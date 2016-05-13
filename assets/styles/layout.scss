@@ -3,17 +3,17 @@
 
 .row-wrapper {
   @include row();
-  border: $base-border; // for layout only
+  // border: $base-border; // for layout only
 
   .outer-container {
     @include outer-container;
-    border: $base-border; // for layout only
+    // border: $base-border; // for layout only
 
     section {
       @include span-columns(8);
       @include shift(2);
 
-      border: $base-border; // for layout only
+      // border: $base-border; // for layout only
       margin-bottom: 79px;
       margin-top: 88px;
       text-align: center;
@@ -64,9 +64,11 @@ header {
   background-image: url("http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/10/mountains_hd.jpg");
   background-position: 50% 15%; // xpos ypos
   background-repeat: no-repeat, repeat-x;
-  box-shadow: 0 5px 10px -5px inset;
+  box-shadow: $base-inset-shadow;
 }
 
 .welcome-section {
-  padding: 120px 0
+  padding: 120px 0;
+  color: $contrast-font-color;
+  text-shadow: $base-text-shadow;
 }
