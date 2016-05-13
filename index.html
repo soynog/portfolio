@@ -8,15 +8,16 @@
     </head>
     <body class="container-fluid">
     <!-- HEADER/NAVBAR -->
+      <a name="home">
       <div class="row-wrapper textured">
         <div class="outer-container">
           <header>
             <nav>
-              <a href="#">Welcome</a>
-              <a href="#">Portfolio</a>
-              <a href="#">Skills</a>
-              <a href="#">About</a>
-              <a href="#">Contact</a>
+              <a href="#home">Home</a>
+              <a href="#portfolio">Portfolio</a>
+              <a href="#skills">Skills</a>
+              <a href="#about-me">About Me</a>
+              <a href="#contact">Contact</a>
             </nav>
           </header>
         </div>
@@ -35,37 +36,112 @@
 
 
     <!-- PORTFOLIO SECTION -->
+    <!-- Factor this out into Handlebars partial -->
+      <a name="portfolio">
       <div class="row-wrapper textured">
         <div class="outer-container">
           <section id="portfolio-section">
             <h2>Portfolio</h2>
+            <div class="cards">
+              <div class="card">
+                <div class="card-image">
+                  <img src="http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/10/mountains_hd.jpg" alt="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png">
+                </div>
+                <div class="card-header">
+                  RezTailor
+                </div>
+                <div class="card-copy">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-image">
+                  <img src="https://static.pexels.com/photos/2855/landscape-mountains-nature-lake.jpg" alt="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-4.png">
+                </div>
+                <div class="card-header">
+                  Tic-Tac-Toe
+                </div>
+                <div class="card-copy">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-image">
+                  <img src="http://curiositysip.com/wp-content/uploads/2015/12/Mountains-17-1024x640.jpg" alt="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png">
+                </div>
+                <div class="card-header">
+                  Project #3
+                </div>
+                <div class="card-copy">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-image">
+                  <img src="https://i.guim.co.uk/img/media/6168e08ab8168b409f4a078d0a396355f44d7ef8/0_204_5183_3111/master/5183.jpg?w=620&q=55&auto=format&usm=12&fit=max&s=a219bae5e6d694af24b59e90d590a904" alt="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png">
+                </div>
+                <div class="card-header">
+                  Final Project
+                </div>
+                <div class="card-copy">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-image">
+                  <img src="http://miriadna.com/desctopwalls/images/max/Forest-at-the-mountains.jpg" alt="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png">
+                </div>
+                <div class="card-header">
+                  Another Project?
+                </div>
+                <div class="card-copy">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                </div>
+              </div>
+            </div>
+            <p>Update cards to hover or expand with info rather than displaying by default?</p>
           </section>
         </div>
       </div>
 
     <!-- SKILLS SECTION -->
+      <a name="skills">
       <div class="row-wrapper textured">
         <div class="outer-container">
           <section id="skills-section">
             <h2>Skills</h2>
+            <p>Big list of pretty icon cards or windows with hover effects</p>
           </section>
         </div>
       </div>
 
     <!-- ABOUT ME SECTION -->
+      <a name="about-me">
       <div class="row-wrapper textured">
         <div class="outer-container">
           <section id="about-me-section">
             <h2>About Me</h2>
+            <p>Hi! Read all this cool information about me.</p>
           </section>
         </div>
       </div>
 
     <!-- CONTACT SECTION -->
+      <a name="contact">
       <div class="row-wrapper textured">
         <div class="outer-container">
           <section id="contact-section">
             <h2>Contact</h2>
+            <ul>
+              <li><a href="mailto:nicolas.o.garcia@gmail.com"> nicolas.o.garcia@gmail.com</a></li>
+              <li>Location: Cambridge, MA</li>
+              <li><a href="https://github.com/soynog">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/nicolasogarcia">LinkedIn</a></li>
+            </ul>
           </section>
         </div>
       </div>

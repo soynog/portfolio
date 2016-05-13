@@ -10,18 +10,18 @@
     // border: $base-border; // for layout only
 
     section {
-      @include span-columns(8);
-      @include shift(2);
+      @include span-columns(10);
+      @include shift(1);
 
       // border: $base-border; // for layout only
       margin-bottom: 79px;
       margin-top: 88px;
       text-align: center;
 
-      @include media($mobile) {
-        @include shift(1);
-        @include span-columns(10);
-      }
+      // @include media($mobile) {
+      //   @include shift(0);
+      //   @include span-columns(12);
+      // }
     }
   }
 }
