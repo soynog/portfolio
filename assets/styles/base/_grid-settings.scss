@@ -1,0 +1,12 @@
+@import "../lib/bourbon/bourbon"; // or "bourbon" when in Rails
+@import "../lib/neat/neat-helpers"; // or "neat-helpers" when in Rails
+
+// Custom Grid Settings
+$column: 40px;
+$gutter: 44px;
+$grid-columns: 12;
+$max-width: 1080px;
+
+// Define your breakpoints
+$tablet: new-breakpoint(max-width 768px 8);
+$mobile: new-breakpoint(max-width 480px 4);
