@@ -1,0 +1,27 @@
+
+// GENERAL PAGE ELEMENTS //
+
+.row-wrapper {
+  @include row();
+  border: $base-border; // for layout only
+
+  .outer-container {
+    @include outer-container;
+    border: $base-border; // for layout only
+
+    section {
+      @include span-columns(8);
+      @include shift(2);
+
+      margin-bottom: 79px;
+      margin-top: 88px;
+      text-align: center;
+      border: $base-border; // for layout only
+
+      @include media($mobile) {
+        @include shift(1);
+        @include span-columns(10);
+      }
+    }
+  }
+}
