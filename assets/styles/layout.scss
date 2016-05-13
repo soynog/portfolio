@@ -13,10 +13,10 @@
       @include span-columns(8);
       @include shift(2);
 
+      border: $base-border; // for layout only
       margin-bottom: 79px;
       margin-top: 88px;
       text-align: center;
-      border: $base-border; // for layout only
 
       @include media($mobile) {
         @include shift(1);
@@ -26,6 +26,13 @@
   }
 }
 
+// For textured overlay elements
+.textured {
+  @include texture(180deg,$base-background-color,$base-background-color, 48, 0);
+}
+
+
+// ***SPECIFIC SECTIONS***
 
 // NAVBAR HEADER
 header {
@@ -48,4 +55,18 @@ header {
       }
     }
   }
+}
+
+
+// WELCOME SECTION
+
+.welcome-wrapper {
+  background-image: url("http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/10/mountains_hd.jpg");
+  background-position: 50% 15%; // xpos ypos
+  background-repeat: no-repeat, repeat-x;
+  box-shadow: 0 5px 10px -5px inset;
+}
+
+.welcome-section {
+  padding: 120px 0
 }
