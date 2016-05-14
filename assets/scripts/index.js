@@ -1,7 +1,36 @@
 'use strict';
 
-// user require with a reference to bundle the file and use it in this file
-// var example = require('./example');
+$(document).ready( function() {
+  (function (jQuery) {
+    jQuery.mark = {
+      jump: function (options) {
+        var defaults = {
+          selector: 'a.scroll-on-page-link'
+        };
+        if (typeof options === 'string') {
+          defaults.selector = options;
+        }
 
-// use require without a reference to ensure a file is bundled
-require('./example');
+        options = jQuery.extend(defaults, options);
+        return jQuery(options.selector).click(function (e) {
+          var jumpobj = jQuery(this);
+          console.log(jumpobj);
+          var target = jumpobj.attr('href');
+          console.log(target);
+          var thespeed = 600;
+          console.log($(target));
+          var offset = jQuery(target).offset().top;
+          jQuery('html,body').animate({
+            scrollTop: offset
+          }, thespeed, 'swing');
+          e.preventDefault();
+        });
+      }
+    };
+  })(jQuery);
+
+
+  jQuery(function(){
+    jQuery.mark.jump();
+  });
+});
