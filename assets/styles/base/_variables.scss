@@ -49,5 +49,6 @@ $base-timing: ease;
 
 // Shadows
 $shadow-color: $v-dark-gray;
-$base-inset-shadow: 0 0px 10px 0px $shadow-color inset;
-$base-text-shadow: 0 1px 5px $shadow-color; 
+$base-box-shadow: 0 0 10px 0 $shadow-color;
+$base-inset-shadow: 0 0 10px 0 $shadow-color inset;
+$base-text-shadow: 0 1px 5px $shadow-color;

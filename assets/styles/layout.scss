@@ -31,6 +31,10 @@
   @include texture(180deg,$base-background-color,$base-background-color, 48, 0);
 }
 
+// For drop-shadow elements
+.shadow {
+  box-shadow: $base-box-shadow;
+}
 
 // ***SPECIFIC SECTIONS***
 
@@ -64,7 +68,7 @@ header {
   background-image: url("http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/10/mountains_hd.jpg");
   background-position: 50% 15%; // xpos ypos
   background-repeat: no-repeat, repeat-x;
-  box-shadow: $base-inset-shadow;
+  // box-shadow: $base-inset-shadow;
 }
 
 .welcome-section {
