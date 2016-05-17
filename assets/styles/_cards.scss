@@ -9,8 +9,7 @@
   $base-border-radius: 3px !default;
   $base-background-color: $light-gray !default;
   $base-spacing: 1.5em !default;
-  $action-color: #477DCA !default;
-  $dark-gray: #333 !default;
+  $action-color: $dark-gray !default;
   $base-font-color: $dark-gray !default;
   $card-border-color: $base-border-color;
   $card-border: 1px solid $card-border-color;
@@ -29,7 +28,7 @@
   flex-grow: 1;
   margin: 0 $card-margin $base-spacing $card-margin;
   position: relative;
-  transition: all 0.2s ease-in-out;
+  transition: all .2s ease-in-out;
 
   .card-image {
     background-color: $card-image-hover-color;
@@ -41,7 +40,7 @@
     img {
       @include border-top-radius($base-border-radius);
       opacity: 1;
-      transition: all 0.2s ease-in-out;
+      transition: all .2s ease-in-out;
       width: 100%;
     }
   }
@@ -49,22 +48,23 @@
   .card-header {
     background-color: $card-header-background;
     border-bottom: $card-border;
-    border-radius: $base-border-radius $base-border-radius 0 0;
+    // border-radius: $base-border-radius $base-border-radius 0 0;
+    border-radius: $base-border-radius;
     font-weight: bold;
     line-height: 1.5em;
     padding: ($base-spacing / 3) ($base-spacing / 2);
     transition: all 0.2s ease-in-out;
   }
 
-  .card-copy {
-    font-size: 0.9em;
-    line-height: 1.5em;
-    padding: ($base-spacing / 2) ($base-spacing / 2);
-
-    p {
-      margin: 0 0 ($base-spacing / 2);
-    }
-  }
+  // .card-copy {
+  //   font-size: 0.9em;
+  //   line-height: 1.5em;
+  //   padding: ($base-spacing / 2) ($base-spacing / 2);
+  //
+  //   p {
+  //     margin: 0 0 ($base-spacing / 2);
+  //   }
+  // }
 
   &:focus,
   &:hover {
