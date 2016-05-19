@@ -2,9 +2,25 @@
 $medium-screen: 600px;
 $large-screen: 900px;
 
+// Overwrite System Font Stack
+$font-stack-system: (
+  "Roboto",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  "Oxygen",
+  "Ubuntu",
+  "Cantarell",
+  "Fira Sans",
+  "Droid Sans",
+  "Helvetica Neue",
+  sans-serif,
+);
+
 // Typography
 $base-font-family: $font-stack-system;
 $heading-font-family: $base-font-family;
+$body-font-family: $base-font-family;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -54,4 +70,4 @@ $base-timing: ease;
 $shadow-color: $v-dark-gray;
 $base-box-shadow: 0 0 10px 0 $shadow-color;
 $base-inset-shadow: 0 0 10px 0 $shadow-color inset;
-$base-text-shadow: 0 1px 5px $shadow-color;
+$base-text-shadow: 0 1px 5px darken($shadow-color,100%);

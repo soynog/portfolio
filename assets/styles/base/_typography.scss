@@ -18,25 +18,30 @@ h6 {
 }
 
 h1 {
-  font-size: modular-scale(6);
+  font-size: modular-scale(7);
+  font-weight: 100;
 }
 
 h2 {
   font-size: modular-scale(5);
+  font-weight: 100;
 }
 
 h3 {
   font-size: modular-scale(4);
+  font-weight: 300;
 }
 
 p {
   margin: 0 0 $small-spacing;
+  font-weight: 400;
 }
 
 a {
   color: $action-color;
   text-decoration: none;
   transition: color $base-duration $base-timing;
+  font-weight: 600;
 
   &:active,
   &:focus,
