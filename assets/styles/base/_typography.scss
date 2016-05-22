@@ -32,16 +32,21 @@ h3 {
   font-weight: 300;
 }
 
+h4 {
+  font-size: modular-scale(2);
+  font-weight: 300;
+}
+
 p {
   margin: 0 0 $small-spacing;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 a {
   color: $action-color;
   text-decoration: none;
   transition: color $base-duration $base-timing;
-  font-weight: 600;
+  font-weight: 500;
 
   &:active,
   &:focus,
