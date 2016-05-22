@@ -1,23 +1,18 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .card {
-  $base-border-color: $medium-gray !default;
-  $base-border-radius: 3px !default;
-  $base-background-color: $light-gray !default;
-  $base-spacing: 1.5em !default;
-  $action-color: $dark-gray !default;
-  $base-font-color: $dark-gray !default;
   $card-border-color: $base-border-color;
-  $card-border: 1px solid $card-border-color;
-  $card-background: lighten($secondary-background-color, 10%);
-  $card-header-background: $card-background;
+  $card-border: $base-border;
+  $card-background: $secondary-background-color;
+  $card-header-background: lighten($card-background, 5%);
   $card-margin: 1em;
   $card-image-hover-opacity: 0.7;
   $card-image-hover-color: $blue;
+  $card-image-height: 150px;
 
   background-color: $card-background;
   border: $card-border;
@@ -25,70 +20,99 @@
   box-shadow: $base-box-shadow;
   cursor: pointer;
   flex-basis: 15em;
-  flex-grow: 1;
-  margin: 0 $card-margin $base-spacing $card-margin;
+  flex-grow: 0;
+  margin: 0 $card-margin $base-spacing;
   position: relative;
   transition: all .2s ease-in-out;
 
-  .card-image {
-    background-color: $card-image-hover-color;
-    @include border-top-radius($base-border-radius);
-    height: 150px;
-    max-height: 150px;
+  .hover-tile-container {
+    height: $card-image-height;
     overflow: hidden;
 
-    img {
-      @include border-top-radius($base-border-radius);
-      opacity: 1;
-      transition: all .2s ease-in-out;
-      width: 100%;
+    .card-image {
+      @include border-top-radius($base-border-radius - $base-border-thickness);
+      background-color: $card-image-hover-color;
+      height: $card-image-height;
+      max-height: $card-image-height;
+      overflow: hidden;
+
+      img {
+        @include border-top-radius($base-border-radius - $base-border-thickness);
+        opacity: 1;
+        transition: all .2s ease-in-out;
+        width: 100%;
+      }
     }
-  }
-
-  .card-header {
-    background-color: $card-header-background;
-    border-bottom: $card-border;
-    // border-radius: $base-border-radius $base-border-radius 0 0;
-    border-radius: $base-border-radius;
-    font-weight: bold;
-    line-height: 1.5em;
-    padding: ($base-spacing / 3) ($base-spacing / 2);
-    transition: all 0.2s ease-in-out;
-  }
-
-  // .card-copy {
-  //   font-size: 0.9em;
-  //   line-height: 1.5em;
-  //   padding: ($base-spacing / 2) ($base-spacing / 2);
-  //
-  //   p {
-  //     margin: 0 0 ($base-spacing / 2);
-  //   }
-  // }
-
-  &:focus,
-  &:hover {
-    cursor: pointer;
-
-    img {
-      opacity: $card-image-hover-opacity;
-    }
-  }
-
-  &:active {
-    background-color: $card-background;
 
     .card-header {
+      @include border-bottom-radius($base-border-radius);
+      background-color: $card-header-background;
+      font-weight: bold;
+      line-height: 1.5em;
+      padding: ($base-spacing / 3) ($base-spacing / 2);
+      // transition: all .2s ease-in-out;
+    }
+
+    .card-copy {
+      font-size: 0.9em;
+      line-height: 1.5em;
+      height: $card-image-height;
+      // padding: ($base-spacing / 2) ($base-spacing / 2);
+
+      p {
+        margin: 0 0 ($base-spacing / 2);
+      }
+    }
+
+    .hover-tile {
+      overflow: hidden;
+      padding: 0;
+      transition: all 0.2s ease-in-out;
+    }
+
+    .hover-tile-hidden {
+      background: transparentize(#000, 0.9);
+    }
+
+    &:focus,
+    &:hover {
+      cursor: pointer;
+
+      img {
+        opacity: $card-image-hover-opacity;
+      }
+
+      .hover-tile {
+        transform: translate(0, -100%);
+      }
+    }
+
+    &:active {
       background-color: $card-background;
+
+      .card-header {
+        background-color: $card-background;
+      }
     }
   }
+}
+
+
+.hover-tile {
+  overflow: hidden;
+  padding: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.hover-tile-hidden {
+  background: transparentize(#000, 0.5);
 }
 
 .hover-tile-outer {
   $base-border-color: gainsboro !default;
   $base-line-height: 1.5em !default;
   $medium-screen: 40em !default;
-  $hover-tile-height: 10em;
+  $hover-tile-height: 150px;
   $base-spacing: 1.5em;
 
   background: url("https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png");

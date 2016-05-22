@@ -30,8 +30,7 @@ $base-line-height: 1.5;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$base-border-radius: 20px;
-$base-spacing: $base-line-height * 1em;
+$base-spacing: $base-line-height * 1.2em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 $header-height: 72px;
@@ -54,7 +53,10 @@ $action-color: $dark-gray;
 // Border
 // $base-border-color: $light-gray;
 $base-border-color: $medium-gray;
-$base-border: 1px solid $base-border-color;
+$base-border-thickness: 1px;
+$base-border-style: solid;
+$base-border-radius: 5px;
+$base-border: $base-border-thickness $base-border-style $base-border-color;
 
 // Background Colors
 $base-background-color: $white;
