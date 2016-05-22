@@ -69,7 +69,7 @@ nav {
 // WELCOME SECTION
 
 .welcome-wrapper {
-  background: linear-gradient(rgba(60, 40, 0, 0.2), rgba(0, 0, 0, 0)), url('/assets/images/moosilauke_pix/hazy_sunset.jpg');
+  background: linear-gradient($bg-sepia, $bg-clear), url('/assets/images/moosilauke_pix/hazy_sunset.jpg');
   background-position: 50% 35%; // xpos ypos
   background-repeat: no-repeat, repeat-x;
   background-size: cover;
@@ -81,5 +81,7 @@ nav {
   padding: 120px 0;
   text-shadow: $base-text-shadow;
 }
+
+
 
 // PORTFOLIO SECTION
