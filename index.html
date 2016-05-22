@@ -1,174 +1,170 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
-      <title>Example</title>
 
-      <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
-      <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
-    </head>
-    <body class="container-fluid">
-      <a id="home">
+  <head>
 
-    <!-- HEADER/NAVBAR -->
-      <div class="navbar-wrapper shadow">
-        <div class="row-wrapper textured">
-          <div class="outer-container">
-            <header>
-              <nav>
-                <a class="scroll-on-page-link" href="#home">Home</a>
-                <a class="scroll-on-page-link" href="#portfolio">Portfolio</a>
-                <a class="scroll-on-page-link" href="#skills">Skills</a>
-                <a class="scroll-on-page-link" href="#about-me">About Me</a>
-                <a class="scroll-on-page-link" href="#contact">Contact</a>
-              </nav>
-            </header>
-          </div>
-        </div>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+    <title>Example</title>
+
+    <script src="vendor.bundle.js" type="text/javascript" charset="utf-8" defer></script>
+    <script src="bundle.js" type="text/javascript" charset="utf-8" defer></script>
+
+  </head>
+
+  <body class="container-fluid">
+
+    <a id="home"></a>
+
+  <!-- HEADER/NAVBAR -->
+    <!--<div class="navbar-wrapper shadow">-->
+      <div class="row-wrapper textured navbar-wrapper shadow">
+        <!--<div class="outer-container">-->
+          <header>
+            <nav>
+              <a class="scroll-on-page-link" href="#home">Home</a>
+              <a class="scroll-on-page-link" href="#portfolio">Portfolio</a>
+              <a class="scroll-on-page-link" href="#skills">Skills</a>
+              <a class="scroll-on-page-link" href="#about-me">About Me</a>
+              <a class="scroll-on-page-link" href="#contact">Contact</a>
+            </nav>
+          </header>
+        <!--</div>-->
       </div>
+    <!--</div>-->
 
 
-    <!-- WELCOME SPLASH -->
+  <!-- WELCOME SPLASH -->
 
-      <div class="row-wrapper welcome-wrapper">
-        <div class="outer-container">
-          <section class="welcome-section">
-            <h1>Nicolas Garcia</h1>
-            <h3>full-stack web developer</h3>
-          </section>
-        </div>
+    <div class="row-wrapper welcome-wrapper">
+      <div class="outer-container">
+        <section class="welcome-section">
+          <h1>Nicolas Garcia</h1>
+          <h3>full-stack web developer</h3>
+        </section>
       </div>
+    </div>
 
 
-    <!-- PORTFOLIO SECTION -->
-    <!-- Factor this out into Handlebars partial -->
-      <a id="portfolio">
-      <div class="row-wrapper textured shadow">
-        <div class="outer-container">
-          <section id="portfolio-section">
-            <h2>Portfolio</h2>
+  <!-- PORTFOLIO SECTION -->
+  <!-- Factor this out into Handlebars partial -->
+    <a id="portfolio"></a>
+    <div class="row-wrapper textured shadow">
+      <div class="outer-container">
+        <section id="portfolio-section">
+          <h2>Portfolio</h2>
 
-            <div class="cards">
-              
-              <div class="card">
-                <div class="hover-text-container">
-                  <div class="card-image">
-                    <img src="http://phandroid.s3.amazonaws.com/wp-content/uploads/2014/10/mountains_hd.jpg" alt="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains.png">
-                  </div>
-                  <div class="card-copy hover-text hover-text-hidden">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-                  </div>
-                </div>
-                <div class="card-header">
-                  <h4>RezTailor</h4>
+          <div class="cards">
+
+            <div class="card">
+              <div class="hover-text-container">
+                <div class="card-image"></div>
+                <div class="card-copy hover-text hover-text-hidden">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
                 </div>
               </div>
-
-              <div class="card">
-                <div class="hover-text-container">
-                  <div class="card-image">
-                    <img src="https://static.pexels.com/photos/2855/landscape-mountains-nature-lake.jpg" alt="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-4.png">
-                  </div>
-                  <div class="card-copy hover-text hover-text-hidden">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-                  </div>
-                </div>
-                <div class="card-header">
-                  <h4>Tic-Tac-Toe</h4>
-                </div>
+              <div class="card-header">
+                <h4>RezTailor</h4>
               </div>
-
-              <div class="card">
-                <div class="hover-text-container">
-                  <div class="card-image">
-                    <img src="http://curiositysip.com/wp-content/uploads/2015/12/Mountains-17-1024x640.jpg" alt="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png">
-                  </div>
-                  <div class="card-copy hover-text hover-text-hidden">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-                  </div>
-                </div>
-                <div class="card-header">
-                  <h4>SoftSurv</h4>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="hover-text-container">
-                  <div class="card-image">
-                    <img src="https://i.guim.co.uk/img/media/6168e08ab8168b409f4a078d0a396355f44d7ef8/0_204_5183_3111/master/5183.jpg?w=620&q=55&auto=format&usm=12&fit=max&s=a219bae5e6d694af24b59e90d590a904" alt="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png">
-                  </div>
-                  <div class="card-copy hover-text hover-text-hidden">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-                  </div>
-                </div>
-                <div class="card-header">
-                  <h4>Campify</h4>
-                </div>
-              </div>
-
-              <div class="card">
-                <div class="hover-text-container">
-                  <div class="card-image">
-                    <img src="http://miriadna.com/desctopwalls/images/max/Forest-at-the-mountains.jpg" alt="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/mountains-3.png">
-                  </div>
-                  <div class="card-copy hover-text hover-text-hidden">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
-                  </div>
-                </div>
-                <div class="card-header">
-                  <h4>This Very Website</h4>
-                </div>
-              </div>
-
             </div>
-          </section>
-        </div>
-      </div>
 
-    <!-- SKILLS SECTION -->
-      <a id="skills">
-      <div class="row-wrapper textured">
-        <div class="outer-container">
-          <section id="skills-section">
-            <h2>Skills</h2>
-            <p>Big list of pretty icon cards or windows with hover effects</p>
-          </section>
-        </div>
-      </div>
+            <div class="card">
+              <div class="hover-text-container">
+                <div class="card-image"></div>
+                <div class="card-copy hover-text hover-text-hidden">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+                </div>
+              </div>
+              <div class="card-header">
+                <h4>Tic-Tac-Toe</h4>
+              </div>
+            </div>
 
-    <!-- ABOUT ME SECTION -->
-      <a id="about-me">
-      <div class="row-wrapper textured">
-        <div class="outer-container">
-          <section id="about-me-section">
-            <h2>About Me</h2>
-            <p>Hi! Read all this cool information about me.</p>
-          </section>
-        </div>
-      </div>
+            <div class="card">
+              <div class="hover-text-container">
+                <div class="card-image"></div>
+                <div class="card-copy hover-text hover-text-hidden">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+                </div>
+              </div>
+              <div class="card-header">
+                <h4>SoftSurv</h4>
+              </div>
+            </div>
 
-    <!-- CONTACT SECTION -->
-      <a id="contact">
-      <div class="row-wrapper textured">
-        <div class="outer-container">
-          <section id="contact-section">
-            <h2>Contact</h2>
-            <ul>
-              <li><a href="mailto:nicolas.o.garcia@gmail.com"> nicolas.o.garcia@gmail.com</a></li>
-              <li>Location: Cambridge, MA</li>
-              <li><a href="https://github.com/soynog">GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/nicolasogarcia">LinkedIn</a></li>
-            </ul>
-          </section>
-        </div>
-      </div>
+            <div class="card">
+              <div class="hover-text-container">
+                <div class="card-image"></div>
+                <div class="card-copy hover-text hover-text-hidden">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+                </div>
+              </div>
+              <div class="card-header">
+                <h4>Campify</h4>
+              </div>
+            </div>
 
-    <!-- FOOTER -->
-      <div class="row-wrapper textured">
-        <div class="outer-container section">
-          <footer>&copy; 2016 <a href="http://www.nicolasogarcia.com">nicolas o garcia</a></footer>
-        </div>
-      </div>
+            <div class="card">
+              <div class="hover-text-container">
+                <div class="card-image"></div>
+                <div class="card-copy hover-text hover-text-hidden">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident.</p>
+                </div>
+              </div>
+              <div class="card-header">
+                <h4>This Very Website</h4>
+              </div>
+            </div>
 
-    </body>
+          </div>
+        </section>
+      </div>
+    </div>
+
+  <!-- SKILLS SECTION -->
+    <a id="skills"></a>
+    <div class="row-wrapper textured">
+      <div class="outer-container">
+        <section id="skills-section">
+          <h2>Skills</h2>
+          <p>Big list of pretty icon cards or windows with hover effects</p>
+        </section>
+      </div>
+    </div>
+
+  <!-- ABOUT ME SECTION -->
+    <a id="about-me"></a>
+    <div class="row-wrapper textured">
+      <div class="outer-container">
+        <section id="about-me-section">
+          <h2>About Me</h2>
+          <p>Hi! Read all this cool information about me.</p>
+        </section>
+      </div>
+    </div>
+
+  <!-- CONTACT SECTION -->
+    <a id="contact"></a>
+    <div class="row-wrapper textured">
+      <div class="outer-container">
+        <section id="contact-section">
+          <h2>Contact</h2>
+          <ul>
+            <li><a href="mailto:nicolas.o.garcia@gmail.com"> nicolas.o.garcia@gmail.com</a></li>
+            <li>Location: Cambridge, MA</li>
+            <li><a href="https://github.com/soynog">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/nicolasogarcia">LinkedIn</a></li>
+          </ul>
+        </section>
+      </div>
+    </div>
+
+  <!-- FOOTER -->
+    <div class="row-wrapper textured">
+      <div class="outer-container section">
+        <footer>&copy; 2016 <a href="http://www.nicolasogarcia.com">nicolas o garcia</a></footer>
+      </div>
+    </div>
+
+  </body>
+
 </html>

@@ -18,10 +18,15 @@
       margin-top: 88px;
       text-align: center;
 
-      // @include media($mobile) {
-      //   @include shift(0);
-      //   @include span-columns(12);
-      // }
+      @include media($tablet) {
+        @include shift(0);
+        @include span-columns(8);
+      }
+
+      @include media($mobile) {
+        @include shift(0);
+        @include span-columns(4);
+      }
     }
   }
 }
@@ -42,17 +47,20 @@
 .navbar-wrapper {
   position: fixed;
   width: 100%;
+  z-index: 100; // Places navbar in front of card elements
 }
 
 header {
   @include span-columns(12);
   display: table;
   height: $header-height;
+
 }
 
 nav {
   float: right;
   line-height: 72px;
+  z-index: 9999;
 
   a {
     // font-size:18px;
