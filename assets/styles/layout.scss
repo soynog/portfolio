@@ -68,13 +68,13 @@ nav {
     margin-right: 40px;
     text-transform: uppercase;
 
-    // @include media($tablet) {
-    //   color: red;
-    // }
-    //
-    // @include media($mobile) {
-    //   color: blue;
-    // }
+    @include media($tablet) {
+      color: red;
+    }
+
+    @include media($mobile) {
+      color: blue;
+    }
 
     &:last-child {
       margin-right: 9px;
