@@ -20,6 +20,10 @@ const portfolio = [
   {
     title: "This Very Website",
     desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident."
+  },
+  {
+    title: $(document).width(),
+    desc: ""
   }
 ];
 

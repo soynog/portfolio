@@ -74,9 +74,9 @@ webpackJsonp([0],[
 /***/ },
 /* 2 */,
 /* 3 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
 	var portfolio = [{
 	  title: "Campify",
@@ -93,11 +93,15 @@ webpackJsonp([0],[
 	}, {
 	  title: "This Very Website",
 	  desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident."
+	}, {
+	  title: $(document).width(),
+	  desc: ""
 	}];
 
 	module.exports = {
 	  portfolio: portfolio
 	};
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
 /* 4 */
