@@ -15,21 +15,31 @@ h6 {
   font-size: modular-scale(1);
   line-height: $heading-line-height;
   margin: 0 0 $small-spacing;
+  text-shadow: $base-text-shadow;
 }
 
 h1 {
-  font-size: modular-scale(6);
+  font-size: modular-scale(7);
+  font-weight: 100;
 }
 
 h2 {
   font-size: modular-scale(5);
+  font-weight: 100;
 }
 
 h3 {
   font-size: modular-scale(4);
+  font-weight: 300;
+}
+
+h4 {
+  font-size: modular-scale(2);
+  font-weight: 300;
 }
 
 p {
+  font-weight: 300;
   margin: 0 0 $small-spacing;
 }
 
@@ -37,6 +47,7 @@ a {
   color: $action-color;
   text-decoration: none;
   transition: color $base-duration $base-timing;
+  font-weight: 500;
 
   &:active,
   &:focus,

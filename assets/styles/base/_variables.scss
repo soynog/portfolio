@@ -2,9 +2,25 @@
 $medium-screen: 600px;
 $large-screen: 900px;
 
+// Overwrite System Font Stack
+$font-stack-system: (
+  "Roboto",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  "Oxygen",
+  "Ubuntu",
+  "Cantarell",
+  "Fira Sans",
+  "Droid Sans",
+  "Helvetica Neue",
+  sans-serif,
+);
+
 // Typography
 $base-font-family: $font-stack-system;
 $heading-font-family: $base-font-family;
+$body-font-family: $base-font-family;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -14,17 +30,21 @@ $base-line-height: 1.5;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
+$base-spacing: $base-line-height * 1.2em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
+$header-height: 72px;
 
 // Colors
+$black: #000;
 $blue: #1565c0;
 $v-dark-gray: #222;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
+$white: #fff;
+$bg-sepia: rgba(60, 40, 0, .2);
+$bg-clear: rgba(0, 0, 0, 0);
 
 // Font Colors
 $base-font-color: $v-dark-gray;
@@ -32,16 +52,20 @@ $contrast-font-color: $light-gray;
 $action-color: $dark-gray;
 
 // Border
-$base-border-color: $light-gray;
-$base-border: 1px solid $base-border-color;
+// $base-border-color: $light-gray;
+$base-border-color: $medium-gray;
+$base-border-thickness: 1px;
+$base-border-style: solid;
+$base-border-radius: 2px;
+$base-border: $base-border-thickness $base-border-style $base-border-color;
 
 // Background Colors
-$base-background-color: #fff;
+$base-background-color: $white;
 $secondary-background-color: tint($base-border-color, 75%);
 
 // Forms
-$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+$form-box-shadow: inset 0 1px 3px rgba($black, .06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -.3);
 
 // Animations
 $base-duration: 150ms;
@@ -49,5 +73,11 @@ $base-timing: ease;
 
 // Shadows
 $shadow-color: $v-dark-gray;
-$base-inset-shadow: 0 0px 10px 0px $shadow-color inset;
-$base-text-shadow: 0 1px 5px $shadow-color; 
+$base-box-shadow: 0 0 10px 0 $shadow-color;
+$light-box-shadow: 0 0 10px 0 lighten($shadow-color, 50%);
+$base-inset-shadow: 0 0 10px 0 $shadow-color inset;
+$base-text-shadow: 0 0 5px lighten($shadow-color, 50%);
+$dark-text-shadow: 0 1px 5px darken($shadow-color, 100%);
+
+// Animations
+$base-transition: all .3s ease-in-out;

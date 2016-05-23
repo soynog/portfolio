@@ -1,76 +1,77 @@
+$card-border-color: $base-border-color;
+$card-border: $base-border;
+$card-background: $secondary-background-color;
+$card-header-background: lighten($card-background, 5%);
+$card-margin: 1em;
+$card-image-hover-opacity: .5;
+$card-image-hover-color: darken($blue, 15%);
+$card-image-height: 150px;
+
 .cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .card {
-  // $base-border-color: $dark-gray !default;
-  $base-border-radius: 10px !default;
-  // $base-background-color: $light-blue !default;
-  $base-spacing: 1.5em !default;
-  $action-color: #477DCA !default;
-  $dark-gray: #333 !default;
-  $base-font-color: $dark-gray !default;
-  $card-border-color: $base-border-color;
-  $card-border: 1px solid $card-border-color;
-  $card-background: lighten($secondary-background-color, 10%);
-  $card-header-background: $card-background;
-  $card-margin: 1em;
-  $card-image-hover-opacity: 0.7;
-  $card-image-hover-color: #F8F2B4;
-
   background-color: $card-background;
   border: $card-border;
   border-radius: $base-border-radius;
-  box-shadow: 0 2px 4px darken($secondary-background-color, 10%);
+  box-shadow: $light-box-shadow;
   cursor: pointer;
   flex-basis: 15em;
-  flex-grow: 1;
-  margin: 0 $card-margin $base-spacing $card-margin;
+  flex-grow: 0;
+  margin: 0 $card-margin $base-spacing;
+  padding-bottom: 0;
   position: relative;
-  transition: all 0.2s ease-in-out;
+  // transition: all .2s ease-in-out;
+}
+
+.hover-text-container {
+  height: $card-image-height;
+  overflow: hidden;
 
   .card-image {
-    background-color: $card-image-hover-color;
-    height: 150px;
-    max-height: 150px;
+    @include border-top-radius($base-border-radius - $base-border-thickness);
+    background: url('/assets/images/moosilauke_pix/hazy_sunset.jpg');
+    background-size: cover;
+    height: $card-image-height;
+    max-height: $card-image-height;
     overflow: hidden;
-
-    img {
-      @include border-top-radius($base-border-radius);
-      opacity: 1;
-      transition: all 0.2s ease-in-out;
-      width: 100%;
-    }
-  }
-
-  .card-header {
-    background-color: $card-header-background;
-    border-bottom: $card-border;
-    border-radius: $base-border-radius $base-border-radius 0 0;
-    font-weight: bold;
-    line-height: 1.5em;
-    padding: ($base-spacing / 3) ($base-spacing / 2);
-    transition: all 0.2s ease-in-out;
   }
 
   .card-copy {
-    font-size: 0.9em;
+    font-size: .9em;
+    height: $card-image-height;
     line-height: 1.5em;
-    padding: ($base-spacing / 2) ($base-spacing / 2);
+    display: table;
 
     p {
-      margin: 0 0 ($base-spacing / 2);
+      color: $contrast-font-color;
+      display: table-cell;
+      padding: ($base-spacing / 2);
+      text-align: center;
+      vertical-align: middle;
     }
+  }
+
+  .hover-text {
+    overflow: hidden;
+    padding: 0;
+    transition: $base-transition;
+  }
+
+  .hover-text-hidden {
+    @include border-top-radius($base-border-radius - $base-border-thickness);
+    background: transparentize($card-image-hover-color, $card-image-hover-opacity);
   }
 
   &:focus,
   &:hover {
     cursor: pointer;
 
-    img {
-      opacity: $card-image-hover-opacity;
+    .hover-text {
+      transform: translate(0, -100%);
     }
   }
 
@@ -80,5 +81,17 @@
     .card-header {
       background-color: $card-background;
     }
+  }
+}
+
+.card-header {
+  @include border-bottom-radius($base-border-radius);
+  background-color: $card-header-background;
+  line-height: 1.5em;
+  padding: ($base-spacing / 4);
+  transition: all .2s ease-in-out;
+
+  h4 {
+    margin: 0;
   }
 }
