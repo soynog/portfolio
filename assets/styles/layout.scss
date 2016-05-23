@@ -14,18 +14,22 @@
       @include shift(1);
 
       // border: $base-border; // for layout only
-      margin-bottom: 79px;
-      margin-top: 88px;
+      margin-bottom: $base-section-margin;
+      margin-top: $base-section-margin;
       text-align: center;
 
       @include media($tablet) {
         @include shift(0);
         @include span-columns(8);
+        margin-bottom: $base-section-margin / 2;
+        margin-top: $base-section-margin / 2;
       }
 
       @include media($mobile) {
         @include shift(0);
         @include span-columns(4);
+        margin-bottom: $base-section-margin / 10;
+        margin-top: $base-section-margin / 10;
       }
     }
   }
@@ -54,7 +58,6 @@ header {
   @include span-columns(12);
   display: table;
   height: $header-height;
-
 }
 
 nav {
