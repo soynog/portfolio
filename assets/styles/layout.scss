@@ -87,7 +87,9 @@ nav {
 .welcome-section {
   color: $contrast-font-color;
   padding: 120px 0;
-  text-shadow: $base-text-shadow;
+  h1,h3 {
+    text-shadow: $dark-text-shadow;
+  }
 }
 
 

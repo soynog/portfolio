@@ -1,6 +1,13 @@
 'use strict';
 
+const portfolio = require('./app-data').portfolio;
+
 $(document).ready( function() {
+  // Render Portfolio cards
+  let portfolioCards = require('./templates/portfolio-cards.handlebars');
+  $('.portfolio-cards').append(portfolioCards({portfolio}));
+
+  // Page Scroll Animation
   (function (jQuery) {
     jQuery.mark = {
       jump: function (options) {
