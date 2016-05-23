@@ -33,7 +33,7 @@ $card-image-height: 150px;
 
   .card-image {
     @include border-top-radius($base-border-radius - $base-border-thickness);
-    background: url('/assets/images/moosilauke_pix/hazy_sunset.jpg');
+    background: url('http://curiositysip.com/wp-content/uploads/2015/12/Mountains-18-1024x640.jpg');
     background-size: cover;
     height: $card-image-height;
     max-height: $card-image-height;
