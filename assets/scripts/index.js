@@ -36,6 +36,12 @@ $(document).ready( function() {
     };
   })(jQuery);
 
+  // Navbar Menu
+  $("#menuExpand]").click(function(e) {
+    $(".menu").toggleClass("menuOpen");
+    e.preventDefault();
+  });
+
 
   jQuery(function(){
     jQuery.mark.jump();

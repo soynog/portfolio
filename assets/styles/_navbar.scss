@@ -1,0 +1,96 @@
+// .navbar-wrapper {
+//   position: fixed;
+//   width: 100%;
+//   z-index: 100; // Places navbar in front of card elements
+// }
+//
+// .nav {
+//   float: right;
+//   line-height: 72px;
+//   z-index: 9999;
+//
+//   a {
+//     // font-size:18px;
+//     // color: $dark-gray;
+//     margin-right: 40px;
+//     text-transform: uppercase;
+//
+//     &:last-child {
+//       margin-right: 9px;
+//     }
+//   }
+// }
+
+.header {
+  @include span-columns(12);
+  display: table;
+  height: $header-height;
+
+  .menu {
+    ul {
+      padding:0;
+      margin:0;
+      li {
+        display: inline-block;
+        float: left;
+        list-style: none;
+        padding: 0 0 0 5px;
+        margin: 0;
+      }
+    }
+  }
+  .menuIcon {
+    display: none;
+    background: #000;
+    width: 100%;
+    text-align: center;
+    &:hover {
+      background: #999;
+    }
+    a {
+      width: 100%;
+      display: inline-block;
+      color: #fff;
+      img {
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+@include media($mobile) {
+  .header {
+    .menu {
+      max-height: 0;
+      overflow: hidden;
+      float: none;
+      text-align: center;
+      width: 100%;
+      transition: max-height .5s;
+      &.menuOpen {
+        max-height: 1000px;
+        transition: max-height .5s;
+      }
+    }
+    ul {
+      li {
+        display: block;
+        width: 100%;
+        background: $black;
+        border-top:1px solid #4d4d4d;
+        &:hover {
+          background: #999;
+        }
+        a {
+          color: #fff;
+          text-shadow: #848484 0px 1px 2px;
+          padding: 10px 0;
+          width: 100%;
+        }
+      }
+    }
+    .menuIcon {
+      display: inline-block;
+    }
+  }
+}

@@ -48,34 +48,7 @@
 // ***SPECIFIC SECTIONS***
 
 // NAVBAR HEADER
-.navbar-wrapper {
-  position: fixed;
-  width: 100%;
-  z-index: 100; // Places navbar in front of card elements
-}
-
-header {
-  @include span-columns(12);
-  display: table;
-  height: $header-height;
-}
-
-nav {
-  float: right;
-  line-height: 72px;
-  z-index: 9999;
-
-  a {
-    // font-size:18px;
-    // color: $dark-gray;
-    margin-right: 40px;
-    text-transform: uppercase;
-
-    &:last-child {
-      margin-right: 9px;
-    }
-  }
-}
+// See navbar.scss
 
 // WELCOME SECTION
 
