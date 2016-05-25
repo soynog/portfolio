@@ -37,7 +37,8 @@ $(document).ready( function() {
   })(jQuery);
 
   // Navbar Menu
-  $("#menuExpand]").click(function(e) {
+  $(".menu-expand").on('click', function(e) {
+    console.log("Menu Click");
     $(".menu").toggleClass("menuOpen");
     e.preventDefault();
   });
