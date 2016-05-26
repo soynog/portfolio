@@ -47,7 +47,7 @@
     width: 100%;
     text-align: left;
     &:hover {
-      // background: #999;
+      background: $focus-background;
     }
     a {
       width: 100%;
@@ -78,7 +78,7 @@
         display: block;
         width: 100%;
         &:hover {
-          background: #999;
+          background: $focus-background;
         }
         a {
           padding: 10px 0;

@@ -62,7 +62,9 @@ $base-border: $base-border-thickness $base-border-style $base-border-color;
 
 // Background Colors
 $base-background-color: $white;
+$highlight-background: $medium-gray;
 $secondary-background-color: tint($base-border-color, 75%);
+$focus-background: rgba(red($highlight-background), green($highlight-background), blue($highlight-background), .5);
 
 // Forms
 $form-box-shadow: inset 0 1px 3px rgba($black, .06);
