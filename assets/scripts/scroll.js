@@ -20,7 +20,7 @@ const scrollAnimate = function (jQuery) {
         console.log($(target));
         let menuWidth = $('li.scroll-on-page-link').height();
         console.log(menuWidth);
-        var offset = jQuery(target).offset().top - menuWidth;
+        var offset = jQuery(target).offset().top - menuWidth * 2;
         jQuery('html,body').animate({
           scrollTop: offset
         }, thespeed, 'swing');
