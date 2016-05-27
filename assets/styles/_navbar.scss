@@ -8,86 +8,84 @@
   @include span-columns(12);
   display: table;
   height: $header-height;
+}
 
-  .nav {
-    float: right;
-    line-height: 72px;
-    z-index: 9999;
+.menu {
+  float: right;
+  line-height: $header-height;
+  z-index: 9999;
 
-    a {
-      // font-size:18px;
-      // color: $dark-gray;
-      margin-right: 40px;
-      text-transform: uppercase;
+  li {
+    display: inline-block;
+    float: left;
+    list-style: none;
+    padding: 0 15px;
+    text-transform: uppercase;
 
-      &:last-child {
-        margin-right: 9px;
-      }
+    &:last-child {
+      margin-right: 10px;
     }
-  }
 
-  .menu {
-    ul {
-      padding:0;
-      margin:0;
-      li {
-        display: inline-block;
-        float: left;
-        list-style: none;
-        padding: 0 0 0 5px;
-        margin: 0;
-      }
-    }
-  }
-  .menuIcon {
-
-    line-height: 72px;
-    padding-left: 10px;
-    display: none;
-    width: 100%;
-    text-align: left;
     &:hover {
       background: $focus-background;
-    }
-    a {
-      width: 100%;
-      display: inline-block;
-      img {
-        vertical-align: middle;
-      }
+      cursor: pointer;
     }
   }
 }
 
-@include media($mobile) {
+.menu-icon {
+  display: none;
+  line-height: $header-height / 2;
+  padding-left: 10px;
+  text-align: left;
+  width: 100%;
+
+  &:hover {
+    background: $focus-background;
+  }
+
+  a {
+    display: inline-block;
+    width: 100%;
+
+    img {
+      vertical-align: middle;
+    }
+  }
+}
+
+@include media($tablet) {
   .header {
-    .menu {
-      max-height: 0;
-      overflow: hidden;
-      float: none;
-      text-align: center;
-      width: 100%;
-      transition: max-height .5s;
-      &.menuOpen {
-        max-height: 1000px;
-        transition: max-height .5s;
-      }
+    height: $header-height / 2;
+  }
+
+  .menu {
+    float: none;
+    line-height: $header-height / 2;
+    max-height: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: max-height .25s;
+    width: 100%;
+
+    &.menuOpen {
+      max-height: 1000px;
+      transition: max-height .25s;
     }
-    ul {
-      li {
-        display: block;
-        width: 100%;
-        &:hover {
-          background: $focus-background;
-        }
-        a {
-          padding: 10px 0;
-          width: 100%;
-        }
-      }
+  }
+
+  li {
+    display: block;
+    width: 100%;
+
+    &:hover {
+      background: $focus-background;
+      cursor: pointer;
     }
-    .menuIcon {
-      display: inline-block;
-    }
+  }
+
+  .menu-icon {
+    display: inline-block;
+    text-transform: uppercase;
   }
 }

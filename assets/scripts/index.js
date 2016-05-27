@@ -12,7 +12,7 @@ $(document).ready( function() {
     jQuery.mark = {
       jump: function (options) {
         var defaults = {
-          selector: 'a.scroll-on-page-link'
+          selector: 'li.scroll-on-page-link'
         };
         if (typeof options === 'string') {
           defaults.selector = options;
