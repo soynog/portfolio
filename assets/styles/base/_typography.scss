@@ -3,6 +3,10 @@ body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
+
+  i {
+    color: $secondary-font-color;
+  }
 }
 
 h1,

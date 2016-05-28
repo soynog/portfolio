@@ -38,20 +38,30 @@ $base-section-header-padding: $base-spacing * 6;
 $base-section-body-padding: $base-spacing * 3;
 
 // Colors
-$black: #000;
-$blue: #1565c0;
+$black: #000; // Grayscale
 $v-dark-gray: #222;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
 $white: #fff;
+
+$v-dark-blue: #092748; // Bluescale
+$dark-blue: #084281;
+$blue: #1565c0;
+$light-blue: #c3dffd;
+
+$v-dark-tan: #413e2e; // Brownscale
+$tan: #d4cca4;
+$light-tan: #f6f4e8;
+
 $bg-sepia: rgba(60, 40, 0, .2);
 $bg-clear: rgba(0, 0, 0, 0);
 
 // Font Colors
-$base-font-color: $v-dark-gray;
-$contrast-font-color: $light-gray;
-$action-color: $dark-gray;
+$base-font-color: $v-dark-tan;
+$secondary-font-color: $dark-blue;
+$contrast-font-color: $light-blue;
+$action-color: $dark-blue;
 
 // Border
 // $base-border-color: $light-gray;
@@ -62,8 +72,8 @@ $base-border-radius: 2px;
 $base-border: $base-border-thickness $base-border-style $base-border-color;
 
 // Background Colors
-$base-background-color: $white;
-$highlight-background: $medium-gray;
+$base-background-color: $light-tan;
+$highlight-background: darken($base-background-color, 25%);
 $secondary-background-color: tint($base-border-color, 75%);
 $focus-background: rgba(red($highlight-background), green($highlight-background), blue($highlight-background), .5);
 
