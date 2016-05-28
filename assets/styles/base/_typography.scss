@@ -14,8 +14,7 @@ h6 {
   font-family: $heading-font-family;
   font-size: modular-scale(1);
   line-height: $heading-line-height;
-  margin: 0 0 $small-spacing;
-  text-shadow: $base-text-shadow;
+  margin: 0 $small-spacing / 4;
   padding: 0 $small-spacing / 4;
 }
 

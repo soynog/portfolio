@@ -6,28 +6,59 @@
 
   .outer-container {
     @include outer-container;
-
-    section {
-      @include span-columns(10);
-      @include shift(1);
-      margin-bottom: $base-section-margin;
-      margin-top: $base-section-margin;
-      text-align: center;
-
-      @include media($tablet) {
-        @include shift(0);
-        @include span-columns(8);
-      }
-
-      @include media($mobile) {
-        @include shift(0);
-        @include span-columns(4);
-        margin-bottom: $base-section-margin / 2;
-        margin-top: $base-section-margin / 2;
-      }
-    }
   }
 }
+
+section {
+  @include span-columns(12);
+  @include shift(0);
+  text-align: center;
+
+  .section-header {
+    background-repeat: no-repeat, repeat-x;
+    background-size: cover;
+    color: $contrast-font-color;
+    margin: 0;
+    padding-bottom: $base-section-header-padding;
+    padding-top: $base-section-header-padding;
+    text-shadow: $dark-text-shadow;
+
+    @include media($tablet) {
+      @include span-columns(8);
+    }
+
+    @include media($mobile) {
+      @include span-columns(4);
+    }
+  }
+
+  .section-body {
+    box-shadow: $base-box-shadow;
+    padding-bottom: $base-section-body-padding;
+    padding-top: $base-section-body-padding;
+    @include texture(180deg, $base-background-color, $base-background-color, 48, 0);
+    text-shadow: $base-text-shadow;
+
+    @include media($tablet) {
+      padding-bottom: $base-section-body-padding;
+      padding-top: $base-section-body-padding;
+    }
+
+    @include media($mobile) {
+      padding-bottom: $base-section-body-padding / 2;
+      padding-top: $base-section-body-padding / 2;
+    }
+  }
+
+  @include media($tablet) {
+    @include span-columns(8);
+  }
+
+  @include media($mobile) {
+    @include span-columns(4);
+  }
+}
+
 
 // For textured overlay elements
 .textured {
@@ -46,25 +77,20 @@
 
 // WELCOME SECTION
 
-.welcome-wrapper {
-  background: linear-gradient($bg-sepia, $bg-clear), url('http://curiositysip.com/wp-content/uploads/2015/12/Mountains-18-1024x640.jpg');
-  background-position: 50% 35%; // xpos ypos
-  background-repeat: no-repeat, repeat-x;
-  background-size: cover;
-  padding-top: $header-height;
-}
-
 .welcome-section {
-  color: $contrast-font-color;
-  margin: 0;
-  padding: 100px 0;
-
-  h1,h3 {
-    text-shadow: $dark-text-shadow;
-  }
+  margin-top: $header-height;
 
   @include media($tablet) {
-    padding: 40px 0;
+    margin-top: 0;
+  }
+}
+
+.welcome-section-header {
+  background: linear-gradient($bg-sepia, $bg-clear), url('/assets/images/mtns-default.jpg');
+  background-position: 50% 35%; // xpos ypos
+
+  @include media($tablet) {
+    padding: 0;
   }
 
   @include media($mobile) {
