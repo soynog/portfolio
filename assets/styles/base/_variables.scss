@@ -34,8 +34,8 @@ $base-spacing: $base-line-height * 1.2em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 $header-height: 72px;
-$base-section-header-padding: $base-spacing * 4;
-$base-section-body-padding: $base-spacing * 2;
+$base-section-header-padding: $base-spacing * 6;
+$base-section-body-padding: $base-spacing * 3;
 
 // Colors
 $black: #000;
@@ -81,6 +81,6 @@ $quick-transition: all $base-duration / 2 $base-timing / 2;
 $shadow-color: $v-dark-gray;
 $base-box-shadow: 0 0 10px 0 $shadow-color;
 $light-box-shadow: 0 0 10px 0 lighten($shadow-color, 50%);
-$base-inset-shadow: 0 0 10px 0 $shadow-color inset;
+$base-inset-shadow: 0 10px 10px -10px $shadow-color inset;
 $base-text-shadow: 0 0 5px lighten($shadow-color, 50%);
 $dark-text-shadow: 0 1px 5px darken($shadow-color, 100%);

@@ -1,4 +1,6 @@
 .navbar-wrapper {
+  @extend %textured;
+  @extend %shadow;
   position: fixed;
   width: 100%;
   z-index: 100; // Places navbar in front of card elements
