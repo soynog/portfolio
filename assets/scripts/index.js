@@ -10,9 +10,14 @@ $(document).ready( function() {
 
   // Navbar Menu
   $(".menu-expand").on('click', function(e) {
-    console.log("Menu Click");
     $(".menu").toggleClass("menuOpen");
     e.preventDefault();
+    e.stopPropagation(); // Make sure hide menu click doesn't fire
+  });
+
+  // Hide Menu on external click
+  $("body").on('click', function() {
+    $(".menu").removeClass("menuOpen");
   });
 
   // Page Scroll Animation
