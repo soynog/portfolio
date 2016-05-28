@@ -80,7 +80,7 @@ section {
 
 // WELCOME SECTION
 section.welcome-section {
-  margin-top: $header-height;
+  // margin-top: $header-height;
 
   @include media($tablet) {
     margin-top: 0;
@@ -88,12 +88,13 @@ section.welcome-section {
 
   .welcome-section-header {
     background: linear-gradient($bg-sepia, $bg-clear), url('/assets/images/mtns-default.jpg');
-    background-position: 50% 35%; // xpos ypos
+    background-position: 50% 25%; // xpos ypos
     background-repeat: no-repeat;
     background-size: cover;
     height: 70vh;
     .header-content {
       @include vertical-align();
+      padding-top: $header-height / 2; // So that centerd in div despite nav
     }
 
     @include media($tablet) {
