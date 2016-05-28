@@ -21,8 +21,13 @@ section {
     background-size: cover;
     color: $contrast-font-color;
     margin: 0;
-    padding: $base-section-header-padding 0;
+    // padding: $base-section-header-padding 0;
     text-shadow: $dark-text-shadow;
+    height: 30vh;
+
+    .header-content {
+      @include vertical-align();
+    }
 
     @include media($tablet) {
       padding: $base-section-header-padding 0;
@@ -36,6 +41,7 @@ section {
   .section-body {
     @extend %shadow;
     @extend %textured;
+    min-height: 70vh;
 
     padding: $base-section-body-padding 0;
 
@@ -94,7 +100,7 @@ section.welcome-section {
     height: 70vh;
     .header-content {
       @include vertical-align();
-      padding-top: $header-height / 2; // So that centerd in div despite nav
+      padding-top: $header-height / 2; // So that centered in div despite nav
     }
 
     @include media($tablet) {
@@ -108,6 +114,7 @@ section.welcome-section {
 
   .welcome-section-body {
     height: 30vh;
+    min-height: 0;
     .body-content {
       @include vertical-align();
     }
