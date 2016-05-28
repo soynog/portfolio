@@ -10,14 +10,16 @@ $(document).ready( function() {
 
   // Navbar Menu
   $(".menu-expand").on('click', function(e) {
-    $(".menu").toggleClass("menuOpen");
+    $('.navbar-wrapper').toggleClass('menu-open');
+    $(".menu").toggleClass("menu-open");
     e.preventDefault();
     e.stopPropagation(); // Make sure hide menu click doesn't fire
   });
 
   // Hide Menu on external click
   $("body").on('click', function() {
-    $(".menu").removeClass("menuOpen");
+    $('.navbar-wrapper').removeClass('menu-open');
+    $(".menu").removeClass("menu-open");
   });
 
   // Page Scroll Animation

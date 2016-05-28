@@ -2,6 +2,19 @@
   position: fixed;
   width: 100%;
   z-index: 100; // Places navbar in front of card elements
+  transition: width .15s;
+  overflow: hidden;
+
+  @include media($tablet) {
+    min-height: $header-height / 2;
+    width: $header-height / 2;
+    border-bottom-right-radius: $header-height / 8;
+    &.menu-open {
+      width: 50%;
+      transition: width .15s;
+      border-bottom-right-radius: 0;
+    }
+  }
 }
 
 .header {
@@ -68,7 +81,7 @@
     transition: max-height .25s;
     width: 100%;
 
-    &.menuOpen {
+    &.menu-open {
       max-height: 1000px;
       transition: max-height .25s;
     }
