@@ -3,17 +3,13 @@
 
 .row-wrapper {
   @include row();
-  // border: $base-border; // for layout only
 
   .outer-container {
     @include outer-container;
-    // border: $base-border; // for layout only
 
     section {
       @include span-columns(10);
       @include shift(1);
-
-      // border: $base-border; // for layout only
       margin-bottom: $base-section-margin;
       margin-top: $base-section-margin;
       text-align: center;
@@ -21,15 +17,13 @@
       @include media($tablet) {
         @include shift(0);
         @include span-columns(8);
-        // margin-bottom: $base-section-margin / 2;
-        // margin-top: $base-section-margin / 2;
       }
 
       @include media($mobile) {
         @include shift(0);
         @include span-columns(4);
-        // margin-bottom: $base-section-margin / 10;
-        // margin-top: $base-section-margin / 10;
+        margin-bottom: $base-section-margin / 2;
+        margin-top: $base-section-margin / 2;
       }
     }
   }
@@ -62,9 +56,19 @@
 
 .welcome-section {
   color: $contrast-font-color;
-  padding: 120px 0;
+  margin: 0;
+  padding: 100px 0;
+
   h1,h3 {
     text-shadow: $dark-text-shadow;
+  }
+
+  @include media($tablet) {
+    padding: 40px 0;
+  }
+
+  @include media($mobile) {
+    padding: 0;
   }
 }
 
