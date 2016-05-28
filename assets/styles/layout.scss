@@ -17,7 +17,7 @@ section {
   .section-header {
     @extend %inset;
     background-color: $blue;
-    background-repeat: no-repeat, repeat-x;
+    background-repeat: no-repeat;
     background-size: cover;
     color: $contrast-font-color;
     margin: 0;
@@ -89,6 +89,12 @@ section.welcome-section {
   .welcome-section-header {
     background: linear-gradient($bg-sepia, $bg-clear), url('/assets/images/mtns-default.jpg');
     background-position: 50% 35%; // xpos ypos
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+    .header-content {
+      @include vertical-align();
+    }
 
     @include media($tablet) {
       // padding: 0;
@@ -96,6 +102,13 @@ section.welcome-section {
 
     @include media($mobile) {
       // padding: 0;
+    }
+  }
+
+  .welcome-section-body {
+    height: 30vh;
+    .body-content {
+      @include vertical-align();
     }
   }
 }
