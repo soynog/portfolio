@@ -14,20 +14,24 @@ section {
   @include shift(0);
   text-align: center;
 
+  @include media($tablet) {
+    @include span-columns(8);
+  }
+
+  @include media($mobile) {
+    @include span-columns(4);
+  }
+
   .section-header {
     @extend %inset;
     background-color: $blue;
     background-repeat: no-repeat;
     background-size: cover;
     color: $contrast-font-color;
-    margin: 0;
+    // margin: 0;
     // padding: $base-section-header-padding 0;
-    text-shadow: $dark-text-shadow;
     height: 30vh;
-
-    .header-content {
-      @include vertical-align();
-    }
+    text-shadow: $dark-text-shadow;
 
     @include media($tablet) {
       padding: $base-section-header-padding 0;
@@ -36,6 +40,11 @@ section {
     @include media($mobile) {
       padding: $base-section-header-padding * .5 0;
     }
+
+    .header-content {
+      @include vertical-align();
+    }
+
   }
 
   .section-body {
@@ -52,14 +61,6 @@ section {
     @include media($mobile) {
       padding: $base-section-body-padding * .5 0;
     }
-  }
-
-  @include media($tablet) {
-    @include span-columns(8);
-  }
-
-  @include media($mobile) {
-    @include span-columns(4);
   }
 }
 
@@ -85,12 +86,7 @@ section {
 // See navbar.scss
 
 // WELCOME SECTION
-section.welcome-section {
-  // margin-top: $header-height;
-
-  @include media($tablet) {
-    margin-top: 0;
-  }
+.welcome-section {
 
   .welcome-section-header {
     background: linear-gradient($bg-sepia, $bg-clear), url('/assets/images/mtns-default.jpg');
@@ -98,23 +94,20 @@ section.welcome-section {
     background-repeat: no-repeat;
     background-size: cover;
     height: 70vh;
+
     .header-content {
       @include vertical-align();
       padding-top: $header-height / 2; // So that centered in div despite nav
-    }
-
-    @include media($tablet) {
-      // padding: 0;
-    }
-
-    @include media($mobile) {
-      // padding: 0;
+      @include media($tablet) {
+        padding-top: 0;
+      }
     }
   }
 
   .welcome-section-body {
     height: 30vh;
     min-height: 0;
+
     .body-content {
       @include vertical-align();
     }
