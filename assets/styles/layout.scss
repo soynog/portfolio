@@ -114,6 +114,30 @@ section {
   }
 }
 
-
-
 // PORTFOLIO SECTION
+.portfolio-section {
+  .section-header.portfolio-section-header {
+    background-color: $blue;
+  }
+}
+
+// SKILLS SECTION
+.skills-section {
+  .section-header.skills-section-header {
+    background-color: $red;
+  }
+}
+
+// ABOUT ME SECTION
+.about-me-section {
+  .section-header.about-me-section-header {
+    background-color: $dark-blue;
+  }
+}
+
+// CONTACT SECTION
+.contact-section {
+  .section-header.contact-section-header {
+    background-color: $light-blue;
+  }
+}
