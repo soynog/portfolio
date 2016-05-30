@@ -5,7 +5,7 @@ const portfolio = [
     title: "OTO",
     desc: "OTO (Outdoor Trip Organizer) makes organizing a camping trip fun and easy! Built on Node.js, MongoDB, Ember.js, Bourbon. UX design by Norman Wozniak.",
     bgImage: "background-image:url(/assets/images/cards/OTO-screenshot.png)",
-    link: "http://nicolasogarcia.com/oto",
+    link: "http://nicolasogarcia.com",
   },
   {
     title: "SoftSurv",
@@ -29,13 +29,13 @@ const portfolio = [
     title: "Stache.it",
     desc: "Pin a mustache to your favorite selfie! Stache.it uses Microsoft’s facial recognition API and a custom placement algorithm to automatically draw mustaches onto uploaded images. Created for a 24-hour hackathon challenge.",
     bgImage: "background-image:url(/assets/images/cards/stache-it-screenshot.png)",
-    link: "http://nicolasogarcia.com/stacheit",
+    link: "http://nicolasogarcia.com",
   },
   {
     title: "Cryptography",
     desc: "I research and presented this brief overview of cryptography, past and present, for a student conference at General Assembly.",
     bgImage: "background-image:url(/assets/images/cards/cryptography-screenshot.png)",
-    link: "http://nicolasogarcia.com/cryptography",
+    link: "http://nicolasogarcia.com",
   },
   {
     title: "This Very Website",

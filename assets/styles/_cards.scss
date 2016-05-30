@@ -9,18 +9,6 @@ $card-image-height: 240px;
 $card-text-color-header: $v-dark-blue;
 $card-text-color-copy: $contrast-font-color;
 
-.card:nth-child(3n+1) {
-  $card-background: $light-blue;
-}
-
-.card:nth-child(3n+2) {
-  $card-background: $light-blue;
-}
-
-.card:nth-child(3n+0) {
-  $card-background: $light-blue;
-}
-
 .cards {
   display: flex;
   flex-wrap: wrap;
@@ -37,7 +25,14 @@ $card-text-color-copy: $contrast-font-color;
   margin: 0 $card-margin $base-spacing;
   padding-bottom: 0;
   position: relative;
-  // transition: all .2s ease-in-out;
+  transition: $base-transition;
+
+  &:focus,
+  &:hover {
+    .hover-text {
+      transform: translate(0, -100%);
+    }
+  }
 }
 
 .hover-text-container {
@@ -81,22 +76,7 @@ $card-text-color-copy: $contrast-font-color;
     background: transparentize($card-image-hover-color, $card-image-hover-opacity);
   }
 
-  &:focus,
-  &:hover {
-    cursor: pointer;
 
-    .hover-text {
-      transform: translate(0, -100%);
-    }
-  }
-
-  &:active {
-    background-color: $card-background;
-
-    .card-header {
-      background-color: $card-background;
-    }
-  }
 }
 
 .card-header {
@@ -104,11 +84,16 @@ $card-text-color-copy: $contrast-font-color;
   background-color: $card-header-background;
   line-height: 1.5em;
   padding: ($base-spacing / 4);
-  transition: all .2s ease-in-out;
+  transition: $quick-transition;
   color: $card-text-color-header;
 
   h4 {
     margin: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background-color: shade($card-header-background, 15%);
   }
 }
 
