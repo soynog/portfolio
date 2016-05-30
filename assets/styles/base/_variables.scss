@@ -84,8 +84,8 @@ $base-border-radius: 2px;
 $base-border: $base-border-thickness $base-border-style $base-border-color;
 
 // Background Colors
-$base-background-color: $light-tan;
-$highlight-background: shade($base-background-color, 25%);
+$base-background-color: $v-light-tan;
+$highlight-background: shade($base-background-color, 15%);
 $secondary-background-color: tint($base-border-color, 75%);
 $focus-background: rgba(red($highlight-background), green($highlight-background), blue($highlight-background), .5);
 

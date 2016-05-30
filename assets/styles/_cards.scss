@@ -1,11 +1,25 @@
 $card-border-color: $base-border-color;
-$card-border: $base-border;
-$card-background: $secondary-background-color;
-$card-header-background: lighten($card-background, 5%);
+$card-border: 0;
+$card-background: $light-blue;
+$card-header-background: $card-background;
 $card-margin: 1em;
-$card-image-hover-opacity: .5;
-$card-image-hover-color: darken($blue, 15%);
-$card-image-height: 150px;
+$card-image-hover-opacity: 0.25;
+$card-image-hover-color: $dark-blue;
+$card-image-height: 240px;
+$card-text-color-header: $v-dark-blue;
+$card-text-color-copy: $contrast-font-color;
+
+.card:nth-child(3n+1) {
+  $card-background: $light-blue;
+}
+
+.card:nth-child(3n+2) {
+  $card-background: $light-blue;
+}
+
+.card:nth-child(3n+0) {
+  $card-background: $light-blue;
+}
 
 .cards {
   display: flex;
@@ -14,7 +28,6 @@ $card-image-height: 150px;
 }
 
 .card {
-  background-color: $card-background;
   border: $card-border;
   border-radius: $base-border-radius;
   box-shadow: $light-box-shadow;
@@ -33,7 +46,7 @@ $card-image-height: 150px;
 
   .card-image {
     @include border-top-radius($base-border-radius - $base-border-thickness);
-    background: url('http://curiositysip.com/wp-content/uploads/2015/12/Mountains-18-1024x640.jpg');
+    background: url('/assets/images/cards/soft-surv-screenshot.png');
     background-size: cover;
     height: $card-image-height;
     max-height: $card-image-height;
@@ -47,12 +60,13 @@ $card-image-height: 150px;
     display: table;
 
     p {
-      color: $contrast-font-color;
+      color: $card-text-color-copy;
       display: table-cell;
       padding: ($base-spacing / 2);
       text-align: center;
       vertical-align: middle;
     }
+
   }
 
   .hover-text {
@@ -90,8 +104,26 @@ $card-image-height: 150px;
   line-height: 1.5em;
   padding: ($base-spacing / 4);
   transition: all .2s ease-in-out;
+  color: $card-text-color-header;
 
   h4 {
     margin: 0;
   }
 }
+
+// // Alternating Color Scheme
+// .card:nth-child(3n + 1) {
+//   background-color: $dark-blue;
+//   .card-header {
+//     color: $contrast-font-color;
+//   }
+// .hover-text-hidden {
+//     background: $light-blue;
+//   }
+// }
+// .card:nth-child(3n + 2) {
+//   background-color: $light-blue;
+// }
+// .card:nth-child(3n + 0) {
+//   background-color: $red;
+// }
