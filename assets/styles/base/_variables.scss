@@ -45,14 +45,26 @@ $medium-gray: #999;
 $light-gray: #ddd;
 $white: #fff;
 
-$v-dark-blue: #092748; // Bluescale
-$dark-blue: #084281;
-$blue: #1565c0;
-$light-blue: #c3dffd;
+// $v-dark-blue: #092748; // Bluescale
+// $dark-blue: #084281;
+// $blue: #1565c0;
+// $light-blue: #c3dffd;
 
-$v-dark-tan: #413e2e; // Brownscale
+// $v-dark-tan: #413e2e; // Brownscale
+// $tan: #d4cca4;
+// $light-tan: #f6f4e8;
+
+$v-dark-blue: #092748; // Bluescale
+$dark-blue: rgba(0,32,96,1);
+$blue: rgba(0,112,192,1);
+$light-blue: rgba(0,176,240,1);
+
+$red: rgba(192,0,0,1); // Redscale
+
+$v-dark-tan: rgba(29,27,17,1); // Brownscale
 $tan: #d4cca4;
-$light-tan: #f6f4e8;
+$light-tan: rgba(238,236,225,1);
+$v-light-tan: rgba(254,254,250,1);
 
 $bg-sepia: rgba(60, 40, 0, .2);
 $bg-clear: rgba(0, 0, 0, 0);

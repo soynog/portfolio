@@ -29,6 +29,10 @@ const portfolio = [
     title: "This Very Website",
     desc: "Custom-built front-end using the lightweight and flexible Bourbon framework. Uses no templates or pre-made themes."
   },
+  {
+    title: "TEST",
+    desc: "Look at this cool test text. Right? Right?!?"
+  },
 ];
 
 module.exports = {
