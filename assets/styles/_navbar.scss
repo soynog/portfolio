@@ -83,21 +83,22 @@
     transition: max-height .25s;
     width: 100%;
 
+    li {
+      display: block;
+      width: 100%;
+
+      &:hover {
+        background: $focus-background;
+        cursor: pointer;
+      }
+    }
+
     &.menu-open {
       max-height: 1000px;
       transition: max-height .25s;
     }
   }
 
-  li {
-    display: block;
-    width: 100%;
-
-    &:hover {
-      background: $focus-background;
-      cursor: pointer;
-    }
-  }
 
   .menu-icon {
     display: inline-block;

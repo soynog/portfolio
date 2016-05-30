@@ -126,6 +126,21 @@ section {
   .section-header.skills-section-header {
     background-color: $red;
   }
+
+  .section-body.skills-section-body{
+    .skill-list {
+      li {
+        display: inline-block;
+        float: none;
+        list-style: none;
+        padding: $base-spacing / 2;
+        text-transform: uppercase;
+      }
+    }
+    .skill-manifesto {
+      margin: $base-spacing;
+    }
+  }
 }
 
 // ABOUT ME SECTION
