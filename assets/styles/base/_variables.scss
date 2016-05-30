@@ -60,7 +60,7 @@ $bg-clear: rgba(0, 0, 0, 0);
 // Font Colors
 $base-font-color: $v-dark-tan;
 $secondary-font-color: $dark-blue;
-$contrast-font-color: $light-blue;
+$contrast-font-color: $light-tan;
 $action-color: $dark-blue;
 
 // Border
@@ -73,7 +73,7 @@ $base-border: $base-border-thickness $base-border-style $base-border-color;
 
 // Background Colors
 $base-background-color: $light-tan;
-$highlight-background: darken($base-background-color, 25%);
+$highlight-background: shade($base-background-color, 25%);
 $secondary-background-color: tint($base-border-color, 75%);
 $focus-background: rgba(red($highlight-background), green($highlight-background), blue($highlight-background), .5);
 
