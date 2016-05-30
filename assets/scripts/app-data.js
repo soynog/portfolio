@@ -11,19 +11,19 @@ const portfolio = [
     title: "SoftSurv",
     desc: "Create single-scoop surveys for your friends! Each survey may be shared via a unique public URL. Built on Node.js, MongoDB, Express.js, and Bootstrap.",
     bgImage: "background-image:url(/assets/images/cards/soft-surv-screenshot.png)",
-    link: "http://schoof-there-it-is.github.io/softsurv/",
+    link: "http://schoof-there-it-is.github.io/softsurv",
   },
   {
     title: "RezTailor",
     desc: "Tailor documents for specific needs by selecting modular sections from a master version. Rails/PostgreSQL back-end uses polymorphism to allow arbitrarily nested hierarchical document sections.",
     bgImage: "background-image:url(/assets/images/cards/reztailor-screenshot.png)",
-    link: "http://soynog.github.io/resume-tailor-frontend/",
+    link: "http://soynog.github.io/resume-tailor-frontend",
   },
   {
     title: "Tic-Tac-Toe",
     desc: "This simple game app requires user authentication and allows remote play between two players. Leverages a back-end resource watcher to update the game state in real time in response to player activity.",
     bgImage: "background-image:url(/assets/images/cards/tic-tac-toe-screenshot.png)",
-    link: "http://soynog.github.io/tic-tac-toe/",
+    link: "http://soynog.github.io/tic-tac-toe",
   },
   {
     title: "Stache.it",

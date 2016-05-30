@@ -7,7 +7,10 @@ $(document).ready( function() {
   // Render Portfolio cards
   let portfolioCards = require('./templates/portfolio-cards.handlebars');
   $('.portfolio-cards').append(portfolioCards({portfolio}));
-  // Render custom background images
+  // // Portfolio link click handlebars
+  // $('.card-header').on('click', function(e) {
+  //
+  // });
 
   // Navbar Menu
   $(".menu-expand").on('click', function(e) {
