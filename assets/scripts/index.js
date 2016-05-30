@@ -7,6 +7,7 @@ $(document).ready( function() {
   // Render Portfolio cards
   let portfolioCards = require('./templates/portfolio-cards.handlebars');
   $('.portfolio-cards').append(portfolioCards({portfolio}));
+  // Render custom background images
 
   // Navbar Menu
   $(".menu-expand").on('click', function(e) {

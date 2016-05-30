@@ -46,7 +46,8 @@ $card-text-color-copy: $contrast-font-color;
 
   .card-image {
     @include border-top-radius($base-border-radius - $base-border-thickness);
-    background: url('/assets/images/cards/soft-surv-screenshot.png');
+    // background: url('/assets/images/cards/soft-surv-screenshot.png');
+    background-repeat: no-repeat;
     background-size: cover;
     height: $card-image-height;
     max-height: $card-image-height;
