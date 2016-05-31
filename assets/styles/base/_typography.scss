@@ -46,7 +46,13 @@ h4 {
 p {
   font-size: modular-scale(1);
   font-weight: 300;
-  margin: 0 0 $small-spacing;
+  margin: 0 $base-spacing * 2 $small-spacing;
+  @include media($tablet) {
+    margin: 0 $base-spacing $small-spacing;
+  }
+  @include media($mobile) {
+    margin: 0 $small-spacing $small-spacing;
+  }
 }
 
 a {
