@@ -30,7 +30,7 @@ section {
     color: $contrast-font-color;
     // margin: 0;
     // padding: $base-section-header-padding 0;
-    height: 30vh;
+    height: 25vh;
     text-shadow: $dark-text-shadow;
 
     @include media($tablet) {
@@ -50,7 +50,7 @@ section {
   .section-body {
     @extend %shadow;
     @extend %textured;
-    min-height: 70vh;
+    min-height: 75vh;
 
     padding: $base-section-body-padding 0;
 
@@ -117,14 +117,14 @@ section {
 // PORTFOLIO SECTION
 .portfolio-section {
   .section-header.portfolio-section-header {
-    background-color: $blue;
+    background-color: $red;
   }
 }
 
 // SKILLS SECTION
 .skills-section {
   .section-header.skills-section-header {
-    background-color: $red;
+    background-color: $dark-blue;
   }
 
   .section-body.skills-section-body{
@@ -133,7 +133,6 @@ section {
         display: inline-block;
         float: none;
         list-style: none;
-        padding: $base-spacing / 2;
         text-transform: uppercase;
       }
     }
@@ -146,13 +145,22 @@ section {
 // ABOUT ME SECTION
 .about-me-section {
   .section-header.about-me-section-header {
-    background-color: $dark-blue;
+    background-color: $red;
   }
 }
 
 // CONTACT SECTION
 .contact-section {
   .section-header.contact-section-header {
-    background-color: $light-blue;
+    background-color: $dark-blue;
+  }
+}
+
+// FOOTER
+footer {
+  background-color: $light-blue;
+  padding: 0 $base-spacing;
+  p {
+    margin: 0;
   }
 }
