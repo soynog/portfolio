@@ -5,7 +5,7 @@ const portfolio = [
     title: "OTO",
     desc: "OTO (Outdoor Trip Organizer) makes organizing a camping trip fun and easy! Built on Node.js, MongoDB, Ember.js, Bourbon. UX design by Norman Wozniak.",
     bgImage: "background-image:url(/assets/images/cards/OTO-screenshot.png)",
-    link: "http://nicolasogarcia.com",
+    link: "http://soynog.github.io/oto-client",
   },
   {
     title: "SoftSurv",
