@@ -15,15 +15,15 @@ body {
 // }
 
 section {
-  margin-left: -$small-spacing / 4; // Eliminate space on edges of boxes
-  margin-right: -$small-spacing / 4;
+  margin-left: -$tiny-spacing; // Eliminate space on edges of boxes
+  margin-right: -$tiny-spacing;
   margin-bottom: $small-spacing;
   text-align: center;
 
   .box {
     @extend %shadow;
 
-    margin: 0 $small-spacing / 4 $small-spacing / 2  $small-spacing / 4;
+    margin: 0 $tiny-spacing $tiny-spacing * 2 $tiny-spacing;
 
     align-items: center;
     display: flex;
