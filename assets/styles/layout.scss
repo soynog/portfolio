@@ -13,9 +13,12 @@ body {
 // }
 
 section {
+
+
+  text-align: center;
+
   @include span-columns(4);
   @include shift(0);
-  text-align: center;
 
   @include media($tablet) {
     @include span-columns(8);
@@ -49,38 +52,6 @@ section {
   //   }
   //
   // }
-
-  .box {
-    display: table; // for centering content vertically
-
-    @extend %shadow;
-    // margin: $small-spacing / 2;
-
-    span { // for centering content vertically
-      display: table-cell;
-      vertical-align: middle;
-    }
-
-    &.tall {
-      height: 300px;
-    }
-
-    &.short {
-      height: 200px;
-    }
-
-    &.blue {
-      background-color: $blue;
-    }
-
-    &.navy {
-      background-color: $dark-blue;
-    }
-
-    &.red {
-      background-color: $red;
-    }
-  }
 
   .section-body {
     background-color: rgba($base-background-color, 0);
@@ -123,11 +94,67 @@ section {
 .welcome-section {
   // padding-top: $header-height;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  flex-flow: row wrap;
   background-color: $light-tan;
+  min-height: 100vh;
+  // padding-top: $header-height;
   @extend %textured;
 
+  .box {
+    flex: 1 100%;
+    padding: $base-spacing 0;
+    margin-bottom: $small-spacing / 2;
+    // display: table; // for centering content vertically
+
+    @extend %shadow;
+    // margin: $small-spacing / 2;
+
+    // &.tall {
+    //   height: 200px;
+    // }
+    //
+    // &.short {
+    //   height: 120px;
+    // }
+
+    &.blue {
+      background-color: $blue;
+    }
+
+    &.navy {
+      background-color: $dark-blue;
+    }
+
+    &.red {
+      background-color: $red;
+    }
+
+    &.shim {
+      flex: 1 0;
+    }
+  }
+
+}
+
+#title-box {
+  padding-top: $header-height * 1.2;
+  padding-bottom: $header-height * 1.2;
+  min-height: 39vh;
+
+  @include media($tablet) {
+    padding-top: $header-height * 2;
+  }
+}
+
+#subtitle-box {
+  min-height: 14vh;
+}
+
+#portrait-box {
+  min-height: 44vh;
+  min-width: 34vh;
+  flex-basis: auto;
+  margin-right: $small-spacing / 2;
 }
 
 // WELCOME SECTION
