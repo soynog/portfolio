@@ -110,6 +110,11 @@ section {
 
   .box {
     flex: 1 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     padding: $base-spacing 0;
     margin-bottom: $small-spacing / 2;
     // display: table; // for centering content vertically
@@ -145,8 +150,8 @@ section {
 }
 
 #title-box {
-  padding-top: $header-height * 1.2;
-  padding-bottom: $header-height * 1.2;
+  // padding-top: $header-height * 1.2;
+  // padding-bottom: $header-height * 1.2;
   min-height: 39vh;
 
   @include media($tablet) {
@@ -159,6 +164,7 @@ section {
 }
 
 #portrait-box {
+
   min-height: 44vh;
   min-width: 34vh;
   flex-basis: auto;
