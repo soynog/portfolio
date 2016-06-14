@@ -59,6 +59,14 @@ section {
       background-color: $light-blue;
     }
 
+    &.green {
+      background-color: $green;
+    }
+
+    &.gold {
+      background-color: $gold;
+    }
+
     &.shim {
       flex: 4 0;
     }
