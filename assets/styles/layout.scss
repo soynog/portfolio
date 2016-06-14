@@ -1,6 +1,7 @@
 
 // GENERAL PAGE ELEMENTS //
 body {
+  background-color: $light-tan;
   @extend %textured;
 }
 
@@ -13,8 +14,7 @@ body {
 // }
 
 section {
-
-
+  margin-bottom: $small-spacing;
   text-align: center;
 
   @include span-columns(4);
@@ -27,86 +27,6 @@ section {
   @include media($desktop) {
     @include span-columns(12);
   }
-
-  // .section-header {
-  //   @extend %shadow;
-  //   background-color: $blue;
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   color: $contrast-font-color;
-  //   // margin: 0;
-  //   // padding: $base-section-header-padding 0;
-  //   height: 25vh;
-  //   text-shadow: $dark-text-shadow;
-  //
-  //   // @include media($tablet) {
-  //   //   padding: $base-section-header-padding 0;
-  //   // }
-  //   //
-  //   // @include media($mobile) {
-  //   //   padding: $base-section-header-padding * .5 0;
-  //   // }
-  //
-  //   .header-content {
-  //     @include vertical-align();
-  //   }
-  //
-  // }
-
-  .section-body {
-    background-color: rgba($base-background-color, 0);
-    min-height: 75vh;
-
-    padding: $base-section-body-padding 0;
-
-    // @include media($tablet) {
-    //   padding: $base-section-body-padding 0;
-    // }
-    //
-    // @include media($mobile) {
-    //   padding: $base-section-body-padding * .5 0;
-    // }
-  }
-}
-
-
-// For textured overlay elements
-%textured,
-.textured {
-  @include texture(180deg, $base-background-color, $base-background-color, 48, 0);
-}
-
-// For drop-shadow elements
-%shadow,
-.shadow {
-  box-shadow: $base-box-shadow;
-}
-
-// For inset-shadow elements
-%inset,
-.inset {
-  box-shadow: $base-inset-shadow;
-}
-
-%circle,
-.circle {
-  border-radius: 50%;
-}
-
-// ***SPECIFIC SECTIONS***
-
-// NAVBAR HEADER
-// See navbar.scss
-
-// WELCOME SECTION
-.welcome-section {
-  // padding-top: $header-height;
-  display: flex;
-  flex-flow: row wrap;
-  background-color: $light-tan;
-  min-height: 100vh;
-  // padding-top: $header-height;
-  @extend %textured;
 
   .box {
     flex: 1 100%;
@@ -146,6 +66,60 @@ section {
       flex: 4 0;
     }
   }
+
+  // .section-body {
+  //   background-color: rgba($base-background-color, 0);
+  //   min-height: 75vh;
+  //
+  //   padding: $base-section-body-padding 0;
+  //
+  //   // @include media($tablet) {
+  //   //   padding: $base-section-body-padding 0;
+  //   // }
+  //   //
+  //   // @include media($mobile) {
+  //   //   padding: $base-section-body-padding * .5 0;
+  //   // }
+  // }
+}
+
+
+// For textured overlay elements
+%textured,
+.textured {
+  @include texture(180deg, $base-background-color, $base-background-color, 48, 0);
+}
+
+// For drop-shadow elements
+%shadow,
+.shadow {
+  box-shadow: $base-box-shadow;
+}
+
+// For inset-shadow elements
+%inset,
+.inset {
+  box-shadow: $base-inset-shadow;
+}
+
+%circle,
+.circle {
+  border-radius: 50%;
+}
+
+// ***SPECIFIC SECTIONS***
+
+// NAVBAR HEADER
+// See navbar.scss
+
+// WELCOME SECTION
+.welcome-section {
+  // padding-top: $header-height;
+  display: flex;
+  flex-flow: row wrap;
+  min-height: 100vh;
+  // padding-top: $header-height;
+  @extend %textured;
 
 }
 
