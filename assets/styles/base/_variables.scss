@@ -100,7 +100,7 @@ $base-transition: all $base-duration $base-timing;
 $quick-transition: all $base-duration / 2 $base-timing / 2;
 
 // Shadows
-$shadow-color: $v-dark-gray;
+$shadow-color: $medium-gray;
 $base-box-shadow: 0 0 10px 0 $shadow-color;
 $light-box-shadow: 0 0 10px 0 lighten($shadow-color, 50%);
 $base-inset-shadow: 0 10px 10px -10px $shadow-color inset;

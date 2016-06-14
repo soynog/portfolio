@@ -87,32 +87,69 @@ section {
 
 // WELCOME SECTION
 .welcome-section {
+  padding-top: $header-height;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background-color: $light-tan;
+  @extend %textured;
 
-  .welcome-section-header {
-    background: linear-gradient($bg-sepia, $bg-clear), url('/assets/images/mtns-default.jpg');
-    background-position: 50% 25%; // xpos ypos
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 70vh;
+}
 
-    .header-content {
-      @include vertical-align();
-      padding-top: $header-height / 2; // So that centered in div despite nav
-      @include media($tablet) {
-        padding-top: 0;
-      }
-    }
+.box {
+  color: $contrast-font-color;
+  @extend %shadow;
+  margin: $small-spacing / 2;
+
+  &.tall {
+    height: 300px;
   }
 
-  .welcome-section-body {
-    height: 30vh;
-    min-height: 0;
+  &.short {
+    height: 200px;
+  }
 
-    .body-content {
-      @include vertical-align();
-    }
+  &.blue {
+    background-color: $blue;
+  }
+
+  &.dk-blue {
+    background-color: $dark-blue;
+  }
+
+  &.red {
+    background-color: $red;
   }
 }
+
+// WELCOME SECTION
+// .welcome-section {
+//
+//   .welcome-section-header {
+//     background: linear-gradient($bg-sepia, $bg-clear), url('/assets/images/mtns-default.jpg');
+//     background-position: 50% 25%; // xpos ypos
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     height: 70vh;
+//
+//     .header-content {
+//       @include vertical-align();
+//       padding-top: $header-height / 2; // So that centered in div despite nav
+//       @include media($tablet) {
+//         padding-top: 0;
+//       }
+//     }
+//   }
+//
+//   .welcome-section-body {
+//     height: 30vh;
+//     min-height: 0;
+//
+//     .body-content {
+//       @include vertical-align();
+//     }
+//   }
+// }
 
 // PORTFOLIO SECTION
 .portfolio-section {
