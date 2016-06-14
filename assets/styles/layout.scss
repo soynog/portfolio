@@ -1,8 +1,9 @@
 
 // GENERAL PAGE ELEMENTS //
 body {
-  background-color: $light-tan;
   @extend %textured;
+
+  background-color: $light-tan;
 }
 
 // .row-wrapper {
@@ -14,11 +15,11 @@ body {
 // }
 
 section {
-  margin-bottom: $small-spacing;
-  text-align: center;
-
   @include span-columns(4);
   @include shift(0);
+
+  margin-bottom: $small-spacing;
+  text-align: center;
 
   @include media($tablet) {
     @include span-columns(8);
@@ -29,16 +30,14 @@ section {
   }
 
   .box {
-    flex: 1 100%;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: $base-spacing 0;
-    margin-bottom: $small-spacing / 2;
-
     @extend %shadow;
+
+    align-items: center;
+    display: flex;
+    flex: 1 100%;
+    justify-content: center;
+    margin-bottom: $small-spacing / 2;
+    padding: $base-spacing 0;
 
     &.blue {
       background-color: $blue;
@@ -75,6 +74,7 @@ section {
 }
 
 
+// STYLING CLASSES/EXTENDABLES
 // For textured overlay elements
 %textured,
 .textured {
@@ -108,7 +108,6 @@ section {
   display: flex;
   flex-flow: row wrap;
   min-height: 100vh;
-  @extend %textured;
 }
 
 #welcome-shim-1 {
@@ -139,10 +138,10 @@ section {
 }
 
 #portrait-box {
-  min-height: 44vh;
-  min-width: 34vh;
   flex: 1 auto;
   margin-right: $small-spacing / 2;
+  min-height: 44vh;
+  min-width: 34vh;
   order: 4;
   // padding: $small-spacing * 2;
 
@@ -163,41 +162,8 @@ section {
   order: 5;
 }
 
-// WELCOME SECTION
-// .welcome-section {
-//
-//   .welcome-section-header {
-//     background: linear-gradient($bg-sepia, $bg-clear), url('/assets/images/mtns-default.jpg');
-//     background-position: 50% 25%; // xpos ypos
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     height: 70vh;
-//
-//     .header-content {
-//       @include vertical-align();
-//       padding-top: $header-height / 2; // So that centered in div despite nav
-//       @include media($tablet) {
-//         padding-top: 0;
-//       }
-//     }
-//   }
-//
-//   .welcome-section-body {
-//     height: 30vh;
-//     min-height: 0;
-//
-//     .body-content {
-//       @include vertical-align();
-//     }
-//   }
-// }
-
 // PORTFOLIO SECTION
-.portfolio-section {
-  .section-header.portfolio-section-header {
-    background-color: $red;
-  }
-}
+
 
 // SKILLS SECTION
 .skills-section {
