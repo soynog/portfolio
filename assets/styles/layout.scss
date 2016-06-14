@@ -1,5 +1,8 @@
 
 // GENERAL PAGE ELEMENTS //
+body {
+  @extend %textured;
+}
 
 .row-wrapper {
   @include row();
@@ -10,17 +13,17 @@
 }
 
 section {
-  @include span-columns(12);
+  @include span-columns(4);
   @include shift(0);
   text-align: center;
 
-  // @include media($tablet) {
-  //   @include span-columns(8);
-  // }
-  //
-  // @include media($mobile) {
-  //   @include span-columns(4);
-  // }
+  @include media($tablet) {
+    @include span-columns(8);
+  }
+
+  @include media($desktop) {
+    @include span-columns(12);
+  }
 
   .section-header {
     @extend %inset;
