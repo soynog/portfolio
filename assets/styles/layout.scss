@@ -71,18 +71,26 @@ section {
 
 
 // For textured overlay elements
-%textured {
+%textured,
+.textured {
   @include texture(180deg, $base-background-color, $base-background-color, 48, 0);
 }
 
 // For drop-shadow elements
-%shadow {
+%shadow,
+.shadow {
   box-shadow: $base-box-shadow;
 }
 
 // For inset-shadow elements
-%inset {
+%inset,
+.inset {
   box-shadow: $base-inset-shadow;
+}
+
+%circle,
+.circle {
+  border-radius: 50%;
 }
 
 // ***SPECIFIC SECTIONS***
@@ -155,6 +163,13 @@ section {
   min-width: 34vh;
   flex-basis: auto;
   margin-right: $small-spacing / 2;
+  padding: $small-spacing * 2;
+
+  #portrait-image {
+    @extend %circle;
+    @extend %shadow;
+    max-width: 32vh;
+  }
 }
 
 // WELCOME SECTION
