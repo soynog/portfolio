@@ -15,28 +15,20 @@ body {
 // }
 
 section {
-  @include span-columns(4);
-  @include shift(0);
-
+  margin-left: -$small-spacing / 4; // Eliminate space on edges of boxes
+  margin-right: -$small-spacing / 4;
   margin-bottom: $small-spacing;
   text-align: center;
 
-  @include media($tablet) {
-    @include span-columns(8);
-  }
-
-  @include media($desktop) {
-    @include span-columns(12);
-  }
-
   .box {
     @extend %shadow;
+
+    margin: 0 $small-spacing / 4 $small-spacing / 2  $small-spacing / 4;
 
     align-items: center;
     display: flex;
     flex: 1 100%;
     justify-content: center;
-    margin-bottom: $small-spacing / 2;
     padding: $base-spacing 0;
 
     &.blue {
@@ -128,8 +120,8 @@ section {
 
   @include media($desktop) {
     flex: 1 60%;
-    margin-left: $small-spacing / 2;
-    margin-right: $small-spacing / 2;
+    // margin-left: $small-spacing / 2;
+    // margin-right: $small-spacing / 2;
     padding-top: $header-height;
   }
 }
@@ -140,14 +132,13 @@ section {
 
   @include media($desktop) {
     flex: 1 60%;
-    margin-right: $small-spacing / 2;
+    // margin-right: $small-spacing / 2;
     order: 4;
   }
 }
 
 #portrait-box {
   flex: 1 auto;
-  margin-right: $small-spacing / 2;
   min-height: 44vh;
   min-width: 34vh;
   order: 4;
@@ -160,9 +151,10 @@ section {
   }
 
   @include media($desktop) {
+    background-color: $dark-blue;
     padding-top: $header-height;
     order: 3;
-    margin-right: 0;
+    // margin-right: 0;
   }
 }
 
