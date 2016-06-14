@@ -17,7 +17,7 @@ body {
 section {
   margin-left: -$tiny-spacing; // Eliminate space on edges of boxes
   margin-right: -$tiny-spacing;
-  margin-bottom: $base-spacing;
+  margin-bottom: 0;
   text-align: center;
 
   .box {
@@ -29,7 +29,6 @@ section {
     display: flex;
     flex: 1 100%;
     justify-content: center;
-    padding: $base-spacing 0;
 
     &.blue {
       background-color: $blue;
@@ -59,8 +58,22 @@ section {
       background-color: $gold;
     }
 
+    &.gray {
+      background-color: $md-dk-gray;
+    }
+
     &.shim {
       flex: 4 0;
+    }
+
+    &.divider {
+      flex: 1 100%;
+      min-height: 5vh;
+      order: 100;
+    }
+
+    &.header-box {
+      padding: $base-spacing * 2 0;
     }
 
     &.desktop-only {
