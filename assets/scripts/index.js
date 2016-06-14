@@ -6,7 +6,8 @@ const scrollAnimate = require('./scroll');
 $(document).ready( function() {
   // Render Portfolio cards
   let portfolioCards = require('./templates/portfolio-cards.handlebars');
-  $('.portfolio-cards').append(portfolioCards({portfolio}));
+  $('#portfolio-header-box').after(portfolioCards({portfolio}));
+  // $('.portfolio-cards').append(portfolioCards({portfolio}));
   // // Portfolio link click handlebars
   // $('.card-header').on('click', function(e) {
   //
