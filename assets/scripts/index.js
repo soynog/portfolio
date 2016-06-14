@@ -31,8 +31,7 @@ $(document).ready( function() {
 
   // Hide Menu on external click
   $("body").on('click', function() {
-    $('.navbar-wrapper').removeClass('menu-open');
-    $(".menu").removeClass("menu-open");
+    $(".nav-menu").removeClass("menu-open");
   });
 
   // Page Scroll Animation
