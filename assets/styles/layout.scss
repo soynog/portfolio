@@ -37,18 +37,8 @@ section {
 
     padding: $base-spacing 0;
     margin-bottom: $small-spacing / 2;
-    // display: table; // for centering content vertically
 
     @extend %shadow;
-    // margin: $small-spacing / 2;
-
-    // &.tall {
-    //   height: 200px;
-    // }
-    //
-    // &.short {
-    //   height: 120px;
-    // }
 
     &.blue {
       background-color: $blue;
@@ -62,25 +52,26 @@ section {
       background-color: $red;
     }
 
+    &.maroon {
+      background-color: $v-dark-red;
+    }
+
+    &.sky-blue {
+      background-color: $light-blue;
+    }
+
     &.shim {
       flex: 4 0;
     }
-  }
 
-  // .section-body {
-  //   background-color: rgba($base-background-color, 0);
-  //   min-height: 75vh;
-  //
-  //   padding: $base-section-body-padding 0;
-  //
-  //   // @include media($tablet) {
-  //   //   padding: $base-section-body-padding 0;
-  //   // }
-  //   //
-  //   // @include media($mobile) {
-  //   //   padding: $base-section-body-padding * .5 0;
-  //   // }
-  // }
+    &.large-screen-only {
+      display: none;
+
+      @include media($tablet) {
+        display: flex;
+      }
+    }
+  }
 }
 
 
@@ -114,42 +105,62 @@ section {
 
 // WELCOME SECTION
 .welcome-section {
-  // padding-top: $header-height;
   display: flex;
   flex-flow: row wrap;
   min-height: 100vh;
-  // padding-top: $header-height;
   @extend %textured;
+}
 
+#welcome-shim-1 {
+  order: 1;
 }
 
 #title-box {
-  // padding-top: $header-height * 1.2;
-  // padding-bottom: $header-height * 1.2;
   min-height: 39vh;
+  order: 2;
 
   @include media($tablet) {
+    flex: 1 60%;
+    margin-left: $small-spacing / 2;
+    margin-right: $small-spacing / 2;
     padding-top: $header-height;
   }
 }
 
 #subtitle-box {
   min-height: 14vh;
+  order: 3;
+
+  @include media($tablet) {
+    flex: 1 60%;
+    margin-right: $small-spacing / 2;
+    order: 4;
+  }
 }
 
 #portrait-box {
-
   min-height: 44vh;
   min-width: 34vh;
   flex: 1 auto;
   margin-right: $small-spacing / 2;
-  padding: $small-spacing * 2;
+  order: 4;
+  // padding: $small-spacing * 2;
 
   #portrait-image {
     @extend %circle;
     @extend %shadow;
     max-width: 32vh;
   }
+
+  @include media($tablet) {
+    padding-top: $header-height;
+    order: 3;
+    margin-right: 0;
+  }
+}
+
+#welcome-shim-2 {
+  order: 5;
 }
 
 // WELCOME SECTION
