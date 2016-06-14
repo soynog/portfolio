@@ -50,9 +50,9 @@ p {
   @include media($tablet) {
     margin: 0 $base-spacing $small-spacing;
   }
-  @include media($mobile) {
-    margin: 0 $small-spacing $small-spacing;
-  }
+  // @include media($mobile) {
+  //   margin: 0 $small-spacing $small-spacing;
+  // }
 }
 
 a {

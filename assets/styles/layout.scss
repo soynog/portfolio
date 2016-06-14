@@ -14,13 +14,13 @@ section {
   @include shift(0);
   text-align: center;
 
-  @include media($tablet) {
-    @include span-columns(8);
-  }
-
-  @include media($mobile) {
-    @include span-columns(4);
-  }
+  // @include media($tablet) {
+  //   @include span-columns(8);
+  // }
+  //
+  // @include media($mobile) {
+  //   @include span-columns(4);
+  // }
 
   .section-header {
     @extend %inset;
@@ -33,13 +33,13 @@ section {
     height: 25vh;
     text-shadow: $dark-text-shadow;
 
-    @include media($tablet) {
-      padding: $base-section-header-padding 0;
-    }
-
-    @include media($mobile) {
-      padding: $base-section-header-padding * .5 0;
-    }
+    // @include media($tablet) {
+    //   padding: $base-section-header-padding 0;
+    // }
+    //
+    // @include media($mobile) {
+    //   padding: $base-section-header-padding * .5 0;
+    // }
 
     .header-content {
       @include vertical-align();
@@ -54,13 +54,13 @@ section {
 
     padding: $base-section-body-padding 0;
 
-    @include media($tablet) {
-      padding: $base-section-body-padding 0;
-    }
-
-    @include media($mobile) {
-      padding: $base-section-body-padding * .5 0;
-    }
+    // @include media($tablet) {
+    //   padding: $base-section-body-padding 0;
+    // }
+    //
+    // @include media($mobile) {
+    //   padding: $base-section-body-padding * .5 0;
+    // }
   }
 }
 
