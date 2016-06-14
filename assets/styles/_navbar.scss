@@ -1,107 +1,170 @@
-.navbar-wrapper {
-  @extend %textured;
-  @extend %shadow;
+// NAVBAR STYLING
+
+$icon-height: $base-spacing * 1.5;
+
+nav {
   position: fixed;
   width: 100%;
-  z-index: 100; // Places navbar in front of card elements
-  transition: width .15s;
-  overflow: hidden;
+}
 
-  @include media($tablet) {
-    min-height: $header-height / 2;
-    width: $header-height / 2;
-    border-bottom-right-radius: $header-height / 8;
-    &.menu-open {
-      width: 50%;
-      transition: width .15s;
-      border-bottom-right-radius: 0;
-    }
+.nav-menu-icon {
+  @extend %textured;
+  @extend %shadow;
+
+  border-radius: 50%;
+  height: $icon-height;
+  line-height: $icon-height;
+  margin: $small-spacing / 2;
+  text-align: center;
+  width: $icon-height;
+
+  &:hover {
+    background: $focus-background;
+    cursor: pointer;
   }
 }
 
-.header {
-  @include span-columns(12);
-  display: table;
-  height: $header-height;
-}
+.nav-menu {
+  display: none;
 
-.menu {
-  float: right;
-  line-height: $header-height;
-  z-index: 9999;
+  @extend %textured;
+  @extend %shadow;
 
   li {
-    display: inline-block;
-    float: left;
-    list-style: none;
-    padding: 0 15px;
-    text-transform: uppercase;
-
-    &:last-child {
-      margin-right: 10px;
-    }
 
     &:hover {
       background: $focus-background;
       cursor: pointer;
     }
   }
-}
 
-.menu-icon {
-  display: none;
-  line-height: $header-height / 2;
-  padding-left: 10px;
-  text-align: left;
-  width: 100%;
-
-  &:hover {
-    background: $focus-background;
-  }
-
-  a {
-    display: inline-block;
-    width: 100%;
-
-    img {
-      vertical-align: middle;
-    }
+  &.menu-open {
+    display: block;
   }
 }
 
+// For Larger Screens
 @include media($tablet) {
-  .header {
-    height: $header-height / 2;
+  .nav-menu-icon {
+    display: none;
   }
 
-  .menu {
-    float: none;
-    line-height: $header-height / 2;
-    max-height: 0;
-    overflow: hidden;
+  .nav-menu {
+    display: inline-block;
+    float: right;
+    height: $header-height;
+    line-height: $header-height;
+    max-width: 100%;
     text-align: center;
-    transition: max-height .25s;
     width: 100%;
+  }
+
+  ul {
+    // margin: 0;
 
     li {
-      display: block;
-      width: 100%;
-
-      &:hover {
-        background: $focus-background;
-        cursor: pointer;
-      }
-    }
-
-    &.menu-open {
-      max-height: 1000px;
-      transition: max-height .25s;
+      line-height: $header-height / 2;
+      display: inline-block;
+      padding: 0 $small-spacing;
     }
   }
 
-
-  .menu-icon {
-    display: inline-block;
-    text-transform: uppercase;
-  }
 }
+
+
+// .navbar-wrapper {
+//   @extend %textured;
+//   @extend %shadow;
+//   position: fixed;
+//   z-index: 100; // Places navbar in front of card elements
+//   transition: width .15s;
+//   min-height: $header-height / 2;
+//   width: $header-height / 2;
+//   border-bottom-right-radius: $header-height / 8;
+//   &.menu-open {
+//     width: 50%;
+//     transition: width .15s;
+//     border-bottom-right-radius: 0;
+//   }
+//
+//   @include media($tablet) {
+//     width: 100%;
+//     border-bottom-right-radius: 0;
+//   }
+// }
+//
+// .header {
+//   position: fixed;
+//   height: $header-height / 2;
+//   display: table;
+// }
+//
+// .menu {
+//   float: none;
+//   line-height: $header-height / 2;
+//   max-height: 0;
+//   overflow: hidden;
+//   text-align: center;
+//   transition: max-height .25s;
+//   width: 100%;
+//   z-index: 9999;
+//
+//   li {
+//     display: block;
+//     list-style: none;
+//     float: left;
+//     padding: 0 15px;
+//     text-transform: uppercase;
+//
+//     &:last-child {
+//       margin-right: 10px;
+//     }
+//
+//     &:hover {
+//       background: $focus-background;
+//       cursor: pointer;
+//     }
+//   }
+//
+//   &.menu-open {
+//     max-height: 1000px;
+//     transition: max-height .25s;
+//   }
+// }
+//
+// .menu-icon {
+//   display: inline-block;
+//   text-transform: uppercase;
+//   line-height: $header-height / 2;
+//   padding-left: 10px;
+//   text-align: left;
+//   width: 100%;
+//
+//   &:hover {
+//     background: $focus-background;
+//   }
+//
+//   a {
+//     display: inline-block;
+//     width: 100%;
+//
+//     img {
+//       vertical-align: middle;
+//     }
+//   }
+// }
+//
+// @include media($tablet) {
+//   .header {
+//     height: $header-height;
+//   }
+//
+//   .menu {
+//     float: right;
+//     line-height: $header-height;
+//   }
+//
+//   .menu-icon {
+//     display: none;
+//   }
+// }

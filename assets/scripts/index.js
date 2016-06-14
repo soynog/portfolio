@@ -12,10 +12,19 @@ $(document).ready( function() {
   //
   // });
 
+  // // Navbar Menu
+  // $(".menu-expand").on('click', function(e) {
+  //   $('.navbar-wrapper').toggleClass('menu-open');
+  //   $(".menu").toggleClass("menu-open");
+  //   e.preventDefault();
+  //   e.stopPropagation(); // Make sure hide menu click doesn't fire
+  // });
+
   // Navbar Menu
-  $(".menu-expand").on('click', function(e) {
-    $('.navbar-wrapper').toggleClass('menu-open');
-    $(".menu").toggleClass("menu-open");
+  $(".nav-menu-icon").on('click', function(e) {
+    // $('.navbar-wrapper').toggleClass('menu-open');
+    console.log("Nav Menu Clicked");
+    $(".nav-menu").toggleClass("menu-open");
     e.preventDefault();
     e.stopPropagation(); // Make sure hide menu click doesn't fire
   });
