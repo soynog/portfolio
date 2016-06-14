@@ -16,6 +16,7 @@ h4,
 h5,
 h6 {
   color: $contrast-font-color;
+  letter-spacing: 1px;
   font-family: $heading-font-family;
   font-size: modular-scale(1);
   line-height: $heading-line-height;
