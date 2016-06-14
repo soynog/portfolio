@@ -5,6 +5,7 @@ $icon-height: $base-spacing * 1.5;
 nav {
   position: fixed;
   width: 100%;
+  z-index: 100;
 }
 
 .nav-menu-icon {
