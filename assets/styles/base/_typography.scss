@@ -23,18 +23,27 @@ h6 {
 }
 
 h1 {
-  font-size: modular-scale(7);
+  font-size: modular-scale(4);
   font-weight: 100;
+  @include media($tablet) {
+    font-size: modular-scale(7);
+  }
 }
 
 h2 {
-  font-size: modular-scale(6);
+  font-size: modular-scale(4);
   font-weight: 100;
+  @include media($tablet) {
+    font-size: modular-scale(6);
+  }
 }
 
 h3 {
-  font-size: modular-scale(4);
+  font-size: modular-scale(2);
   font-weight: 300;
+  @include media($tablet) {
+    font-size: modular-scale(4);
+  }
 }
 
 h4 {

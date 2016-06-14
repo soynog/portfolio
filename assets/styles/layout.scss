@@ -50,6 +50,38 @@ section {
 
   }
 
+  .box {
+    color: $contrast-font-color;
+    display: table; // for centering content vertically
+    @extend %shadow;
+    margin: $small-spacing / 2;
+
+    span {
+      display: table-cell;
+      vertical-align: middle;
+    }
+
+    &.tall {
+      height: 300px;
+    }
+
+    &.short {
+      height: 200px;
+    }
+
+    &.blue {
+      background-color: $blue;
+    }
+
+    &.navy {
+      background-color: $dark-blue;
+    }
+
+    &.red {
+      background-color: $red;
+    }
+  }
+
   .section-body {
     background-color: rgba($base-background-color, 0);
     min-height: 75vh;
@@ -89,39 +121,13 @@ section {
 
 // WELCOME SECTION
 .welcome-section {
-  padding-top: $header-height;
+  // padding-top: $header-height;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   background-color: $light-tan;
   @extend %textured;
 
-}
-
-.box {
-  color: $contrast-font-color;
-  @extend %shadow;
-  margin: $small-spacing / 2;
-
-  &.tall {
-    height: 300px;
-  }
-
-  &.short {
-    height: 200px;
-  }
-
-  &.blue {
-    background-color: $blue;
-  }
-
-  &.dk-blue {
-    background-color: $dark-blue;
-  }
-
-  &.red {
-    background-color: $red;
-  }
 }
 
 // WELCOME SECTION
