@@ -26,7 +26,7 @@ section {
   }
 
   .section-header {
-    @extend %inset;
+    @extend %shadow;
     background-color: $blue;
     background-repeat: no-repeat;
     background-size: cover;
@@ -51,8 +51,7 @@ section {
   }
 
   .section-body {
-    @extend %shadow;
-    @extend %textured;
+    background-color: rgba($base-background-color, 0);
     min-height: 75vh;
 
     padding: $base-section-body-padding 0;
@@ -195,9 +194,5 @@ section {
 
 // FOOTER
 footer {
-  background-color: $light-blue;
-  padding: 0 $base-spacing;
-  p {
-    margin: 0;
-  }
+  //
 }
