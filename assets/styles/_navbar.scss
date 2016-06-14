@@ -41,6 +41,7 @@ nav {
 
   &.menu-open {
     display: block;
+    max-width: 30vh;
   }
 }
 
@@ -64,6 +65,8 @@ nav {
     // margin: 0;
 
     li {
+      font-size: modular-scale(1);
+      text-transform: uppercase;
       line-height: $header-height / 2;
       display: inline-block;
       padding: 0 $small-spacing;
