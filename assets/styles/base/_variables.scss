@@ -2,9 +2,25 @@
 $medium-screen: 600px;
 $large-screen: 900px;
 
+// Overwrite System Font Stack
+$font-stack-system: (
+  "Roboto",
+  -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  "Oxygen",
+  "Ubuntu",
+  "Cantarell",
+  "Fira Sans",
+  "Droid Sans",
+  "Helvetica Neue",
+  sans-serif,
+);
+
 // Typography
 $base-font-family: $font-stack-system;
 $heading-font-family: $base-font-family;
+$body-font-family: $base-font-family;
 
 // Font Sizes
 $base-font-size: 1em;
@@ -14,40 +30,85 @@ $base-line-height: 1.5;
 $heading-line-height: 1.2;
 
 // Other Sizes
-$base-border-radius: 3px;
-$base-spacing: $base-line-height * 1em;
+$base-spacing: $base-line-height * 1.2em;
 $small-spacing: $base-spacing / 2;
+$tiny-spacing: $small-spacing / 4;
 $base-z-index: 0;
+$header-height: 72px;
+$base-section-header-padding: $base-spacing * 6;
+$base-section-body-padding: $base-spacing * 3;
 
 // Colors
-$blue: #1565c0;
+$black: #000; // Grayscale
 $v-dark-gray: #222;
 $dark-gray: #333;
+$md-dk-gray: #666;
 $medium-gray: #999;
 $light-gray: #ddd;
+$white: #fff;
+
+// $v-dark-blue: #092748; // Bluescale
+// $dark-blue: #084281;
+// $blue: #1565c0;
+// $light-blue: #c3dffd;
+
+// $v-dark-tan: #413e2e; // Brownscale
+// $tan: #d4cca4;
+// $light-tan: #f6f4e8;
+
+$v-dark-blue: #092748; // Bluescale
+$dark-blue: rgba(0,32,96,1);
+$blue: rgba(0,112,192,1);
+$light-blue: rgba(0,176,240,1);
+
+$red: rgba(180,0,0,1); // Redscale
+$dark-red: rgba(144,0,0,1);
+$v-dark-red: rgba(96,0,0,1);
+
+$v-dark-tan: rgba(29,27,17,1); // Brownscale
+$tan: #d4cca4;
+$light-tan: rgba(238,236,225,1);
+$v-light-tan: rgba(254,254,250,1);
+
+$bg-sepia: rgba(60, 40, 0, .2); // Other
+$bg-clear: rgba(0, 0, 0, 0);
+$green: rgba(0,130,0,1);
+$gold: rgba(240,180,0,1);
 
 // Font Colors
-$base-font-color: $v-dark-gray;
-$contrast-font-color: $light-gray;
-$action-color: $dark-gray;
+$base-font-color: $v-dark-tan;
+$secondary-font-color: $dark-blue;
+$contrast-font-color: $light-tan;
+$action-color: $tan;
 
 // Border
-$base-border-color: $light-gray;
-$base-border: 1px solid $base-border-color;
+// $base-border-color: $light-gray;
+$base-border-color: $medium-gray;
+$base-border-thickness: 1px;
+$base-border-style: solid;
+$base-border-radius: 2px;
+$base-border: $base-border-thickness $base-border-style $base-border-color;
 
 // Background Colors
-$base-background-color: #fff;
+$base-background-color: $v-light-tan;
+$highlight-background: shade($base-background-color, 15%);
 $secondary-background-color: tint($base-border-color, 75%);
+$focus-background: rgba(red($highlight-background), green($highlight-background), blue($highlight-background), .5);
 
 // Forms
-$form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
-$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -0.3);
+$form-box-shadow: inset 0 1px 3px rgba($black, .06);
+$form-box-shadow-focus: $form-box-shadow, 0 0 5px adjust-color($action-color, $lightness: -5%, $alpha: -.3);
 
 // Animations
-$base-duration: 150ms;
-$base-timing: ease;
+$base-duration: .5s;
+$base-timing: ease-in-out;
+$base-transition: all $base-duration $base-timing;
+$quick-transition: all $base-duration / 2 $base-timing / 2;
 
 // Shadows
-$shadow-color: $v-dark-gray;
-$base-inset-shadow: 0 0px 10px 0px $shadow-color inset;
-$base-text-shadow: 0 1px 5px $shadow-color; 
+$shadow-color: rgba($v-dark-gray, 0.5);
+$base-box-shadow: 0 0 10px 0 $shadow-color;
+$light-box-shadow: 0 0 10px 0 lighten($shadow-color, 50%);
+$base-inset-shadow: 0 10px 10px -10px $shadow-color inset;
+$base-text-shadow: 0 0 5px lighten($shadow-color, 50%);
+$dark-text-shadow: 0 1px 5px darken($shadow-color, 100%);

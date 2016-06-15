@@ -1,7 +1,43 @@
 'use strict';
 
-// user require with a reference to bundle the file and use it in this file
-// var example = require('./example');
+const portfolio = require('./app-data').portfolio;
+const scrollAnimate = require('./scroll');
 
-// use require without a reference to ensure a file is bundled
-require('./example');
+$(document).ready( function() {
+  // Render Portfolio cards
+  let portfolioCards = require('./templates/portfolio-cards.handlebars');
+  $('#portfolio-header-box').after(portfolioCards({portfolio}));
+  // $('.portfolio-cards').append(portfolioCards({portfolio}));
+  // // Portfolio link click handlebars
+  // $('.card-header').on('click', function(e) {
+  //
+  // });
+
+  // // Navbar Menu
+  // $(".menu-expand").on('click', function(e) {
+  //   $('.navbar-wrapper').toggleClass('menu-open');
+  //   $(".menu").toggleClass("menu-open");
+  //   e.preventDefault();
+  //   e.stopPropagation(); // Make sure hide menu click doesn't fire
+  // });
+
+  // Navbar Menu
+  $(".nav-menu-icon").on('click', function(e) {
+    // $('.navbar-wrapper').toggleClass('menu-open');
+    console.log("Nav Menu Clicked");
+    $(".nav-menu").toggleClass("menu-open");
+    e.preventDefault();
+    e.stopPropagation(); // Make sure hide menu click doesn't fire
+  });
+
+  // Hide Menu on external click
+  $("body").on('click', function() {
+    $(".nav-menu").removeClass("menu-open");
+  });
+
+  // Page Scroll Animation
+  scrollAnimate(jQuery);
+  jQuery(function(){
+    jQuery.mark.jump();
+  });
+});
