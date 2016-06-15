@@ -32,6 +32,7 @@ $heading-line-height: 1.2;
 // Other Sizes
 $base-spacing: $base-line-height * 1.2em;
 $small-spacing: $base-spacing / 2;
+$tiny-spacing: $small-spacing / 4;
 $base-z-index: 0;
 $header-height: 72px;
 $base-section-header-padding: $base-spacing * 6;
@@ -41,6 +42,7 @@ $base-section-body-padding: $base-spacing * 3;
 $black: #000; // Grayscale
 $v-dark-gray: #222;
 $dark-gray: #333;
+$md-dk-gray: #666;
 $medium-gray: #999;
 $light-gray: #ddd;
 $white: #fff;
@@ -59,21 +61,25 @@ $dark-blue: rgba(0,32,96,1);
 $blue: rgba(0,112,192,1);
 $light-blue: rgba(0,176,240,1);
 
-$red: rgba(192,0,0,1); // Redscale
+$red: rgba(180,0,0,1); // Redscale
+$dark-red: rgba(144,0,0,1);
+$v-dark-red: rgba(96,0,0,1);
 
 $v-dark-tan: rgba(29,27,17,1); // Brownscale
 $tan: #d4cca4;
 $light-tan: rgba(238,236,225,1);
 $v-light-tan: rgba(254,254,250,1);
 
-$bg-sepia: rgba(60, 40, 0, .2);
+$bg-sepia: rgba(60, 40, 0, .2); // Other
 $bg-clear: rgba(0, 0, 0, 0);
+$green: rgba(0,130,0,1);
+$gold: rgba(240,180,0,1);
 
 // Font Colors
 $base-font-color: $v-dark-tan;
 $secondary-font-color: $dark-blue;
 $contrast-font-color: $light-tan;
-$action-color: $dark-blue;
+$action-color: $tan;
 
 // Border
 // $base-border-color: $light-gray;
@@ -100,7 +106,7 @@ $base-transition: all $base-duration $base-timing;
 $quick-transition: all $base-duration / 2 $base-timing / 2;
 
 // Shadows
-$shadow-color: $v-dark-gray;
+$shadow-color: rgba($v-dark-gray, 0.5);
 $base-box-shadow: 0 0 10px 0 $shadow-color;
 $light-box-shadow: 0 0 10px 0 lighten($shadow-color, 50%);
 $base-inset-shadow: 0 10px 10px -10px $shadow-color inset;

@@ -15,6 +15,8 @@ h3,
 h4,
 h5,
 h6 {
+  color: $contrast-font-color;
+  letter-spacing: 1px;
   font-family: $heading-font-family;
   font-size: modular-scale(1);
   line-height: $heading-line-height;
@@ -23,36 +25,48 @@ h6 {
 }
 
 h1 {
-  font-size: modular-scale(7);
-  font-weight: 100;
+  font-size: modular-scale(4);
+  font-weight: 300;
+  @include media($tablet) {
+    font-size: modular-scale(7);
+  }
 }
 
 h2 {
-  font-size: modular-scale(6);
-  font-weight: 100;
+  font-size: modular-scale(4);
+  font-weight: 300;
+  @include media($tablet) {
+    font-size: modular-scale(6);
+  }
 }
 
 h3 {
-  font-size: modular-scale(4);
+  font-size: modular-scale(2);
   font-weight: 300;
+  @include media($tablet) {
+    font-size: modular-scale(4);
+  }
 }
 
 h4 {
   font-size: modular-scale(2);
   font-weight: 300;
-  margin: $small-spacing / 2;
+  @include media($tablet) {
+    font-size: modular-scale(3);
+  }
 }
 
 p {
+  color: $contrast-font-color;
   font-size: modular-scale(1);
   font-weight: 300;
-  margin: 0 $base-spacing * 2 $small-spacing;
+  margin: $small-spacing $base-spacing;
   @include media($tablet) {
-    margin: 0 $base-spacing $small-spacing;
+    margin: $base-spacing $base-spacing * 2;
   }
-  @include media($mobile) {
-    margin: 0 $small-spacing $small-spacing;
-  }
+  // @include media($mobile) {
+  //   margin: 0 $small-spacing $small-spacing;
+  // }
 }
 
 a {
@@ -69,10 +83,12 @@ a {
 }
 
 ul {
-  margin: 0 $base-spacing;
+  // margin: 0 $base-spacing;
 
   li {
-    padding: $base-spacing / 4 $base-spacing;
+    padding: $small-spacing;
+    font-size: modular-scale(1);
+    font-weight: 500;
   }
 }
 hr {

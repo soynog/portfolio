@@ -12,198 +12,134 @@
 
   <body class="container-fluid">
 
+
+
+    <!-- HEADER/NAVBAR -->
+    <nav>
+      <div class="nav-menu-icon">
+        <span class="ion-navicon-round"></span>
+      </div>
+      <div class="nav-menu">
+        <ul>
+          <li class="scroll-on-page-link" href="#home-scrollto">Home</li>
+          <li class="scroll-on-page-link" href="#portfolio-scrollto">Portfolio</li>
+          <li class="scroll-on-page-link" href="#skills-scrollto">Skills</li>
+          <li class="scroll-on-page-link" href="#about-me-scrollto">About Me</li>
+          <li class="scroll-on-page-link" href="#contact-scrollto">Contact</li>
+        </ul>
+      </div>
+    </nav>
+
+
+    <!-- WELCOME SPLASH -->
     <a id="home-scrollto"></a>
-
-  <!-- HEADER/NAVBAR -->
-    <!--<div class="navbar-wrapper shadow">-->
-      <div class="row-wrapper textured navbar-wrapper shadow">
-        <!--<div class="outer-container">-->
-          <div class="header menu-expand">
-            <div class="menu-icon">
-              <a href="#menu-expand"><i class="ion-navicon-round"></i></a>
-            </div>
-            <div class="menu">
-              <ul>
-                <li class="scroll-on-page-link" href="#home-scrollto">Home</li>
-                <li class="scroll-on-page-link" href="#portfolio-scrollto">Portfolio</li>
-                <li class="scroll-on-page-link" href="#skills-scrollto">Skills</li>
-                <li class="scroll-on-page-link" href="#about-me-scrollto">About Me</li>
-                <li class="scroll-on-page-link" href="#contact-scrollto">Contact</li>
-              </ul>
-            </div>
-          </div>
-        <!--</div>-->
-      </div>
-    <!--</div>-->
-
-
-  <!-- WELCOME SPLASH -->
     <section class="welcome-section" id="welcome-section">
-      <div class="row-wrapper">
-        <div class="outer-container">
-          <div class="section-header welcome-section-header">
-            <div class="header-content">
-              <h1>Nicolas Garcia</h1>
-            </div>
-          </div>
-        </div>
+      <div class="box red shim desktop-only" id="welcome-shim-1"></div>
+      <div class="box blue" id="title-box">
+        <h1>nicolas garcia</h1>
       </div>
-      <div class="row-wrapper">
-        <div class="outer-container">
-          <div class="section-body welcome-section-body">
-            <div class="body-content">
-              <h3>full-stack web developer</h3>
-              <h4>
-                <i class="devicon-ruby-plain"></i>
-                <i class="devicon-javascript-plain"></i>
-                <i class="devicon-python-plain"></i>
-                <i class="devicon-java-plain"></i>
-                <i class="devicon-css3-plain"></i>
-                <i class="devicon-html5-plain"></i>
-                <i class="devicon-jquery-plain"></i>
-                <i class="devicon-sass-original"></i>
-                <i class="devicon-bootstrap-plain"></i>
-                <i class="devicon-git-plain"></i>
-                <i class="devicon-nodejs-plain"></i>
-                <i class="devicon-postgresql-plain"></i>
-                <i class="devicon-rails-plain"></i>
-              </h4>
-            </div>
-          </div>
-        </div>
+      <div class="box navy" id="subtitle-box">
+        <h3>full-stack web developer</h3>
+      </div>
+      <div class="box blue" id="portrait-box">
+        <img id="portrait-image" alt="portrait" src="assets/images/profile_square.png">
+      </div>
+      <div class="box red shim" id="welcome-shim-2">
       </div>
     </section>
 
+    <section>
+      <div class="box gray divider"></div>
+    </section>
 
   <!-- PORTFOLIO SECTION -->
-  <!-- Factor this out into Handlebars partial -->
 
+    <a id="portfolio-scrollto"></a>
     <section class="portfolio-section">
-      <div class="row-wrapper">
-        <div class="outer-container">
-          <a id="portfolio-scrollto"></a>
-          <div class="section-header portfolio-section-header">
-            <div class="header-content">
-              <h2>Portfolio</h2>
-            </div>
-          </div>
-        </div>
+      <div class="box blue header-box" id="portfolio-header-box">
+        <h1>portfolio</h1>
       </div>
-      <div class="row-wrapper">
-        <div class="outer-container">
-          <div class="section-body portfolio-section-body">
-            <div class="portfolio-cards cards">
-              <!-- PORTFOLIO CARDS GO HERE -->
-            </div>
-          </div>
-        </div>
-      </div>
+      <div class="box navy shim desktop-only"></div>
     </section>
 
+    <section>
+      <div class="box gray divider"></div>
+    </section>
 
   <!-- SKILLS SECTION -->
+    <a id="skills-scrollto"></a>
     <section class="skills-section">
-      <div class="row-wrapper">
-        <div class="outer-container">
-          <a id="skills-scrollto"></a>
-          <div class="section-header skills-section-header">
-            <div class="header-content">
-              <h2>Skills</h2>
-            </div>
-          </div>
-        </div>
+      <div class="box blue header-box" id="skills-header-box">
+        <h1>skills</h1>
       </div>
-      <div class="row-wrapper">
-        <div class="outer-container">
-          <div class="section-body skills-section-body">
-
-            <div class="skill-manifesto">
-              <p>My strongest languages are Ruby and JavaScript, and I am comfortable with both front and back-end work. I strive to write elegant code--which to me means DRY, modular, and succinct but comprehensible.</p>
-            </div>
-
-            <div class="skill-list">
-              <ul>
-                <li>JavaScript</li>
-                <li>Ruby</li>
-                <li>Python</li>
-                <li>Java</li>
-                <li>HTML/CSS</li>
-                <li>jQuery/AJAX</li>
-                <li>Ember.js</li>
-                <li>Sass/SCSS</li>
-                <li>Handlebars</li>
-                <li>Bourbon</li>
-                <li>Bootstrap</li>
-                <li>Node.js</li>
-                <li>Express.js</li>
-                <li>Ruby on Rails</li>
-                <li>PostgreSQL</li>
-                <li>MongoDB</li>
-                <li>Git/GitHub</li>
-              </ul>
-            </div>
-
-          </div>
-        </div>
+      <div class="box navy">
+        <p>My strongest languages are Ruby and JavaScript, and I am comfortable with both front and back-end work. I strive to write elegant code--which to me means DRY, modular, and succinct but comprehensible.</p>
       </div>
+      <div class="box rainbow list-box">JavaScript</div>
+      <div class="box rainbow list-box">Ruby</div>
+      <div class="box rainbow list-box">HTML/CSS</div>
+      <div class="box rainbow list-box">jQuery/AJAX</div>
+      <div class="box rainbow list-box">Ember.js</div>
+      <div class="box rainbow list-box">Sass/SCSS</div>
+      <div class="box rainbow list-box">Handlebars</div>
+      <div class="box rainbow list-box">Bourbon</div>
+      <div class="box rainbow list-box">Bootstrap</div>
+      <div class="box rainbow list-box">Node.js</div>
+      <div class="box rainbow list-box">Express.js</div>
+      <div class="box rainbow list-box">Ruby on Rails</div>
+      <div class="box rainbow list-box">PostgreSQL</div>
+      <div class="box rainbow list-box">MongoDB</div>
+      <div class="box rainbow list-box">Git/GitHub</div>
+      <div class="box rainbow shim desktop-only"></div>
+    </section>
+
+    <section>
+      <div class="box gray divider"></div>
     </section>
 
   <!-- ABOUT ME SECTION -->
+    <a id="about-me-scrollto"></a>
     <section class="about-me-section">
-      <div class="row-wrapper">
-        <div class="outer-container">
-          <a id="about-me-scrollto"></a>
-          <div class="section-header about-me-section-header">
-            <div class="header-content">
-              <h2>About Me</h2>
-            </div>
-          </div>
-        </div>
+      <div class="box blue header-box" id="about-me-header-box">
+        <h1>about me</h1>
       </div>
-      <div class="row-wrapper">
-        <div class="outer-container">
-          <div class="section-body about-me-section-body">
-            <p>I’m a full stack web developer eager to find innovative and efficient tech-based solutions to hard problems in the transportation industry and beyond. After five years working as a transit planner in federal and state government, I’ve turned to coding as an outlet for my creativity and love of solving tough problems.</p>
-            <p>My experience as a planner has taught me to value stakeholder involvement and recognize the iterative nature of project development. With this perspective and a strong fluency in web development technologies and concepts, I’m ready to build effective web solutions that meet client needs--and that also improve dynamically as those needs evolve.</p>
-            <p>I love creating things, solving puzzles, learning new skills, and Doing It mYself. In my free time I like to design and play board games, cross-country ski, camp, hunt for wild mushrooms, and cook delicious food. I’m currently living in my home state of Massachusetts, but I’ve spent time in DC, Oregon, and New Hampshire/Vermont.</p>
-          </div>
-        </div>
+      <div class="box navy">
+        <p>I’m a full stack web developer eager to find innovative and efficient tech-based solutions to hard problems in the transportation industry and beyond. After five years working as a transit planner in federal and state government, I’ve turned to coding as an outlet for my creativity and love of solving tough problems.</p>
       </div>
+      <div class="box body-box red">
+        <p>My experience as a planner has taught me to value stakeholder involvement and recognize the iterative nature of project development. With this perspective and a strong fluency in web development technologies and concepts, I’m ready to build effective web solutions that meet client needs--and that also improve dynamically as those needs evolve.</p>
+      </div>
+      <div class="box body-box blue">
+        <p>I love creating things, solving puzzles, learning new skills, and Doing It mYself. In my free time I like to design and play board games, cross-country ski, camp, hunt for wild mushrooms, and cook delicious food. I’m currently living in my home state of Massachusetts, but I’ve spent time in DC, Oregon, and New Hampshire/Vermont.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="box gray divider"></div>
     </section>
 
   <!-- CONTACT SECTION -->
+    <a id="contact-scrollto"></a>
     <section class="contact-section">
-      <div class="row-wrapper">
-        <div class="outer-container">
-          <a id="contact-scrollto"></a>
-          <div class="section-header contact-section-header">
-            <div class="header-content">
-              <h2>Contact</h2>
-            </div>
-          </div>
-        </div>
+      <div class="box blue header-box" id="contact-header-box">
+        <h1>contact</h1>
       </div>
-      <div class="row-wrapper">
-        <div class="outer-container">
-          <div class="section-body contact-section-body">
-            <ul>
-              <li><a href="mailto:nicolas.o.garcia@gmail.com" target="_blank"> nicolas.o.garcia@gmail.com</a></li>
-              <li>Location: Cambridge, MA</li>
-              <li><a href="https://github.com/soynog" target="_blank">GitHub</a></li>
-              <li><a href="https://www.linkedin.com/in/nicolasogarcia" target="_blank">LinkedIn</a></li>
-              <li><a href="assets/images/nog_resume.pdf" target="_blank">Resume</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+      <a class="box rainbow clickable list-box" href="mailto:nicolas.o.garcia@gmail.com" target="_blank"> nicolas.o.garcia@gmail.com</a>
+      <div class="box rainbow list-box">Location: Cambridge, MA</div>
+      <a class="box rainbow clickable list-box" href="https://github.com/soynog" target="_blank">GitHub</a>
+      <a class="box rainbow clickable list-box" href="https://www.linkedin.com/in/nicolasogarcia" target="_blank">LinkedIn</a>
+      <a class="box rainbow clickable list-box" href="assets/images/nog_resume.pdf" target="_blank">Resume</a>
+      <div class="box red shim desktop-only"></div>
     </section>
 
-  <!-- FOOTER -->
-    <div class="row-wrapper textured">
-      <div class="outer-container section">
-        <footer><p>&copy; 2016 <a href="http://www.nicolasogarcia.com" target="_blank">nicolas o garcia</a></p></footer>
-      </div>
-    </div>
+    <section>
+      <div class="box gray divider"></div>
+    </section>
+
+    <!-- FOOTER -->
+    <section>
+      <footer class="box blue">&copy; 2016 &nbsp; <a href="http://www.nicolasogarcia.com" target="_blank">nicolas o garcia</a></footer>
+    </section>
 
   </body>
 

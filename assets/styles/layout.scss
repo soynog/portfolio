@@ -1,83 +1,173 @@
 
 // GENERAL PAGE ELEMENTS //
+body {
+  @extend %textured;
 
-.row-wrapper {
-  @include row();
-
-  .outer-container {
-    @include outer-container;
-  }
+  background-color: $light-tan;
 }
+
+// .row-wrapper {
+//   @include row();
+//
+//   .outer-container {
+//     @include outer-container;
+//   }
+// }
 
 section {
-  @include span-columns(12);
-  @include shift(0);
+  display: flex;
+  flex-flow: row wrap;
+  margin-left: -$tiny-spacing; // Eliminate space on edges of boxes
+  margin-right: -$tiny-spacing;
+  margin-bottom: 0;
   text-align: center;
+}
 
-  @include media($tablet) {
-    @include span-columns(8);
-  }
+.box,
+%box {
+  @extend %shadow;
+  align-items: center;
+  display: flex;
+  flex: 1 100%;
+  justify-content: center;
+  margin: 0 $tiny-spacing $tiny-spacing * 2 $tiny-spacing;
 
-  @include media($mobile) {
-    @include span-columns(4);
-  }
-
-  .section-header {
-    @extend %inset;
+  &.blue {
     background-color: $blue;
-    background-repeat: no-repeat;
-    background-size: cover;
     color: $contrast-font-color;
-    // margin: 0;
-    // padding: $base-section-header-padding 0;
-    height: 25vh;
-    text-shadow: $dark-text-shadow;
-
-    @include media($tablet) {
-      padding: $base-section-header-padding 0;
-    }
-
-    @include media($mobile) {
-      padding: $base-section-header-padding * .5 0;
-    }
-
-    .header-content {
-      @include vertical-align();
-    }
-
   }
 
-  .section-body {
-    @extend %shadow;
-    @extend %textured;
-    min-height: 75vh;
+  &.navy {
+    background-color: $dark-blue;
+    color: $contrast-font-color;
+  }
 
-    padding: $base-section-body-padding 0;
+  &.red {
+    background-color: $red;
+    color: $contrast-font-color;
+  }
 
+  &.maroon {
+    background-color: $v-dark-red;
+    color: $contrast-font-color;
+  }
+
+  &.sky-blue {
+    background-color: $light-blue;
+    color: $contrast-font-color;
+  }
+
+  &.green {
+    background-color: $green;
+    color: $contrast-font-color;
+  }
+
+  &.gold {
+    background-color: $gold;
+    color: $contrast-font-color;
+  }
+
+  &.gray {
+    background-color: $md-dk-gray;
+    color: $contrast-font-color;
+  }
+
+  &.rainbow {
+    color: $contrast-font-color;
+  }
+
+  &.rainbow:nth-child(7n+1) {
+    background-color: $blue;
+  }
+
+  &.rainbow:nth-child(7n+2) {
+    background-color: $dark-blue;
+  }
+
+  &.rainbow:nth-child(7n+3) {
+    background-color: $red;
+  }
+
+  &.rainbow:nth-child(7n+4) {
+    background-color: $dark-blue;
+  }
+
+  &.rainbow:nth-child(7n+5) {
+    background-color: $blue;
+  }
+
+  &.rainbow:nth-child(7n+6) {
+    background-color: $blue;
+  }
+
+  &.rainbow:nth-child(7n+7) {
+    background-color: $red;
+  }
+
+  &.shim {
+    flex: 4 0;
+  }
+
+  &.divider {
+    flex: 1 100%;
+    height: $base-spacing * 2;
+    order: 100;
+  }
+
+  &.header-box {
+    padding: $base-spacing * 2 0;
+  }
+
+  &.body-box {
     @include media($tablet) {
-      padding: $base-section-body-padding 0;
+      flex: 1 350px;
     }
+  }
 
-    @include media($mobile) {
-      padding: $base-section-body-padding * .5 0;
+  &.list-box {
+    padding: $small-spacing;
+    min-height: $base-spacing * 3;
+    flex: 1 $base-spacing * 3;
+  }
+
+  &.desktop-only {
+    display: none;
+
+    @include media($desktop) {
+      display: flex;
+    }
+  }
+
+  &.clickable {
+    &:hover,:active {
+      box-shadow: inset 0 0 200px 200px rgba(255, 255, 255, 0.1);
     }
   }
 }
 
 
+// STYLING CLASSES/EXTENDABLES
 // For textured overlay elements
-%textured {
+%textured,
+.textured {
   @include texture(180deg, $base-background-color, $base-background-color, 48, 0);
 }
 
 // For drop-shadow elements
-%shadow {
+%shadow,
+.shadow {
   box-shadow: $base-box-shadow;
 }
 
 // For inset-shadow elements
-%inset {
+%inset,
+.inset {
   box-shadow: $base-inset-shadow;
+}
+
+%circle,
+.circle {
+  border-radius: 50%;
 }
 
 // ***SPECIFIC SECTIONS***
@@ -87,39 +177,67 @@ section {
 
 // WELCOME SECTION
 .welcome-section {
+  min-height: 100vh;
+}
 
-  .welcome-section-header {
-    background: linear-gradient($bg-sepia, $bg-clear), url('/assets/images/mtns-default.jpg');
-    background-position: 50% 25%; // xpos ypos
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 70vh;
+#welcome-shim-1 {
+  order: 1;
+}
 
-    .header-content {
-      @include vertical-align();
-      padding-top: $header-height / 2; // So that centered in div despite nav
-      @include media($tablet) {
-        padding-top: 0;
-      }
-    }
+#title-box {
+  min-height: 39vh;
+  order: 2;
+
+  @include media($desktop) {
+    flex: 4 50%;
+    // margin-left: $small-spacing / 2;
+    // margin-right: $small-spacing / 2;
+    padding-top: $header-height;
+  }
+}
+
+#subtitle-box {
+  min-height: 14vh;
+  order: 3;
+
+  @include media($desktop) {
+    flex: 1 60%;
+    // margin-right: $small-spacing / 2;
+    order: 4;
+  }
+}
+
+#portrait-box {
+  flex: 1 auto;
+  min-height: 44vh;
+  min-width: 34vh;
+  order: 4;
+
+  @include media($desktop) {
+    background-color: $dark-blue;
+    order: 3;
+    padding-top: $header-height;
   }
 
-  .welcome-section-body {
-    height: 30vh;
-    min-height: 0;
-
-    .body-content {
-      @include vertical-align();
-    }
+  #portrait-image {
+    @extend %circle;
+    @extend %shadow;
+    max-width: 32vh;
   }
+}
+
+#welcome-shim-2 {
+  order: 5;
 }
 
 // PORTFOLIO SECTION
-.portfolio-section {
-  .section-header.portfolio-section-header {
-    background-color: $red;
+#portfolio-header-box {
+  @include media($desktop) {
+    flex: 1 60%;
   }
 }
+
+// see cards.scss
 
 // SKILLS SECTION
 .skills-section {
@@ -155,9 +273,5 @@ section {
 
 // FOOTER
 footer {
-  background-color: $light-blue;
-  padding: 0 $base-spacing;
-  p {
-    margin: 0;
-  }
+  //
 }

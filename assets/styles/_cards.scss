@@ -1,101 +1,153 @@
-$card-border-color: $base-border-color;
-$card-border: 0;
-$card-background: $light-blue;
-$card-header-background: $card-background;
-$card-margin: 1em;
-$card-image-hover-opacity: 0.15;
-$card-image-hover-color: $dark-blue;
-$card-image-height: 240px;
-$card-text-color-header: $v-dark-blue;
-$card-text-color-copy: $contrast-font-color;
-
-.cards {
+.box.card {
+  // align-items: stretch;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+  flex-flow: column nowrap;
+  flex: 1 350px;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: $small-spacing / 2;
 
-.card {
-  border: $card-border;
-  border-radius: $base-border-radius;
-  box-shadow: $light-box-shadow;
-  cursor: pointer;
-  flex-basis: 18em;
-  flex-grow: 0;
-  margin: 0 $card-margin $base-spacing;
-  padding-bottom: 0;
-  position: relative;
-  transition: $base-transition;
+  .card-body {
+    align-self: stretch;
+    align-items: center;
+    display: flex;
+    flex: 0 auto;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: $small-spacing / 2;
+    padding: 0 $small-spacing;
+  }
 
-  &:focus,
-  &:hover {
-    .hover-text {
-      transform: translate(0, -100%);
+  .card-header {
+    flex: 1 100%;
+    margin: 0;
+    padding: 0;
+    h4 {
+      margin: 0;
+      padding: 0;
     }
   }
-}
-
-.hover-text-container {
-  height: $card-image-height;
-  overflow: hidden;
 
   .card-image {
-    @include border-top-radius($base-border-radius - $base-border-thickness);
-    // background: url('/assets/images/cards/soft-surv-screenshot.png');
+    @extend %shadow;
+    @extend %circle;
+    min-width: $base-spacing * 4.5;
+    height: $base-spacing * 4.5;
     background-repeat: no-repeat;
     background-size: cover;
-    height: $card-image-height;
-    max-height: $card-image-height;
-    overflow: hidden;
+
   }
 
   .card-copy {
-    font-size: .9em;
-    height: $card-image-height;
-    line-height: 1.5em;
-    display: table;
-
+    flex: 1 auto;
+    @extend %textured;
+    padding: $small-spacing / 2;
     p {
-      color: $card-text-color-copy;
-      display: table-cell;
-      padding: ($base-spacing / 2);
-      text-align: center;
-      vertical-align: middle;
+      color: $base-font-color;
+      font-size: $base-font-size;
+      margin: 0;
     }
-
-  }
-
-  .hover-text {
-    overflow: hidden;
-    padding: 0;
-    transition: $base-transition;
-  }
-
-  .hover-text-hidden {
-    @include border-top-radius($base-border-radius - $base-border-thickness);
-    background: transparentize($card-image-hover-color, $card-image-hover-opacity);
-  }
-
-
-}
-
-.card-header {
-  @include border-bottom-radius($base-border-radius);
-  background-color: $card-header-background;
-  line-height: 1.5em;
-  padding: ($base-spacing / 4);
-  transition: $quick-transition;
-  color: $card-text-color-header;
-
-  h4 {
-    margin: 0;
-  }
-
-  &:hover {
-    cursor: pointer;
-    background-color: shade($card-header-background, 15%);
   }
 }
+
+// $card-border-color: $base-border-color;
+// $card-border: 0;
+// $card-background: $light-blue;
+// $card-header-background: $card-background;
+// $card-margin: 1em;
+// $card-image-hover-opacity: 0.15;
+// $card-image-hover-color: $dark-blue;
+// $card-image-height: 240px;
+// $card-text-color-header: $v-dark-blue;
+// $card-text-color-copy: $contrast-font-color;
+//
+// .cards {
+//   display: flex;
+//   flex-wrap: wrap;
+//   justify-content: center;
+// }
+//
+// .card {
+//   border: $card-border;
+//   border-radius: $base-border-radius;
+//   box-shadow: $light-box-shadow;
+//   cursor: pointer;
+//   flex-basis: 18em;
+//   flex-grow: 0;
+//   margin: 0 $card-margin $base-spacing;
+//   padding-bottom: 0;
+//   position: relative;
+//   transition: $base-transition;
+//
+//   &:focus,
+//   &:hover {
+//     .hover-text {
+//       transform: translate(0, -100%);
+//     }
+//   }
+// }
+//
+// .hover-text-container {
+//   height: $card-image-height;
+//   overflow: hidden;
+//
+//   .card-image {
+//     @include border-top-radius($base-border-radius - $base-border-thickness);
+//     // background: url('/assets/images/cards/soft-surv-screenshot.png');
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     height: $card-image-height;
+//     max-height: $card-image-height;
+//     overflow: hidden;
+//   }
+//
+//   .card-copy {
+//     font-size: .9em;
+//     height: $card-image-height;
+//     line-height: 1.5em;
+//     display: table;
+//
+//     p {
+//       color: $card-text-color-copy;
+//       display: table-cell;
+//       padding: ($base-spacing / 2);
+//       text-align: center;
+//       vertical-align: middle;
+//     }
+//
+//   }
+//
+//   .hover-text {
+//     overflow: hidden;
+//     padding: 0;
+//     transition: $base-transition;
+//   }
+//
+//   .hover-text-hidden {
+//     @include border-top-radius($base-border-radius - $base-border-thickness);
+//     background: transparentize($card-image-hover-color, $card-image-hover-opacity);
+//   }
+//
+//
+// }
+//
+// .card-header {
+//   @include border-bottom-radius($base-border-radius);
+//   background-color: $card-header-background;
+//   line-height: 1.5em;
+//   padding: ($base-spacing / 4);
+//   transition: $quick-transition;
+//   color: $card-text-color-header;
+//
+//   h4 {
+//     margin: 0;
+//   }
+//
+//   &:hover {
+//     cursor: pointer;
+//     background-color: shade($card-header-background, 15%);
+//   }
+// }
 
 // // Alternating Color Scheme
 // .card:nth-child(3n + 1) {

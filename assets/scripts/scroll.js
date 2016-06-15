@@ -12,15 +12,12 @@ const scrollAnimate = function (jQuery) {
 
       options = jQuery.extend(defaults, options);
       return jQuery(options.selector).click(function (e) {
-        var jumpobj = jQuery(this);
-        console.log(jumpobj);
-        var target = jumpobj.attr('href');
-        console.log(target);
-        var thespeed = 600;
-        console.log($(target));
-        let menuWidth = $('li.scroll-on-page-link').height();
-        menuWidth = menuWidth < 40 ? 0 : menuWidth;
-        var offset = jQuery(target).offset().top - menuWidth;
+        let jumpobj = jQuery(this);
+        let target = jumpobj.attr('href');
+        let thespeed = 600;
+        let windowWidth = $(window).width();
+        let menuWidth = windowWidth > 780 ? $('.nav-menu').height() : 0;
+        let offset = jQuery(target).offset().top - menuWidth;
         jQuery('html,body').animate({
           scrollTop: offset
         }, thespeed, 'swing');
