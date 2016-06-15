@@ -4,7 +4,9 @@
       <div class="card-header">
         <h4>
           <a href={{this.link}} target='_blank'>{{this.title}}</a>
-          <a href={{this.ghLink}} target='_blank'><i class="devicon-github-plain"></i></a>
+          {{#if this.ghLink}}
+            <a href={{this.ghLink}} target='_blank'><i class="devicon-github-plain"></i></a>
+          {{/if}}
         </h4>
       </div>
       <div class="card-image" style={{this.bgImage}}></div>
