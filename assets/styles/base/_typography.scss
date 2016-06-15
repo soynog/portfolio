@@ -86,7 +86,9 @@ ul {
   // margin: 0 $base-spacing;
 
   li {
-    padding: $base-spacing / 4 $base-spacing;
+    padding: $small-spacing;
+    font-size: modular-scale(1);
+    font-weight: 500;
   }
 }
 hr {
