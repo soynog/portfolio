@@ -13,15 +13,15 @@ webpackJsonp([0],[
 	__webpack_require__(1);
 
 	// styles
-	__webpack_require__(24);
+	__webpack_require__(25);
 
 	// attach jQuery globally
-	__webpack_require__(28);
 	__webpack_require__(29);
+	__webpack_require__(30);
 
 	// attach getFormFields globally
 
-	__webpack_require__(30);
+	__webpack_require__(31);
 
 /***/ },
 /* 1 */
@@ -30,41 +30,42 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */(function($, jQuery) {'use strict';
 
 	var portfolio = __webpack_require__(3).portfolio;
+	var scrollAnimate = __webpack_require__(4);
 
 	$(document).ready(function () {
 	  // Render Portfolio cards
-	  var portfolioCards = __webpack_require__(4);
-	  $('.portfolio-cards').append(portfolioCards({ portfolio: portfolio }));
+	  var portfolioCards = __webpack_require__(5);
+	  $('#portfolio-header-box').after(portfolioCards({ portfolio: portfolio }));
+	  // $('.portfolio-cards').append(portfolioCards({portfolio}));
+	  // // Portfolio link click handlebars
+	  // $('.card-header').on('click', function(e) {
+	  //
+	  // });
+
+	  // // Navbar Menu
+	  // $(".menu-expand").on('click', function(e) {
+	  //   $('.navbar-wrapper').toggleClass('menu-open');
+	  //   $(".menu").toggleClass("menu-open");
+	  //   e.preventDefault();
+	  //   e.stopPropagation(); // Make sure hide menu click doesn't fire
+	  // });
+
+	  // Navbar Menu
+	  $(".nav-menu-icon").on('click', function (e) {
+	    // $('.navbar-wrapper').toggleClass('menu-open');
+	    console.log("Nav Menu Clicked");
+	    $(".nav-menu").toggleClass("menu-open");
+	    e.preventDefault();
+	    e.stopPropagation(); // Make sure hide menu click doesn't fire
+	  });
+
+	  // Hide Menu on external click
+	  $("body").on('click', function () {
+	    $(".nav-menu").removeClass("menu-open");
+	  });
 
 	  // Page Scroll Animation
-	  (function (jQuery) {
-	    jQuery.mark = {
-	      jump: function jump(options) {
-	        var defaults = {
-	          selector: 'a.scroll-on-page-link'
-	        };
-	        if (typeof options === 'string') {
-	          defaults.selector = options;
-	        }
-
-	        options = jQuery.extend(defaults, options);
-	        return jQuery(options.selector).click(function (e) {
-	          var jumpobj = jQuery(this);
-	          console.log(jumpobj);
-	          var target = jumpobj.attr('href');
-	          console.log(target);
-	          var thespeed = 600;
-	          console.log($(target));
-	          var offset = jQuery(target).offset().top;
-	          jQuery('html,body').animate({
-	            scrollTop: offset
-	          }, thespeed, 'swing');
-	          e.preventDefault();
-	        });
-	      }
-	    };
-	  })(jQuery);
-
+	  scrollAnimate(jQuery);
 	  jQuery(function () {
 	    jQuery.mark.jump();
 	  });
@@ -74,66 +75,146 @@ webpackJsonp([0],[
 /***/ },
 /* 2 */,
 /* 3 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
-	/* WEBPACK VAR INJECTION */(function($) {'use strict';
+	'use strict';
 
 	var portfolio = [{
-	  title: "Campify",
-	  desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident."
-	}, {
-	  title: "RezTailor",
-	  desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident."
+	  title: "OTO",
+	  desc: "OTO (Outdoor Trip Organizer) makes organizing a camping trip fun and easy! Built on Ruby on Rails, Ember.js, and Bourbon. UX design by Norman Wozniak.",
+	  bgImage: "background-image:url(/assets/images/cards/OTO-screenshot.png)",
+	  imgSrc: "/assets/images/cards/OTO-screenshot.png",
+	  link: "http://soynog.github.io/oto-client"
 	}, {
 	  title: "SoftSurv",
-	  desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident."
+	  desc: "Create single-scoop surveys for your friends! Each survey may be shared via a unique public URL. Built on Node.js, MongoDB, Express.js, and Bootstrap.",
+	  bgImage: "background-image:url(/assets/images/cards/soft-surv-screenshot.png)",
+	  imgSrc: "/assets/images/cards/soft-surv-screenshot.png",
+	  link: "http://schoof-there-it-is.github.io/softsurv"
+	}, {
+	  title: "RezTailor",
+	  desc: "Tailor documents for specific needs by selecting modular sections from a master version. Rails/PostgreSQL back-end uses polymorphism to allow arbitrarily nested hierarchical document sections.",
+	  bgImage: "background-image:url(/assets/images/cards/reztailor-screenshot.png)",
+	  imgSrc: "/assets/images/cards/reztailor-screenshot.png",
+	  link: "http://soynog.github.io/resume-tailor-frontend"
 	}, {
 	  title: "Tic-Tac-Toe",
-	  desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident."
+	  desc: "This simple game app requires user authentication and allows remote play between two players. Leverages a back-end resource watcher to update the game state in real time in response to player activity.",
+	  bgImage: "background-image:url(/assets/images/cards/tic-tac-toe-screenshot.png)",
+	  imgSrc: "/assets/images/cards/tic-tac-toe-screenshot.png",
+	  link: "http://soynog.github.io/tic-tac-toe"
+	},
+	// {
+	//   title: "Mustachify",
+	//   desc: "Pin a mustache to your favorite selfie! Mustachify uses Microsoft’s facial recognition API and a custom placement algorithm to automatically draw mustaches onto uploaded images. Created for a 24-hour hackathon challenge.",
+	//   bgImage: "background-image:url(/assets/images/cards/stache-it-screenshot.png)",
+	//   imgSrc: "/assets/images/cards/stache-it-screenshot.png",
+	//   link: "http://nicolasogarcia.com",
+	// },
+	{
+	  title: "Cryptography",
+	  desc: "I research and presented this brief overview of cryptography, past and present, for a student conference at General Assembly.",
+	  bgImage: "background-image:url(/assets/images/cards/cryptography-screenshot.png)",
+	  imgSrc: "/assets/images/cards/cryptography-screenshot.png",
+	  link: "https://docs.google.com/presentation/d/1ST1uzlsXLzSSn-GIHNNPbRA5lkDIDAT2r53q1S_eYwA/edit?usp=sharing"
 	}, {
 	  title: "This Very Website",
-	  desc: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga, officiis sunt neque facilis culpa molestiae necessitatibus delectus veniam provident."
-	}, {
-	  title: $(document).width(),
-	  desc: ""
+	  desc: "Custom-built front-end using the lightweight and flexible Bourbon framework. Uses no templates or pre-made themes.",
+	  bgImage: "background-image:url(/assets/images/cards/website-screenshot.png)",
+	  imgSrc: "/assets/images/cards/website-screenshot.png",
+	  link: "http://nicolasogarcia.com"
 	}];
 
 	module.exports = {
 	  portfolio: portfolio
 	};
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
 /* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Handlebars = __webpack_require__(5);
-	function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
-	module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
-	    var alias1=container.lambda, alias2=container.escapeExpression;
+	/* WEBPACK VAR INJECTION */(function($) {'use strict';
 
-	  return "  <div class=\"card\">\n    <div class=\"hover-text-container\">\n      <div class=\"card-image\"></div>\n      <div class=\"card-copy hover-text hover-text-hidden\">\n        <p>"
-	    + alias2(alias1((depth0 != null ? depth0.desc : depth0), depth0))
-	    + "</p>\n      </div>\n    </div>\n    <div class=\"card-header\">\n      <h4>"
-	    + alias2(alias1((depth0 != null ? depth0.title : depth0), depth0))
-	    + "</h4>\n    </div>\n  </div>\n";
-	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-	    var stack1;
+	var scrollAnimate = function scrollAnimate(jQuery) {
+	  jQuery.mark = {
+	    jump: function jump(options) {
+	      var defaults = {
+	        selector: 'li.scroll-on-page-link'
+	      };
+	      if (typeof options === 'string') {
+	        defaults.selector = options;
+	      }
 
-	  return ((stack1 = helpers.each.call(depth0 != null ? depth0 : {},(depth0 != null ? depth0.portfolio : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "");
-	},"useData":true});
+	      options = jQuery.extend(defaults, options);
+	      return jQuery(options.selector).click(function (e) {
+	        var jumpobj = jQuery(this);
+	        var target = jumpobj.attr('href');
+	        var thespeed = 600;
+	        var windowWidth = $(window).width();
+	        var menuWidth = windowWidth > 780 ? $('.nav-menu').height() : 0;
+	        var offset = jQuery(target).offset().top - menuWidth;
+	        jQuery('html,body').animate({
+	          scrollTop: offset
+	        }, thespeed, 'swing');
+	        e.preventDefault();
+	      });
+	    }
+	  };
+	};
+
+	module.exports = scrollAnimate;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ },
 /* 5 */
 /***/ function(module, exports, __webpack_require__) {
 
-	// Create a simple path alias to allow browserify to resolve
-	// the runtime on a supported path.
-	module.exports = __webpack_require__(6)['default'];
+	var Handlebars = __webpack_require__(6);
+	function __default(obj) { return obj && (obj.__esModule ? obj["default"] : obj); }
+	module.exports = (Handlebars["default"] || Handlebars).template({"1":function(container,depth0,helpers,partials,data) {
+	    var alias1=container.lambda, alias2=container.escapeExpression;
 
+	  return "  <a class=\"card box rainbow clickable\" href="
+	    + alias2(alias1((depth0 != null ? depth0.link : depth0), depth0))
+	    + ">\n    <div class=\"card-body\">\n      <div class=\"card-header\">\n        <h4>"
+	    + alias2(alias1((depth0 != null ? depth0.title : depth0), depth0))
+	    + "</h4>\n      </div>\n      <div class=\"card-image\" style="
+	    + alias2(alias1((depth0 != null ? depth0.bgImage : depth0), depth0))
+	    + "></div>\n    </div>\n    <div class=\"card-copy\">\n      <p>"
+	    + alias2(alias1((depth0 != null ? depth0.desc : depth0), depth0))
+	    + "</p>\n    </div>\n  </a>\n";
+	},"3":function(container,depth0,helpers,partials,data) {
+	    var alias1=container.lambda, alias2=container.escapeExpression;
+
+	  return "\n  <div class=\"card\">\n    <div class=\"hover-text-container\">\n      <div class=\"card-image\" style="
+	    + alias2(alias1((depth0 != null ? depth0.bgImage : depth0), depth0))
+	    + "></div>\n      <div class=\"card-copy hover-text hover-text-hidden\">\n        <p>"
+	    + alias2(alias1((depth0 != null ? depth0.desc : depth0), depth0))
+	    + "</p>\n      </div>\n    </div>\n    <div class=\"card-header\">\n      <a href="
+	    + alias2(alias1((depth0 != null ? depth0.link : depth0), depth0))
+	    + " target=\"_blank\">\n        <h4>"
+	    + alias2(alias1((depth0 != null ? depth0.title : depth0), depth0))
+	    + "</h4>\n      </a>\n    </div>\n  </div>\n";
+	},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+	    var stack1, alias1=depth0 != null ? depth0 : {};
+
+	  return ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.portfolio : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+	    + "\n<!-- "
+	    + ((stack1 = helpers.each.call(alias1,(depth0 != null ? depth0.portfolio : depth0),{"name":"each","hash":{},"fn":container.program(3, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+	    + " -->\n";
+	},"useData":true});
 
 /***/ },
 /* 6 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// Create a simple path alias to allow browserify to resolve
+	// the runtime on a supported path.
+	module.exports = __webpack_require__(7)['default'];
+
+
+/***/ },
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -147,30 +228,30 @@ webpackJsonp([0],[
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
 
-	var _handlebarsBase = __webpack_require__(7);
+	var _handlebarsBase = __webpack_require__(8);
 
 	var base = _interopRequireWildcard(_handlebarsBase);
 
 	// Each of these augment the Handlebars object. No need to setup here.
 	// (This is done to easily share code between commonjs and browse envs)
 
-	var _handlebarsSafeString = __webpack_require__(21);
+	var _handlebarsSafeString = __webpack_require__(22);
 
 	var _handlebarsSafeString2 = _interopRequireDefault(_handlebarsSafeString);
 
-	var _handlebarsException = __webpack_require__(9);
+	var _handlebarsException = __webpack_require__(10);
 
 	var _handlebarsException2 = _interopRequireDefault(_handlebarsException);
 
-	var _handlebarsUtils = __webpack_require__(8);
+	var _handlebarsUtils = __webpack_require__(9);
 
 	var Utils = _interopRequireWildcard(_handlebarsUtils);
 
-	var _handlebarsRuntime = __webpack_require__(22);
+	var _handlebarsRuntime = __webpack_require__(23);
 
 	var runtime = _interopRequireWildcard(_handlebarsRuntime);
 
-	var _handlebarsNoConflict = __webpack_require__(23);
+	var _handlebarsNoConflict = __webpack_require__(24);
 
 	var _handlebarsNoConflict2 = _interopRequireDefault(_handlebarsNoConflict);
 
@@ -205,7 +286,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 7 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -216,17 +297,17 @@ webpackJsonp([0],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _utils = __webpack_require__(8);
+	var _utils = __webpack_require__(9);
 
-	var _exception = __webpack_require__(9);
+	var _exception = __webpack_require__(10);
 
 	var _exception2 = _interopRequireDefault(_exception);
 
-	var _helpers = __webpack_require__(10);
+	var _helpers = __webpack_require__(11);
 
-	var _decorators = __webpack_require__(18);
+	var _decorators = __webpack_require__(19);
 
-	var _logger = __webpack_require__(20);
+	var _logger = __webpack_require__(21);
 
 	var _logger2 = _interopRequireDefault(_logger);
 
@@ -315,7 +396,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 8 */
+/* 9 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -445,7 +526,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 9 */
+/* 10 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -491,7 +572,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 10 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -502,31 +583,31 @@ webpackJsonp([0],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _helpersBlockHelperMissing = __webpack_require__(11);
+	var _helpersBlockHelperMissing = __webpack_require__(12);
 
 	var _helpersBlockHelperMissing2 = _interopRequireDefault(_helpersBlockHelperMissing);
 
-	var _helpersEach = __webpack_require__(12);
+	var _helpersEach = __webpack_require__(13);
 
 	var _helpersEach2 = _interopRequireDefault(_helpersEach);
 
-	var _helpersHelperMissing = __webpack_require__(13);
+	var _helpersHelperMissing = __webpack_require__(14);
 
 	var _helpersHelperMissing2 = _interopRequireDefault(_helpersHelperMissing);
 
-	var _helpersIf = __webpack_require__(14);
+	var _helpersIf = __webpack_require__(15);
 
 	var _helpersIf2 = _interopRequireDefault(_helpersIf);
 
-	var _helpersLog = __webpack_require__(15);
+	var _helpersLog = __webpack_require__(16);
 
 	var _helpersLog2 = _interopRequireDefault(_helpersLog);
 
-	var _helpersLookup = __webpack_require__(16);
+	var _helpersLookup = __webpack_require__(17);
 
 	var _helpersLookup2 = _interopRequireDefault(_helpersLookup);
 
-	var _helpersWith = __webpack_require__(17);
+	var _helpersWith = __webpack_require__(18);
 
 	var _helpersWith2 = _interopRequireDefault(_helpersWith);
 
@@ -543,14 +624,14 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 11 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _utils = __webpack_require__(8);
+	var _utils = __webpack_require__(9);
 
 	exports['default'] = function (instance) {
 	  instance.registerHelper('blockHelperMissing', function (context, options) {
@@ -588,7 +669,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 12 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -598,9 +679,9 @@ webpackJsonp([0],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _utils = __webpack_require__(8);
+	var _utils = __webpack_require__(9);
 
-	var _exception = __webpack_require__(9);
+	var _exception = __webpack_require__(10);
 
 	var _exception2 = _interopRequireDefault(_exception);
 
@@ -688,7 +769,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 13 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -698,7 +779,7 @@ webpackJsonp([0],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _exception = __webpack_require__(9);
+	var _exception = __webpack_require__(10);
 
 	var _exception2 = _interopRequireDefault(_exception);
 
@@ -719,14 +800,14 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 14 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _utils = __webpack_require__(8);
+	var _utils = __webpack_require__(9);
 
 	exports['default'] = function (instance) {
 	  instance.registerHelper('if', function (conditional, options) {
@@ -754,7 +835,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 15 */
+/* 16 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -786,7 +867,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 16 */
+/* 17 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -804,14 +885,14 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 17 */
+/* 18 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _utils = __webpack_require__(8);
+	var _utils = __webpack_require__(9);
 
 	exports['default'] = function (instance) {
 	  instance.registerHelper('with', function (context, options) {
@@ -843,7 +924,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 18 */
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -854,7 +935,7 @@ webpackJsonp([0],[
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
-	var _decoratorsInline = __webpack_require__(19);
+	var _decoratorsInline = __webpack_require__(20);
 
 	var _decoratorsInline2 = _interopRequireDefault(_decoratorsInline);
 
@@ -865,14 +946,14 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 19 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _utils = __webpack_require__(8);
+	var _utils = __webpack_require__(9);
 
 	exports['default'] = function (instance) {
 	  instance.registerDecorator('inline', function (fn, props, container, options) {
@@ -900,14 +981,14 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 20 */
+/* 21 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
 	exports.__esModule = true;
 
-	var _utils = __webpack_require__(8);
+	var _utils = __webpack_require__(9);
 
 	var logger = {
 	  methodMap: ['debug', 'info', 'warn', 'error'],
@@ -953,7 +1034,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 21 */
+/* 22 */
 /***/ function(module, exports) {
 
 	// Build out our basic SafeString type
@@ -974,7 +1055,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 22 */
+/* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -994,15 +1075,15 @@ webpackJsonp([0],[
 
 	function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj['default'] = obj; return newObj; } }
 
-	var _utils = __webpack_require__(8);
+	var _utils = __webpack_require__(9);
 
 	var Utils = _interopRequireWildcard(_utils);
 
-	var _exception = __webpack_require__(9);
+	var _exception = __webpack_require__(10);
 
 	var _exception2 = _interopRequireDefault(_exception);
 
-	var _base = __webpack_require__(7);
+	var _base = __webpack_require__(8);
 
 	function checkRevision(compilerInfo) {
 	  var compilerRevision = compilerInfo && compilerInfo[0] || 1,
@@ -1272,7 +1353,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 23 */
+/* 24 */
 /***/ function(module, exports) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {/* global window */
@@ -1299,16 +1380,16 @@ webpackJsonp([0],[
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 24 */
+/* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(25);
+	var content = __webpack_require__(26);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(27)(content, {});
+	var update = __webpack_require__(28)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1325,21 +1406,21 @@ webpackJsonp([0],[
 	}
 
 /***/ },
-/* 25 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(26)();
+	exports = module.exports = __webpack_require__(27)();
 	// imports
 
 
 	// module
-	exports.push([module.id, "/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */\n/**\n * 1. Change the default font family in all browsers (opinionated).\n * 2. Prevent adjustments of font size after orientation changes in IE and iOS.\n */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/**\n * Remove the margin in all browsers (opinionated).\n */\nbody {\n  margin: 0; }\n\n/* HTML5 display definitions\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n * 1. Add the correct display in Edge, IE, and Firefox.\n * 2. Add the correct display in IE.\n */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  /* 1 */\n  display: block; }\n\n/**\n * Add the correct display in IE 9-.\n */\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n/**\n * Add the correct display in iOS 4-7.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  vertical-align: baseline; }\n\n/**\n * Add the correct display in IE 10-.\n * 1. Add the correct display in IE.\n */\ntemplate,\n[hidden] {\n  display: none; }\n\n/* Links\n   ========================================================================== */\n/**\n * 1. Remove the gray background on active links in IE 10.\n * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n\n/**\n * Remove the outline on focused links when they are also active or hovered\n * in all browsers (opinionated).\n */\na:active,\na:hover {\n  outline-width: 0; }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * 1. Remove the bottom border in Firefox 39-.\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n */\nb,\nstrong {\n  font-weight: inherit; }\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n * Add the correct font style in Android 4.3-.\n */\ndfn {\n  font-style: italic; }\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/**\n * Add the correct background and color in IE 9-.\n */\nmark {\n  background-color: #ff0;\n  color: #000; }\n\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove the border on images inside links in IE 10-.\n */\nimg {\n  border-style: none; }\n\n/**\n * Hide the overflow in IE.\n */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n * Add the correct margin in IE 8.\n */\nfigure {\n  margin: 1em 40px; }\n\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change font properties to `inherit` in all browsers (opinionated).\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\nselect,\ntextarea {\n  font: inherit;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n * Restore the font weight unset by the previous rule.\n */\noptgroup {\n  font-weight: bold; }\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible; }\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n *    controls in Android 4.\n * 2. Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0; }\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type=\"button\"]:-moz-focusring,\n[type=\"reset\"]:-moz-focusring,\n[type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n\n/**\n * Change the border, margin, and padding in all browsers (opinionated).\n */\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n * Remove the default vertical scrollbar in IE.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * 1. Add the correct box sizing in IE 10-.\n * 2. Remove the padding in IE 10-.\n */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */ }\n\n/**\n * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.\n */\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * Correct the text style of placeholders in Chrome, Edge, and Safari.\n */\n::-webkit-input-placeholder {\n  color: inherit;\n  opacity: 0.54; }\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\nhtml {\n  box-sizing: border-box; }\n\n*, *::after, *::before {\n  box-sizing: inherit; }\n\nbutton, [type='button'], [type='reset'], [type='submit'] {\n  appearance: none;\n  background-color: #333;\n  border: 0;\n  border-radius: 2px;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  font-family: \"Roboto\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\n  font-size: 1em;\n  -webkit-font-smoothing: antialiased;\n  font-weight: 600;\n  line-height: 1;\n  padding: 0.9em 1.8em;\n  text-decoration: none;\n  transition: background-color 150ms ease;\n  user-select: none;\n  vertical-align: middle;\n  white-space: nowrap; }\n  button:hover, button:focus, [type='button']:hover, [type='button']:focus, [type='reset']:hover, [type='reset']:focus, [type='submit']:hover, [type='submit']:focus {\n    background-color: #292929;\n    color: #fff; }\n  button:disabled, [type='button']:disabled, [type='reset']:disabled, [type='submit']:disabled {\n    cursor: not-allowed;\n    opacity: 0.5; }\n    button:disabled:hover, [type='button']:disabled:hover, [type='reset']:disabled:hover, [type='submit']:disabled:hover {\n      background-color: #333; }\n\nfieldset {\n  background-color: transparent;\n  border: 0;\n  margin: 0;\n  padding: 0; }\n\nlegend {\n  font-weight: 600;\n  margin-bottom: 0.45em;\n  padding: 0; }\n\nlabel {\n  display: block;\n  font-weight: 600;\n  margin-bottom: 0.45em; }\n\ninput,\nselect,\ntextarea {\n  display: block;\n  font-family: \"Roboto\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\n  font-size: 1em; }\n\n[type='color'], [type='date'], [type='datetime'], [type='datetime-local'], [type='email'], [type='month'], [type='number'], [type='password'], [type='search'], [type='tel'], [type='text'], [type='time'], [type='url'], [type='week'], input:not([type]), textarea,\nselect[multiple] {\n  background-color: #fff;\n  border: 1px solid #999;\n  border-radius: 2px;\n  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);\n  box-sizing: border-box;\n  margin-bottom: 0.9em;\n  padding: 0.6em;\n  transition: border-color 150ms ease;\n  width: 100%; }\n  [type='color']:hover, [type='date']:hover, [type='datetime']:hover, [type='datetime-local']:hover, [type='email']:hover, [type='month']:hover, [type='number']:hover, [type='password']:hover, [type='search']:hover, [type='tel']:hover, [type='text']:hover, [type='time']:hover, [type='url']:hover, [type='week']:hover, input:not([type]):hover, textarea:hover,\n  select[multiple]:hover {\n    border-color: #7a7a7a; }\n  [type='color']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='email']:focus, [type='month']:focus, [type='number']:focus, [type='password']:focus, [type='search']:focus, [type='tel']:focus, [type='text']:focus, [type='time']:focus, [type='url']:focus, [type='week']:focus, input:not([type]):focus, textarea:focus,\n  select[multiple]:focus {\n    border-color: #333;\n    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(38, 38, 38, 0.7);\n    outline: none; }\n  [type='color']:disabled, [type='date']:disabled, [type='datetime']:disabled, [type='datetime-local']:disabled, [type='email']:disabled, [type='month']:disabled, [type='number']:disabled, [type='password']:disabled, [type='search']:disabled, [type='tel']:disabled, [type='text']:disabled, [type='time']:disabled, [type='url']:disabled, [type='week']:disabled, input:not([type]):disabled, textarea:disabled,\n  select[multiple]:disabled {\n    background-color: #f2f2f2;\n    cursor: not-allowed; }\n    [type='color']:disabled:hover, [type='date']:disabled:hover, [type='datetime']:disabled:hover, [type='datetime-local']:disabled:hover, [type='email']:disabled:hover, [type='month']:disabled:hover, [type='number']:disabled:hover, [type='password']:disabled:hover, [type='search']:disabled:hover, [type='tel']:disabled:hover, [type='text']:disabled:hover, [type='time']:disabled:hover, [type='url']:disabled:hover, [type='week']:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,\n    select[multiple]:disabled:hover {\n      border: 1px solid #999; }\n\ntextarea {\n  resize: vertical; }\n\n[type=\"search\"] {\n  appearance: none; }\n\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  display: inline;\n  margin-right: 0.45em; }\n\n[type=\"file\"] {\n  margin-bottom: 0.9em;\n  width: 100%; }\n\nselect {\n  margin-bottom: 0.9em;\n  max-width: 100%;\n  width: auto; }\n\nhtml {\n  box-sizing: border-box; }\n\n*,\n*::before,\n*::after {\n  box-sizing: inherit; }\n\nul,\nol {\n  list-style-type: none;\n  margin: 0;\n  padding: 0; }\n\ndl {\n  margin: 0; }\n\ndt {\n  font-weight: 600;\n  margin: 0; }\n\ndd {\n  margin: 0; }\n\nfigure {\n  margin: 0; }\n\nimg,\npicture {\n  margin: 0;\n  max-width: 100%; }\n\ntable {\n  border-collapse: collapse;\n  margin: 0.9em 0;\n  table-layout: fixed;\n  width: 100%; }\n\nth {\n  border-bottom: 1px solid #737373;\n  font-weight: 600;\n  padding: 0.9em 0;\n  text-align: left; }\n\ntd {\n  border-bottom: 1px solid #999;\n  padding: 0.9em 0; }\n\ntr,\ntd,\nth {\n  vertical-align: middle; }\n\nbody {\n  color: #222;\n  font-family: \"Roboto\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\n  font-size: 1em;\n  line-height: 1.5; }\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  font-family: \"Roboto\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\n  font-size: 1.25em;\n  line-height: 1.2;\n  margin: 0 0 0.9em;\n  text-shadow: 0 0 5px #a2a2a2; }\n\nh1 {\n  font-size: 4.76837em;\n  font-weight: 100; }\n\nh2 {\n  font-size: 3.05176em;\n  font-weight: 100; }\n\nh3 {\n  font-size: 2.44141em;\n  font-weight: 300; }\n\nh4 {\n  font-size: 1.5625em;\n  font-weight: 300; }\n\np {\n  font-weight: 300;\n  margin: 0 0 0.9em; }\n\na {\n  color: #333;\n  text-decoration: none;\n  transition: color 150ms ease;\n  font-weight: 500; }\n  a:active, a:focus, a:hover {\n    color: #262626; }\n\nhr {\n  border-bottom: 1px solid #999;\n  border-left: 0;\n  border-right: 0;\n  border-top: 0;\n  margin: 1.8em 0; }\n\n.row-wrapper {\n  display: block; }\n  .row-wrapper::after {\n    clear: both;\n    content: \"\";\n    display: block; }\n  .row-wrapper .outer-container {\n    max-width: 1080px;\n    margin-left: auto;\n    margin-right: auto; }\n    .row-wrapper .outer-container::after {\n      clear: both;\n      content: \"\";\n      display: block; }\n    .row-wrapper .outer-container section {\n      float: left;\n      display: block;\n      margin-right: 4.56432%;\n      width: 82.57261%;\n      margin-left: 8.71369%;\n      margin-bottom: 79px;\n      margin-top: 88px;\n      text-align: center; }\n      .row-wrapper .outer-container section:last-child {\n        margin-right: 0; }\n      @media screen and (max-width: 768px) {\n        .row-wrapper .outer-container section {\n          margin-left: 0%;\n          float: left;\n          display: block;\n          margin-right: 7.00637%;\n          width: 100%; }\n          .row-wrapper .outer-container section:last-child {\n            margin-right: 0; } }\n      @media screen and (max-width: 480px) {\n        .row-wrapper .outer-container section {\n          margin-left: 0%;\n          float: left;\n          display: block;\n          margin-right: 15.06849%;\n          width: 100%; }\n          .row-wrapper .outer-container section:last-child {\n            margin-right: 0; } }\n\n.textured {\n  background: url(\"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/inverted/subtle_grunge.png\"), linear-gradient(180deg, #fff, #fff), center no-repeat #fff scroll; }\n\n.shadow {\n  box-shadow: 0 0 10px 0 #222; }\n\n.navbar-wrapper {\n  position: fixed;\n  width: 100%;\n  z-index: 100; }\n\nheader {\n  float: left;\n  display: block;\n  margin-right: 4.56432%;\n  width: 100%;\n  display: table;\n  height: 72px; }\n  header:last-child {\n    margin-right: 0; }\n\nnav {\n  float: right;\n  line-height: 72px;\n  z-index: 9999; }\n  nav a {\n    margin-right: 40px;\n    text-transform: uppercase; }\n    nav a:last-child {\n      margin-right: 9px; }\n\n.welcome-wrapper {\n  background: linear-gradient(rgba(60, 40, 0, 0.2), transparent), url(\"http://curiositysip.com/wp-content/uploads/2015/12/Mountains-18-1024x640.jpg\");\n  background-position: 50% 35%;\n  background-repeat: no-repeat, repeat-x;\n  background-size: cover;\n  padding-top: 72px; }\n\n.welcome-section {\n  color: #ddd;\n  padding: 120px 0; }\n  .welcome-section h1, .welcome-section h3 {\n    text-shadow: 0 1px 5px black; }\n\n.cards {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center; }\n\n.card {\n  background-color: #e6e6e6;\n  border: 1px solid #999;\n  border-radius: 2px;\n  box-shadow: 0 0 10px 0 #a2a2a2;\n  cursor: pointer;\n  flex-basis: 15em;\n  flex-grow: 0;\n  margin: 0 1em 1.8em;\n  padding-bottom: 0;\n  position: relative; }\n\n.hover-text-container {\n  height: 150px;\n  overflow: hidden; }\n  .hover-text-container .card-image {\n    border-top-left-radius: 1px;\n    border-top-right-radius: 1px;\n    background: url(\"http://curiositysip.com/wp-content/uploads/2015/12/Mountains-18-1024x640.jpg\");\n    background-size: cover;\n    height: 150px;\n    max-height: 150px;\n    overflow: hidden; }\n  .hover-text-container .card-copy {\n    font-size: .9em;\n    height: 150px;\n    line-height: 1.5em;\n    display: table; }\n    .hover-text-container .card-copy p {\n      color: #ddd;\n      display: table-cell;\n      padding: 0.9em;\n      text-align: center;\n      vertical-align: middle; }\n  .hover-text-container .hover-text {\n    overflow: hidden;\n    padding: 0;\n    transition: all 0.3s ease-in-out; }\n  .hover-text-container .hover-text-hidden {\n    border-top-left-radius: 1px;\n    border-top-right-radius: 1px;\n    background: rgba(13, 65, 123, 0.5); }\n  .hover-text-container:focus, .hover-text-container:hover {\n    cursor: pointer; }\n    .hover-text-container:focus .hover-text, .hover-text-container:hover .hover-text {\n      transform: translate(0, -100%); }\n  .hover-text-container:active {\n    background-color: #e6e6e6; }\n    .hover-text-container:active .card-header {\n      background-color: #e6e6e6; }\n\n.card-header {\n  border-bottom-left-radius: 2px;\n  border-bottom-right-radius: 2px;\n  background-color: #f3f3f3;\n  line-height: 1.5em;\n  padding: 0.45em;\n  transition: all .2s ease-in-out; }\n  .card-header h4 {\n    margin: 0; }\n", ""]);
+	exports.push([module.id, "/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */\n/**\n * 1. Change the default font family in all browsers (opinionated).\n * 2. Prevent adjustments of font size after orientation changes in IE and iOS.\n */\nhtml {\n  font-family: sans-serif;\n  /* 1 */\n  -ms-text-size-adjust: 100%;\n  /* 2 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/**\n * Remove the margin in all browsers (opinionated).\n */\nbody {\n  margin: 0; }\n\n/* HTML5 display definitions\n   ========================================================================== */\n/**\n * Add the correct display in IE 9-.\n * 1. Add the correct display in Edge, IE, and Firefox.\n * 2. Add the correct display in IE.\n */\narticle,\naside,\ndetails,\nfigcaption,\nfigure,\nfooter,\nheader,\nmain,\nmenu,\nnav,\nsection,\nsummary {\n  /* 1 */\n  display: block; }\n\n/**\n * Add the correct display in IE 9-.\n */\naudio,\ncanvas,\nprogress,\nvideo {\n  display: inline-block; }\n\n/**\n * Add the correct display in iOS 4-7.\n */\naudio:not([controls]) {\n  display: none;\n  height: 0; }\n\n/**\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\n */\nprogress {\n  vertical-align: baseline; }\n\n/**\n * Add the correct display in IE 10-.\n * 1. Add the correct display in IE.\n */\ntemplate,\n[hidden] {\n  display: none; }\n\n/* Links\n   ========================================================================== */\n/**\n * 1. Remove the gray background on active links in IE 10.\n * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.\n */\na {\n  background-color: transparent;\n  /* 1 */\n  -webkit-text-decoration-skip: objects;\n  /* 2 */ }\n\n/**\n * Remove the outline on focused links when they are also active or hovered\n * in all browsers (opinionated).\n */\na:active,\na:hover {\n  outline-width: 0; }\n\n/* Text-level semantics\n   ========================================================================== */\n/**\n * 1. Remove the bottom border in Firefox 39-.\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\n * Prevent the duplicate application of `bolder` by the next rule in Safari 6.\n */\nb,\nstrong {\n  font-weight: inherit; }\n\n/**\n * Add the correct font weight in Chrome, Edge, and Safari.\n */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\n * Add the correct font style in Android 4.3-.\n */\ndfn {\n  font-style: italic; }\n\n/**\n * Correct the font size and margin on `h1` elements within `section` and\n * `article` contexts in Chrome, Firefox, and Safari.\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/**\n * Add the correct background and color in IE 9-.\n */\nmark {\n  background-color: #ff0;\n  color: #000; }\n\n/**\n * Add the correct font size in all browsers.\n */\nsmall {\n  font-size: 80%; }\n\n/**\n * Prevent `sub` and `sup` elements from affecting the line height in\n * all browsers.\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\n   ========================================================================== */\n/**\n * Remove the border on images inside links in IE 10-.\n */\nimg {\n  border-style: none; }\n\n/**\n * Hide the overflow in IE.\n */\nsvg:not(:root) {\n  overflow: hidden; }\n\n/* Grouping content\n   ========================================================================== */\n/**\n * 1. Correct the inheritance and scaling of font size in all browsers.\n * 2. Correct the odd `em` font sizing in all browsers.\n */\ncode,\nkbd,\npre,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\n * Add the correct margin in IE 8.\n */\nfigure {\n  margin: 1em 40px; }\n\n/**\n * 1. Add the correct box sizing in Firefox.\n * 2. Show the overflow in Edge and IE.\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/* Forms\n   ========================================================================== */\n/**\n * 1. Change font properties to `inherit` in all browsers (opinionated).\n * 2. Remove the margin in Firefox and Safari.\n */\nbutton,\ninput,\nselect,\ntextarea {\n  font: inherit;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\n * Restore the font weight unset by the previous rule.\n */\noptgroup {\n  font-weight: bold; }\n\n/**\n * Show the overflow in IE.\n * 1. Show the overflow in Edge.\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible; }\n\n/**\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\n * 1. Remove the inheritance of text transform in Firefox.\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\n * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`\n *    controls in Android 4.\n * 2. Correct the inability to style clickable types in iOS and Safari.\n */\nbutton,\nhtml [type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button;\n  /* 2 */ }\n\n/**\n * Remove the inner border and padding in Firefox.\n */\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0; }\n\n/**\n * Restore the focus styles unset by the previous rule.\n */\nbutton:-moz-focusring,\n[type=\"button\"]:-moz-focusring,\n[type=\"reset\"]:-moz-focusring,\n[type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n\n/**\n * Change the border, margin, and padding in all browsers (opinionated).\n */\nfieldset {\n  border: 1px solid #c0c0c0;\n  margin: 0 2px;\n  padding: 0.35em 0.625em 0.75em; }\n\n/**\n * 1. Correct the text wrapping in Edge and IE.\n * 2. Correct the color inheritance from `fieldset` elements in IE.\n * 3. Remove the padding so developers are not caught out when they zero out\n *    `fieldset` elements in all browsers.\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\n * Remove the default vertical scrollbar in IE.\n */\ntextarea {\n  overflow: auto; }\n\n/**\n * 1. Add the correct box sizing in IE 10-.\n * 2. Remove the padding in IE 10-.\n */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\n * Correct the cursor style of increment and decrement buttons in Chrome.\n */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\n * 1. Correct the odd appearance in Chrome and Safari.\n * 2. Correct the outline style in Safari.\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */ }\n\n/**\n * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.\n */\n[type=\"search\"]::-webkit-search-cancel-button,\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\n * Correct the text style of placeholders in Chrome, Edge, and Safari.\n */\n::-webkit-input-placeholder {\n  color: inherit;\n  opacity: 0.54; }\n\n/**\n * 1. Correct the inability to style clickable types in iOS and Safari.\n * 2. Change font properties to `inherit` in Safari.\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\nhtml {\n  box-sizing: border-box; }\n\n*, *::after, *::before {\n  box-sizing: inherit; }\n\nbutton, [type='button'], [type='reset'], [type='submit'] {\n  appearance: none;\n  background-color: #d4cca4;\n  border: 0;\n  border-radius: 2px;\n  color: #fff;\n  cursor: pointer;\n  display: inline-block;\n  font-family: \"Roboto\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\n  font-size: 1em;\n  -webkit-font-smoothing: antialiased;\n  font-weight: 600;\n  line-height: 1;\n  padding: 0.9em 1.8em;\n  text-decoration: none;\n  transition: background-color 0.5s ease-in-out;\n  user-select: none;\n  vertical-align: middle;\n  white-space: nowrap; }\n  button:hover, button:focus, [type='button']:hover, [type='button']:focus, [type='reset']:hover, [type='reset']:focus, [type='submit']:hover, [type='submit']:focus {\n    background-color: #aaa383;\n    color: #fff; }\n  button:disabled, [type='button']:disabled, [type='reset']:disabled, [type='submit']:disabled {\n    cursor: not-allowed;\n    opacity: 0.5; }\n    button:disabled:hover, [type='button']:disabled:hover, [type='reset']:disabled:hover, [type='submit']:disabled:hover {\n      background-color: #d4cca4; }\n\nfieldset {\n  background-color: transparent;\n  border: 0;\n  margin: 0;\n  padding: 0; }\n\nlegend {\n  font-weight: 600;\n  margin-bottom: 0.45em;\n  padding: 0; }\n\nlabel {\n  display: block;\n  font-weight: 600;\n  margin-bottom: 0.45em; }\n\ninput,\nselect,\ntextarea {\n  display: block;\n  font-family: \"Roboto\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\n  font-size: 1em; }\n\n[type='color'], [type='date'], [type='datetime'], [type='datetime-local'], [type='email'], [type='month'], [type='number'], [type='password'], [type='search'], [type='tel'], [type='text'], [type='time'], [type='url'], [type='week'], input:not([type]), textarea,\nselect[multiple] {\n  background-color: #fefefa;\n  border: 1px solid #999;\n  border-radius: 2px;\n  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);\n  box-sizing: border-box;\n  margin-bottom: 0.9em;\n  padding: 0.6em;\n  transition: border-color 0.5s ease-in-out;\n  width: 100%; }\n  [type='color']:hover, [type='date']:hover, [type='datetime']:hover, [type='datetime-local']:hover, [type='email']:hover, [type='month']:hover, [type='number']:hover, [type='password']:hover, [type='search']:hover, [type='tel']:hover, [type='text']:hover, [type='time']:hover, [type='url']:hover, [type='week']:hover, input:not([type]):hover, textarea:hover,\n  select[multiple]:hover {\n    border-color: #7a7a7a; }\n  [type='color']:focus, [type='date']:focus, [type='datetime']:focus, [type='datetime-local']:focus, [type='email']:focus, [type='month']:focus, [type='number']:focus, [type='password']:focus, [type='search']:focus, [type='tel']:focus, [type='text']:focus, [type='time']:focus, [type='url']:focus, [type='week']:focus, input:not([type]):focus, textarea:focus,\n  select[multiple]:focus {\n    border-color: #d4cca4;\n    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(204, 194, 147, 0.7);\n    outline: none; }\n  [type='color']:disabled, [type='date']:disabled, [type='datetime']:disabled, [type='datetime-local']:disabled, [type='email']:disabled, [type='month']:disabled, [type='number']:disabled, [type='password']:disabled, [type='search']:disabled, [type='tel']:disabled, [type='text']:disabled, [type='time']:disabled, [type='url']:disabled, [type='week']:disabled, input:not([type]):disabled, textarea:disabled,\n  select[multiple]:disabled {\n    background-color: #f1f1ee;\n    cursor: not-allowed; }\n    [type='color']:disabled:hover, [type='date']:disabled:hover, [type='datetime']:disabled:hover, [type='datetime-local']:disabled:hover, [type='email']:disabled:hover, [type='month']:disabled:hover, [type='number']:disabled:hover, [type='password']:disabled:hover, [type='search']:disabled:hover, [type='tel']:disabled:hover, [type='text']:disabled:hover, [type='time']:disabled:hover, [type='url']:disabled:hover, [type='week']:disabled:hover, input:not([type]):disabled:hover, textarea:disabled:hover,\n    select[multiple]:disabled:hover {\n      border: 1px solid #999; }\n\ntextarea {\n  resize: vertical; }\n\n[type=\"search\"] {\n  appearance: none; }\n\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  display: inline;\n  margin-right: 0.45em; }\n\n[type=\"file\"] {\n  margin-bottom: 0.9em;\n  width: 100%; }\n\nselect {\n  margin-bottom: 0.9em;\n  max-width: 100%;\n  width: auto; }\n\nhtml {\n  box-sizing: border-box; }\n\n*,\n*::before,\n*::after {\n  box-sizing: inherit; }\n\nul,\nol {\n  list-style-type: none;\n  margin: 0;\n  padding: 0; }\n\ndl {\n  margin: 0; }\n\ndt {\n  font-weight: 600;\n  margin: 0; }\n\ndd {\n  margin: 0; }\n\nfigure {\n  margin: 0; }\n\nimg,\npicture {\n  margin: 0;\n  max-width: 100%; }\n\ntable {\n  border-collapse: collapse;\n  margin: 0.9em 0;\n  table-layout: fixed;\n  width: 100%; }\n\nth {\n  border-bottom: 1px solid #737373;\n  font-weight: 600;\n  padding: 0.9em 0;\n  text-align: left; }\n\ntd {\n  border-bottom: 1px solid #999;\n  padding: 0.9em 0; }\n\ntr,\ntd,\nth {\n  vertical-align: middle; }\n\nbody {\n  color: #1d1b11;\n  font-family: \"Roboto\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\n  font-size: 1em;\n  line-height: 1.5; }\n  body i {\n    color: #002060; }\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n  color: #eeece1;\n  letter-spacing: 1px;\n  font-family: \"Roboto\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", \"Oxygen\", \"Ubuntu\", \"Cantarell\", \"Fira Sans\", \"Droid Sans\", \"Helvetica Neue\", sans-serif;\n  font-size: 1.25em;\n  line-height: 1.2;\n  margin: 0 0.225em;\n  padding: 0 0.225em; }\n\nh1 {\n  font-size: 2.44141em;\n  font-weight: 300; }\n  @media screen and (min-width: 480px) {\n    h1 {\n      font-size: 4.76837em; } }\n\nh2 {\n  font-size: 2.44141em;\n  font-weight: 300; }\n  @media screen and (min-width: 480px) {\n    h2 {\n      font-size: 3.8147em; } }\n\nh3 {\n  font-size: 1.5625em;\n  font-weight: 300; }\n  @media screen and (min-width: 480px) {\n    h3 {\n      font-size: 2.44141em; } }\n\nh4 {\n  font-size: 1.5625em;\n  font-weight: 300; }\n  @media screen and (min-width: 480px) {\n    h4 {\n      font-size: 1.95312em; } }\n\np {\n  color: #eeece1;\n  font-size: 1.25em;\n  font-weight: 300;\n  margin: 0.9em 1.8em; }\n  @media screen and (min-width: 480px) {\n    p {\n      margin: 1.8em 3.6em; } }\n\na {\n  color: #d4cca4;\n  text-decoration: none;\n  transition: color 0.5s ease-in-out;\n  font-weight: 500; }\n  a:active, a:focus, a:hover {\n    color: #9f997b; }\n\nul li {\n  padding: 0.9em;\n  font-size: 1.25em;\n  font-weight: 500; }\n\nhr {\n  border-bottom: 1px solid #999;\n  border-left: 0;\n  border-right: 0;\n  border-top: 0;\n  margin: 1.8em 0; }\n\nbody {\n  background-color: #eeece1; }\n\nsection {\n  display: flex;\n  flex-flow: row wrap;\n  margin-left: -0.225em;\n  margin-right: -0.225em;\n  margin-bottom: 0;\n  text-align: center; }\n\n.box {\n  align-items: center;\n  display: flex;\n  flex: 1 100%;\n  justify-content: center;\n  margin: 0 0.225em 0.45em 0.225em; }\n  .box.blue {\n    background-color: #0070c0;\n    color: #eeece1; }\n  .box.navy {\n    background-color: #002060;\n    color: #eeece1; }\n  .box.red {\n    background-color: #b40000;\n    color: #eeece1; }\n  .box.maroon {\n    background-color: #600000;\n    color: #eeece1; }\n  .box.sky-blue {\n    background-color: #00b0f0;\n    color: #eeece1; }\n  .box.green {\n    background-color: #008200;\n    color: #eeece1; }\n  .box.gold {\n    background-color: #f0b400;\n    color: #eeece1; }\n  .box.gray {\n    background-color: #666;\n    color: #eeece1; }\n  .box.rainbow {\n    color: #eeece1; }\n  .box.rainbow:nth-child(7n+1) {\n    background-color: #0070c0; }\n  .box.rainbow:nth-child(7n+2) {\n    background-color: #002060; }\n  .box.rainbow:nth-child(7n+3) {\n    background-color: #b40000; }\n  .box.rainbow:nth-child(7n+4) {\n    background-color: #002060; }\n  .box.rainbow:nth-child(7n+5) {\n    background-color: #0070c0; }\n  .box.rainbow:nth-child(7n+6) {\n    background-color: #0070c0; }\n  .box.rainbow:nth-child(7n+7) {\n    background-color: #b40000; }\n  .box.shim {\n    flex: 4 0; }\n  .box.divider {\n    flex: 1 100%;\n    height: 3.6em;\n    order: 100; }\n  .box.header-box {\n    padding: 3.6em 0; }\n  @media screen and (min-width: 480px) {\n    .box.body-box {\n      flex: 1 350px; } }\n  .box.list-box {\n    padding: 0.9em;\n    min-height: 5.4em;\n    flex: 1 5.4em; }\n  .box.desktop-only {\n    display: none; }\n    @media screen and (min-width: 780px) {\n      .box.desktop-only {\n        display: flex; } }\n  .box.clickable:hover, .box.clickable :active {\n    box-shadow: inset 0 0 200px 200px rgba(255, 255, 255, 0.1); }\n\nbody, .nav-menu-icon, .nav-menu, .box.card .card-copy,\n.textured {\n  background: url(\"https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/textures/inverted/subtle_grunge.png\"), linear-gradient(180deg, #fefefa, #fefefa), center no-repeat #fefefa scroll; }\n\n.box, #portrait-box #portrait-image, .nav-menu-icon, .nav-menu, .box.card .card-image,\n.shadow {\n  box-shadow: 0 0 10px 0 rgba(34, 34, 34, 0.5); }\n\n\n.inset {\n  box-shadow: 0 10px 10px -10px rgba(34, 34, 34, 0.5) inset; }\n\n#portrait-box #portrait-image, .box.card .card-image,\n.circle {\n  border-radius: 50%; }\n\n.welcome-section {\n  min-height: 100vh; }\n\n#welcome-shim-1 {\n  order: 1; }\n\n#title-box {\n  min-height: 39vh;\n  order: 2; }\n  @media screen and (min-width: 780px) {\n    #title-box {\n      flex: 4 50%;\n      padding-top: 72px; } }\n\n#subtitle-box {\n  min-height: 14vh;\n  order: 3; }\n  @media screen and (min-width: 780px) {\n    #subtitle-box {\n      flex: 1 60%;\n      order: 4; } }\n\n#portrait-box {\n  flex: 1 auto;\n  min-height: 44vh;\n  min-width: 34vh;\n  order: 4; }\n  @media screen and (min-width: 780px) {\n    #portrait-box {\n      background-color: #002060;\n      order: 3;\n      padding-top: 72px; } }\n  #portrait-box #portrait-image {\n    max-width: 32vh; }\n\n#welcome-shim-2 {\n  order: 5; }\n\n@media screen and (min-width: 780px) {\n  #portfolio-header-box {\n    flex: 1 60%; } }\n\n.skills-section .section-header.skills-section-header {\n  background-color: #002060; }\n\n.skills-section .section-body.skills-section-body .skill-list li {\n  display: inline-block;\n  float: none;\n  list-style: none;\n  text-transform: uppercase; }\n\n.about-me-section .section-header.about-me-section-header {\n  background-color: #b40000; }\n\n.contact-section .section-header.contact-section-header {\n  background-color: #002060; }\n\nnav {\n  position: fixed;\n  width: 100%;\n  z-index: 100; }\n\n.nav-menu-icon {\n  border-radius: 50%;\n  height: 3.24em;\n  line-height: 3.24em;\n  margin: 0.45em;\n  text-align: center;\n  width: 3.24em; }\n  .nav-menu-icon:hover {\n    background: rgba(216, 216, 213, 0.5);\n    cursor: pointer; }\n\n.nav-menu {\n  display: none; }\n  .nav-menu li:hover {\n    background: rgba(216, 216, 213, 0.5);\n    cursor: pointer; }\n  .nav-menu.menu-open {\n    display: block;\n    max-width: 30vh; }\n\n@media screen and (min-width: 780px) {\n  .nav-menu-icon {\n    display: none; }\n  .nav-menu {\n    display: inline-block;\n    float: right;\n    height: 72px;\n    line-height: 72px;\n    max-width: 100%;\n    text-align: center;\n    width: 100%; }\n    .nav-menu ul li {\n      font-size: 1.25em;\n      text-transform: uppercase;\n      line-height: 36px;\n      display: inline-block;\n      padding: 0 0.9em; } }\n\n.box.card {\n  display: flex;\n  flex-flow: column nowrap;\n  flex: 1 350px;\n  justify-content: space-between;\n  overflow: hidden;\n  padding: 0.45em; }\n  .box.card .card-body {\n    align-self: stretch;\n    align-items: center;\n    display: flex;\n    flex: 0 auto;\n    flex-flow: row nowrap;\n    justify-content: space-between;\n    margin-bottom: 0.45em;\n    padding: 0 0.9em; }\n  .box.card .card-header {\n    flex: 1 100%;\n    margin: 0;\n    padding: 0; }\n    .box.card .card-header h4 {\n      margin: 0;\n      padding: 0; }\n  .box.card .card-image {\n    min-width: 8.1em;\n    height: 8.1em;\n    background-repeat: no-repeat;\n    background-size: cover; }\n  .box.card .card-copy {\n    flex: 1 auto;\n    padding: 0.45em; }\n    .box.card .card-copy p {\n      color: #1d1b11;\n      font-size: 1em;\n      margin: 0; }\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 26 */
+/* 27 */
 /***/ function(module, exports) {
 
 	/*
@@ -1395,7 +1476,7 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 27 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -1647,28 +1728,28 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 28 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["$"] = __webpack_require__(2);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 29 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["jQuery"] = __webpack_require__(2);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 30 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["getFormFields"] = __webpack_require__(31);
+	/* WEBPACK VAR INJECTION */(function(global) {module.exports = global["getFormFields"] = __webpack_require__(32);
 	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
 
 /***/ },
-/* 31 */
+/* 32 */
 /***/ function(module, exports) {
 
 	'use strict';
