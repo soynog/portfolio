@@ -1,7 +1,8 @@
-.card {
-  align-items: stretch;
+.box.card {
+  // align-items: stretch;
   display: flex;
   flex-flow: column nowrap;
+  flex: 1 300px;
   overflow: hidden;
   padding: $small-spacing / 2;
 
@@ -36,6 +37,7 @@
   }
 
   .card-copy {
+
     @extend %textured;
     padding: $small-spacing / 2;
     p {
