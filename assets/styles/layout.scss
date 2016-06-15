@@ -23,7 +23,8 @@ section {
   text-align: center;
 }
 
-.box {
+.box,
+%box {
   @extend %shadow;
   align-items: center;
   display: flex;
@@ -123,6 +124,18 @@ section {
     &:hover,:active {
       box-shadow: inset 0 0 200px 200px rgba(255, 255, 255, 0.1);
     }
+  }
+}
+
+// For a list of tiny boxes
+ul.box-list {
+  display: flex;
+  flex-flow: row wrap;
+
+  li {
+    @extend %box;
+    min-height: $base-spacing * 3;
+    flex: 1 $base-spacing * 3;
   }
 }
 
