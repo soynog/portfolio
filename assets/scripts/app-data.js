@@ -29,13 +29,13 @@ const portfolio = [
     imgSrc: "/assets/images/cards/tic-tac-toe-screenshot.png",
     link: "http://soynog.github.io/tic-tac-toe",
   },
-  {
-    title: "Mustachify",
-    desc: "Pin a mustache to your favorite selfie! Mustachify uses Microsoft’s facial recognition API and a custom placement algorithm to automatically draw mustaches onto uploaded images. Created for a 24-hour hackathon challenge.",
-    bgImage: "background-image:url(/assets/images/cards/stache-it-screenshot.png)",
-    imgSrc: "/assets/images/cards/stache-it-screenshot.png",
-    link: "http://nicolasogarcia.com",
-  },
+  // {
+  //   title: "Mustachify",
+  //   desc: "Pin a mustache to your favorite selfie! Mustachify uses Microsoft’s facial recognition API and a custom placement algorithm to automatically draw mustaches onto uploaded images. Created for a 24-hour hackathon challenge.",
+  //   bgImage: "background-image:url(/assets/images/cards/stache-it-screenshot.png)",
+  //   imgSrc: "/assets/images/cards/stache-it-screenshot.png",
+  //   link: "http://nicolasogarcia.com",
+  // },
   {
     title: "Cryptography",
     desc: "I research and presented this brief overview of cryptography, past and present, for a student conference at General Assembly.",
