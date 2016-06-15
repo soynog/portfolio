@@ -62,7 +62,7 @@ p {
   font-weight: 300;
   margin: $small-spacing $base-spacing;
   @include media($tablet) {
-    margin: 0 $base-spacing $small-spacing;
+    margin: $base-spacing $base-spacing * 2;
   }
   // @include media($mobile) {
   //   margin: 0 $small-spacing $small-spacing;
