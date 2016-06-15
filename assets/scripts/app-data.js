@@ -7,6 +7,7 @@ const portfolio = [
     bgImage: "background-image:url(/assets/images/cards/OTO-screenshot.png)",
     imgSrc: "/assets/images/cards/OTO-screenshot.png",
     link: "http://soynog.github.io/oto-client",
+    ghLink: "https://github.com/soynog/oto-client"
   },
   {
     title: "SoftSurv",
@@ -14,6 +15,7 @@ const portfolio = [
     bgImage: "background-image:url(/assets/images/cards/soft-surv-screenshot.png)",
     imgSrc: "/assets/images/cards/soft-surv-screenshot.png",
     link: "http://schoof-there-it-is.github.io/softsurv",
+    ghLink: "https://github.com/soynog/softsurv",
   },
   {
     title: "RezTailor",
@@ -21,6 +23,7 @@ const portfolio = [
     bgImage: "background-image:url(/assets/images/cards/reztailor-screenshot.png)",
     imgSrc: "/assets/images/cards/reztailor-screenshot.png",
     link: "http://soynog.github.io/resume-tailor-frontend",
+    ghLink: "https://github.com/soynog/resume-tailor-frontend",
   },
   {
     title: "Tic-Tac-Toe",
@@ -28,6 +31,7 @@ const portfolio = [
     bgImage: "background-image:url(/assets/images/cards/tic-tac-toe-screenshot.png)",
     imgSrc: "/assets/images/cards/tic-tac-toe-screenshot.png",
     link: "http://soynog.github.io/tic-tac-toe",
+    ghLink: "https://github.com/soynog/tic-tac-toe",
   },
   // {
   //   title: "Mustachify",
@@ -35,6 +39,7 @@ const portfolio = [
   //   bgImage: "background-image:url(/assets/images/cards/stache-it-screenshot.png)",
   //   imgSrc: "/assets/images/cards/stache-it-screenshot.png",
   //   link: "http://nicolasogarcia.com",
+  //   ghLink: "https://github.com/soynog/stache-buqit-frontend",
   // },
   {
     title: "Cryptography",
@@ -49,6 +54,7 @@ const portfolio = [
     bgImage: "background-image:url(/assets/images/cards/website-screenshot.png)",
     imgSrc: "/assets/images/cards/website-screenshot.png",
     link: "http://nicolasogarcia.com",
+    ghLink: "https://github.com/soynog/portfolio",
   },
 ];
 

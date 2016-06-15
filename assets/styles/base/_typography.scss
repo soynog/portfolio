@@ -3,10 +3,6 @@ body {
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
-
-  i {
-    color: $secondary-font-color;
-  }
 }
 
 h1,
@@ -69,16 +65,21 @@ p {
   // }
 }
 
+.list-box {
+  font-size: modular-scale(1);
+  font-weight: 400;
+}
+
 a {
-  color: $action-color;
+  color: inherit;
   text-decoration: none;
-  transition: color $base-duration $base-timing;
+  transition: $quick-transition;
   font-weight: 500;
 
   &:active,
   &:focus,
   &:hover {
-    color: shade($action-color, 25%);
+    color: $action-color;
   }
 }
 
