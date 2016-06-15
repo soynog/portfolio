@@ -172,6 +172,12 @@ section {
 }
 
 // PORTFOLIO SECTION
+#portfolio-header-box {
+  @include media($desktop) {
+    flex: 1 60%;
+  }
+}
+
 // see cards.scss
 
 // SKILLS SECTION
