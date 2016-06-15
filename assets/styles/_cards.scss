@@ -3,6 +3,7 @@
   display: flex;
   flex-flow: column nowrap;
   flex: 0.5 350px;
+  justify-content: space-between;
   overflow: hidden;
   padding: $small-spacing / 2;
 
@@ -10,6 +11,7 @@
     align-self: stretch;
     align-items: center;
     display: flex;
+    flex: 0 auto;
     flex-flow: row nowrap;
     justify-content: space-between;
     margin-bottom: $small-spacing / 2;
@@ -37,7 +39,7 @@
   }
 
   .card-copy {
-
+    flex: 1 auto;
     @extend %textured;
     padding: $small-spacing / 2;
     p {
