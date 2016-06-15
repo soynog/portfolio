@@ -34,38 +34,50 @@ section {
 
   &.blue {
     background-color: $blue;
+    color: $contrast-font-color;
   }
 
   &.navy {
     background-color: $dark-blue;
+    color: $contrast-font-color;
   }
 
   &.red {
     background-color: $red;
+    color: $contrast-font-color;
   }
 
   &.maroon {
     background-color: $v-dark-red;
+    color: $contrast-font-color;
   }
 
   &.sky-blue {
     background-color: $light-blue;
+    color: $contrast-font-color;
   }
 
   &.green {
     background-color: $green;
+    color: $contrast-font-color;
   }
 
   &.gold {
     background-color: $gold;
+    color: $contrast-font-color;
   }
 
   &.gray {
     background-color: $md-dk-gray;
+    color: $contrast-font-color;
+  }
+
+  &.rainbow {
+    color: $contrast-font-color;
   }
 
   &.rainbow:nth-child(7n+1) {
-    background-color: $dark-blue;
+    background-color: $blue;
   }
 
   &.rainbow:nth-child(7n+2) {
