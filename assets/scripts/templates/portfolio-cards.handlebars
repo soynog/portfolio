@@ -1,14 +1,15 @@
 {{#each portfolio}}
   <div class="card box blue">
     <div class="card-body">
-      <img src={{this.imgSrc}} class="card-image circle">
-      <div class="card-copy">
-        <p>{{this.desc}}</p>
+      <div class="card-header">
+        <h4>{{this.title}}</h4>
       </div>
+      <div class="card-image" style={{this.bgImage}}></div>
     </div>
-    <div class="card-header">
-      <h4>{{this.title}}</h4>
+    <div class="card-copy">
+      <p>{{this.desc}}</p>
     </div>
+
   </div>
 {{/each}}
 

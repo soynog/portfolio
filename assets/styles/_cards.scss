@@ -1,7 +1,47 @@
 .card {
+  align-items: stretch;
+  display: flex;
+  flex-flow: column nowrap;
+  overflow: hidden;
+  padding: $small-spacing / 2;
+
+  .card-body {
+    align-self: stretch;
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    margin-bottom: $small-spacing / 2;
+    padding: 0 $small-spacing;
+  }
+
+  .card-header {
+    flex: 1 100%;
+    margin: 0;
+    padding: 0;
+    h4 {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
   .card-image {
-    width: $base-spacing * 8;
-    height: $base-spacing * 8;
+    @extend %shadow;
+    @extend %circle;
+    min-width: $base-spacing * 4.5;
+    height: $base-spacing * 4.5;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+
+  .card-copy {
+    @extend %textured;
+    padding: $small-spacing / 2;
+    p {
+      margin: 0;
+      font-size: $base-font-size;
+    }
   }
 }
 
