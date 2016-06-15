@@ -1,15 +1,18 @@
 {{#each portfolio}}
-  <a class="card box rainbow clickable" href={{this.link}}>
+  <div class="card box rainbow">
     <div class="card-body">
       <div class="card-header">
-        <h4>{{this.title}}</h4>
+        <h4>
+          <a href={{this.link}} target='_blank'>{{this.title}}</a>
+          <a href={{this.ghLink}} target='_blank'><i class="devicon-github-plain"></i></a>
+        </h4>
       </div>
       <div class="card-image" style={{this.bgImage}}></div>
     </div>
     <div class="card-copy">
       <p>{{this.desc}}</p>
     </div>
-  </a>
+  </div>
 {{/each}}
 
 <!-- {{#each portfolio}}
