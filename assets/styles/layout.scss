@@ -105,6 +105,12 @@ section {
     padding: $base-spacing * 2 0;
   }
 
+  &.body-box {
+    @include media($tablet) {
+      flex: 1 350px;
+    }
+  }
+
   &.desktop-only {
     display: none;
 
