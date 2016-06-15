@@ -1,4 +1,18 @@
 {{#each portfolio}}
+  <div class="card box blue">
+    <div class="card-body">
+      <img src={{this.imgSrc}} class="card-image circle">
+      <div class="card-copy">
+        <p>{{this.desc}}</p>
+      </div>
+    </div>
+    <div class="card-header">
+      <h4>{{this.title}}</h4>
+    </div>
+  </div>
+{{/each}}
+
+<!-- {{#each portfolio}}
   <div class="card">
     <div class="hover-text-container">
       <div class="card-image" style={{this.bgImage}}></div>
@@ -12,4 +26,4 @@
       </a>
     </div>
   </div>
-{{/each}}
+{{/each}} -->
