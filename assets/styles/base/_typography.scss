@@ -51,6 +51,9 @@ h3 {
 h4 {
   font-size: modular-scale(2);
   font-weight: 300;
+  @include media($tablet) {
+    font-size: modular-scale(3);
+  }
 }
 
 p {
