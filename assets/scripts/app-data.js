@@ -30,8 +30,8 @@ const portfolio = [
     link: "http://soynog.github.io/tic-tac-toe",
   },
   {
-    title: "Stache.it",
-    desc: "Pin a mustache to your favorite selfie! Stache.it uses Microsoft’s facial recognition API and a custom placement algorithm to automatically draw mustaches onto uploaded images. Created for a 24-hour hackathon challenge.",
+    title: "Mustachify",
+    desc: "Pin a mustache to your favorite selfie! Mustachify uses Microsoft’s facial recognition API and a custom placement algorithm to automatically draw mustaches onto uploaded images. Created for a 24-hour hackathon challenge.",
     bgImage: "background-image:url(/assets/images/cards/stache-it-screenshot.png)",
     imgSrc: "/assets/images/cards/stache-it-screenshot.png",
     link: "http://nicolasogarcia.com",
