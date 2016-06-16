@@ -8,6 +8,7 @@ const portfolio = [
     imgSrc: "/assets/images/cards/OTO-screenshot.png",
     link: "http://soynog.github.io/oto-client",
     ghLink: "https://github.com/soynog/oto-client",
+    id: "oto",
   },
   {
     title: "SoftSurv",
@@ -16,6 +17,7 @@ const portfolio = [
     imgSrc: "/assets/images/cards/soft-surv-screenshot.png",
     link: "http://schoof-there-it-is.github.io/softsurv",
     ghLink: "https://github.com/soynog/softsurv",
+    id: "softsurv",
   },
   {
     title: "RezTailor",
@@ -24,6 +26,7 @@ const portfolio = [
     imgSrc: "/assets/images/cards/reztailor-screenshot.png",
     link: "http://soynog.github.io/resume-tailor-frontend",
     ghLink: "https://github.com/soynog/resume-tailor-frontend",
+    id: "reztailor",
   },
   {
     title: "Tic-Tac-Toe",
@@ -32,21 +35,24 @@ const portfolio = [
     imgSrc: "/assets/images/cards/tic-tac-toe-screenshot.png",
     link: "http://soynog.github.io/tic-tac-toe",
     ghLink: "https://github.com/soynog/tic-tac-toe",
+    id: "tic-tac-toe",
   },
-  // {
-  //   title: "Mustachify",
-  //   desc: "Pin a mustache to your favorite selfie! Mustachify uses Microsoft’s facial recognition API and a custom placement algorithm to automatically draw mustaches onto uploaded images. Created for a 24-hour hackathon challenge.",
-  //   bgImage: "background-image:url(/assets/images/cards/stache-it-screenshot.png)",
-  //   imgSrc: "/assets/images/cards/stache-it-screenshot.png",
-  //   link: "http://nicolasogarcia.com",
-  //   ghLink: "https://github.com/soynog/stache-buqit-frontend",
-  // },
+  {
+    title: "Mustachify",
+    desc: "Pin a mustache to your favorite selfie! Mustachify uses Microsoft’s facial recognition API and a custom placement algorithm to automatically draw mustaches onto uploaded images. Created for a 24-hour hackathon challenge.",
+    bgImage: "background-image:url(/assets/images/cards/stache-it-screenshot.png)",
+    imgSrc: "/assets/images/cards/stache-it-screenshot.png",
+    link: "http://nicolasogarcia.com",
+    ghLink: "https://github.com/soynog/mustachify",
+    id: "mustachify",
+  },
   {
     title: "Cryptography",
     desc: "I research and presented this brief overview of cryptography, past and present, for a student conference at General Assembly.",
     bgImage: "background-image:url(/assets/images/cards/cryptography-screenshot.png)",
     imgSrc: "/assets/images/cards/cryptography-screenshot.png",
     link: "https://docs.google.com/presentation/d/1ST1uzlsXLzSSn-GIHNNPbRA5lkDIDAT2r53q1S_eYwA/edit?usp=sharing",
+    id: "cryptography",
   },
   {
     title: "This Very Website",
@@ -55,6 +61,7 @@ const portfolio = [
     imgSrc: "/assets/images/cards/website-screenshot.png",
     link: "http://nicolasogarcia.com",
     ghLink: "https://github.com/soynog/portfolio",
+    id: "portfolio-website",
   },
 ];
 
