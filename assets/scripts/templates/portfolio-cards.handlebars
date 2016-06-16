@@ -1,9 +1,11 @@
 {{#each portfolio}}
-  <div class="card box rainbow" id="{{this.title}}-card" style="order:{{@index}};">
+  <div class="card box blue" id="{{this.id}}-card" style="order:{{@index}};">
     <div class="card-body">
       <div class="card-header">
         <h4>
           <a href={{this.link}} target='_blank'>{{this.title}}</a>
+        </h4>
+        <h4>
           {{#if this.ghLink}}
             <a href={{this.ghLink}} target='_blank'><i class="devicon-github-plain"></i></a>
           {{/if}}
