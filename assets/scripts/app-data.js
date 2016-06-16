@@ -2,15 +2,6 @@
 
 const portfolio = [
   {
-    title: "OTO",
-    desc: "OTO (Outdoor Trip Organizer) makes organizing a camping trip fun and easy! Built on Ruby on Rails, Ember.js, and Bourbon. UX design by Norman Wozniak.",
-    bgImage: "background-image:url(/assets/images/cards/OTO-screenshot.png)",
-    imgSrc: "/assets/images/cards/OTO-screenshot.png",
-    link: "http://soynog.github.io/oto-client",
-    ghLink: "https://github.com/soynog/oto-client",
-    id: "oto",
-  },
-  {
     title: "SoftSurv",
     desc: "Create single-scoop surveys for your friends! Each survey may be shared via a unique public URL. Built on Node.js, MongoDB, Express.js, and Bootstrap.",
     bgImage: "background-image:url(/assets/images/cards/soft-surv-screenshot.png)",
@@ -27,6 +18,15 @@ const portfolio = [
     link: "http://soynog.github.io/resume-tailor-frontend",
     ghLink: "https://github.com/soynog/resume-tailor-frontend",
     id: "reztailor",
+  },
+  {
+    title: "OTO",
+    desc: "OTO, the Outdoor Trip Organizer, makes organizing a camping trip fun and easy! Built with Ruby on Rails, Ember.js, and Bourbon. I challenged myself when building OTO by choosing to use the Ember.js front-end framework, and by collaborating with a UX designer on the project. Using Ember meant learning a new tool on the fly, but it helped me create a well-organized and easily expandable app. Working with a UX designer allowed me to focus on coding rather than design minutiae, but also challenged me to build features as specified, without the flexibility to rework them for easier implementation. I am actively working to improve OTO and add more features.",
+    bgImage: "background-image:url(/assets/images/cards/OTO-screenshot.png)",
+    imgSrc: "/assets/images/cards/OTO-screenshot.png",
+    link: "http://soynog.github.io/oto-client",
+    ghLink: "https://github.com/soynog/oto-client",
+    id: "oto",
   },
   {
     title: "Tic-Tac-Toe",
