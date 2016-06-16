@@ -106,6 +106,7 @@ section {
 
   &.shim {
     flex: 4 0;
+    order: 100;
   }
 
   &.divider {
@@ -237,7 +238,13 @@ section {
   }
 }
 
+#OTO-card {
+  order: 1;
+}
+
 // see cards.scss
+
+
 
 // SKILLS SECTION
 .skills-section {
