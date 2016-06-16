@@ -238,8 +238,9 @@ section {
   }
 }
 
-#OTO-card {
-  background-color: $green;
+#oto-card {
+  background-color: $red;
+  flex: 4 600px;
 }
 
 // see cards.scss
