@@ -41,6 +41,7 @@
   .card-copy {
     flex: 1 auto;
     @extend %textured;
+    opacity: 0.7;
     padding: $small-spacing / 2;
     p {
       color: $base-font-color;
