@@ -7,7 +7,7 @@ const portfolio = [
     bgImage: "background-image:url(/assets/images/cards/OTO-screenshot.png)",
     imgSrc: "/assets/images/cards/OTO-screenshot.png",
     link: "http://soynog.github.io/oto-client",
-    ghLink: "https://github.com/soynog/oto-client"
+    ghLink: "https://github.com/soynog/oto-client",
   },
   {
     title: "SoftSurv",
