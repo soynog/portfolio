@@ -121,39 +121,50 @@ section {
 
 // Particular Card Styling
 #softsurv-card {
-  background-color: $red;
+  background-color: $blue;
+  order: 2;
 }
 
 #reztailor-card {
-  background-color: $red;
+  background-color: $blue;
+  order: 4;
 }
 
 #oto-card {
   background-color: $red;
   flex: 4 600px;
   align-self: center;
+  order: 1;
 
   @include media($tablet) {
+    background-color: $gold;
+    order: 1;
   }
 
   @include media($desktop) {
+    background-color: $green;
+    order: 3;
   }
 }
 
 #tic-tac-toe-card {
-  background-color: $red;
+  background-color: $blue;
+  order: 6;
 }
 
 #mustachify-card {
-  background-color: $red;
+  background-color: $blue;
+  order: 8;
 }
 
 #cryptography-card {
-  background-color: $red;
+  background-color: $blue;
+  order: 10;
 }
 
 #portfolio-website-card {
-  background-color: $red;
+  background-color: $blue;
+  order: 12;
 }
 
 
