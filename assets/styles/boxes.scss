@@ -5,6 +5,7 @@
   align-items: center;
   display: flex;
   flex: 1 100%;
+  flex-flow: column nowrap;
   justify-content: center;
   margin: 0 $tiny-spacing $tiny-spacing * 2 $tiny-spacing;
 
@@ -96,6 +97,9 @@
   }
 
   &.body-box {
+    justify-content: space-between;
+    padding: $small-spacing;
+
     @include media($tablet) {
       flex: 1 350px;
     }
