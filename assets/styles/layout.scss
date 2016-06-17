@@ -111,9 +111,9 @@ section {
 
 // PORTFOLIO SECTION
 #portfolio-header-box {
-  @include media($desktop) {
-    flex: 1 60%;
-  }
+  // @include media($desktop) {
+  //   flex: 1 60%;
+  // }
 }
 
 // General Card Styling
@@ -131,18 +131,13 @@ section {
 }
 
 #oto-card {
-  background-color: $red;
-  flex: 4 600px;
   align-self: center;
+  background-color: $red;
+  flex: 1 100%;
   order: 1;
 
-  @include media($tablet) {
-    background-color: $gold;
-    order: 1;
-  }
-
   @include media($desktop) {
-    background-color: $green;
+    flex: 1 50%;
     order: 3;
   }
 }
