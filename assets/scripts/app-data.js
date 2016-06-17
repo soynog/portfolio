@@ -48,7 +48,7 @@ const portfolio = [
   },
   {
     title: "Cryptography",
-    desc: "I research and presented this brief overview of cryptography, past and present, for a student conference at General Assembly.",
+    desc: "I researched and presented this brief overview of cryptography, past and present, for a student conference at General Assembly.",
     bgImage: "background-image:url(/assets/images/cards/cryptography-screenshot.png)",
     imgSrc: "/assets/images/cards/cryptography-screenshot.png",
     link: "https://docs.google.com/presentation/d/1ST1uzlsXLzSSn-GIHNNPbRA5lkDIDAT2r53q1S_eYwA/edit?usp=sharing",
