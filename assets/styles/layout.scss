@@ -238,13 +238,45 @@ section {
   }
 }
 
+// General Card Styling
+@import 'cards';
+
+// Particular Card Styling
+#softsurv-card {
+  background-color: $red;
+}
+
+#reztailor-card {
+  background-color: $red;
+}
+
 #oto-card {
   background-color: $red;
   flex: 4 600px;
+  align-self: center;
+
+  @include media($tablet) {
+  }
+
+  @include media($desktop) {
+  }
 }
 
-// see cards.scss
+#tic-tac-toe-card {
+  background-color: $red;
+}
 
+#mustachify-card {
+  background-color: $red;
+}
+
+#cryptography-card {
+  background-color: $red;
+}
+
+#portfolio-website-card {
+  background-color: $red;
+}
 
 
 // SKILLS SECTION
