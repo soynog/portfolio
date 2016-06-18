@@ -1,7 +1,7 @@
 {{#each portfolio}}
   <div class="card box blue" id="{{this.id}}-card">
     <div class="card-body">
-      <div class="card-header">
+      <div class="card-header" style={{this.bgImage}}>
         <h4>
           <a href={{this.link}} target='_blank'>{{this.title}}</a>
         </h4>
@@ -11,7 +11,6 @@
           {{/if}}
         </h4>
       </div>
-      <div class="card-image" style={{this.bgImage}}></div>
     </div>
     <div class="card-copy">
       <p>{{this.desc}}</p>
