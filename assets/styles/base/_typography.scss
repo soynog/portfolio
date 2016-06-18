@@ -16,8 +16,7 @@ h6 {
   font-family: $heading-font-family;
   font-size: modular-scale(1);
   line-height: $heading-line-height;
-  margin: 0 $small-spacing / 4;
-  padding: 0 $small-spacing / 4;
+  margin: $tiny-spacing;
 }
 
 h1 {
@@ -56,9 +55,9 @@ p {
   color: $contrast-font-color;
   font-size: modular-scale(1);
   font-weight: 300;
-  margin: $small-spacing $base-spacing;
+  margin: $tiny-spacing;
   @include media($tablet) {
-    margin: $base-spacing $base-spacing * 2;
+    // margin: $base-spacing $base-spacing * 2;
   }
   // @include media($mobile) {
   //   margin: 0 $small-spacing $small-spacing;
