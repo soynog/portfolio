@@ -51,14 +51,15 @@ section {
 
 .clickable {
   transition: $quick-transition;
+  @extend %shadow;
 
   &:hover,:active {
     box-shadow: $dark-box-shadow;
-
     color: $action-color;
-    i {
-      color: $action-color;
-    }
+  }
+
+  h4:hover,:active {
+    color: $action-color;
   }
 }
 
