@@ -55,9 +55,9 @@ section {
   &:hover,:active {
     box-shadow: $dark-box-shadow;
 
-    color: $light-blue;
+    color: $action-color;
     i {
-      color: $light-blue;
+      color: $action-color;
     }
   }
 }
