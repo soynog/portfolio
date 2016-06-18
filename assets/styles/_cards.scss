@@ -21,7 +21,6 @@
 
   .card-header {
     @extend %circle;
-    @extend %shadow;
 
     background-color: rgba($blue, .8);
     display: flex;

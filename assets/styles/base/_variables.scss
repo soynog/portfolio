@@ -108,7 +108,9 @@ $quick-transition: all $base-duration / 2 $base-timing / 2;
 
 // Shadows
 $shadow-color: rgba($v-dark-gray, .25);
+$dark-shadow-color: rgba($v-dark-gray, .4);
 $base-box-shadow: 1px 3px 6px 0 $shadow-color;
+$dark-box-shadow: 2px 5px 10px 0 $dark-shadow-color;
 $light-box-shadow: 1px 3px 6px 0 lighten($shadow-color, 50%);
 $base-inset-shadow: 0 10px 10px -10px $shadow-color inset;
 $base-text-shadow: 0 0 5px lighten($shadow-color, 50%);
