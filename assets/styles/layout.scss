@@ -49,6 +49,19 @@ section {
   border-radius: 50%;
 }
 
+.clickable {
+  transition: $quick-transition;
+
+  &:hover,:active {
+    box-shadow: $dark-box-shadow;
+
+    color: $light-blue;
+    i {
+      color: $light-blue;
+    }
+  }
+}
+
 // ***SPECIFIC SECTIONS***
 
 // NAVBAR HEADER
