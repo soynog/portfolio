@@ -21,7 +21,7 @@ const portfolio = [
   },
   {
     title: "OTO",
-    desc: "OTO, the Outdoor Trip Organizer, makes organizing a camping trip fun and easy! Built with Ruby on Rails, Ember.js, and Bourbon. I challenged myself when building OTO by choosing to use the Ember.js front-end framework, and by collaborating with a UX designer on the project. Using Ember meant learning a new tool on the fly, but it helped me create a well-organized and easily expandable app. Working with a UX designer allowed me to focus on coding rather than design minutiae, but also challenged me to build features as specified, without the flexibility to rework them for easier implementation. I am actively working to improve OTO and add more features.",
+    desc: "OTO, the Outdoor Trip Organizer, makes organizing a camping trip fun and easy! Built with Ruby on Rails, Ember.js, and Bourbon. I challenged myself when building OTO by choosing to use the Ember.js front-end framework, and by collaborating with UX designer Norman Wozniak on the project. Using Ember meant learning a new tool on the fly, but it helped me create a well-organized and easily expandable app. Working with a UX designer allowed me to focus on coding rather than design minutiae, but also challenged me to build features as specified, without the flexibility to rework them for easier implementation. I am actively working to improve OTO and add more features.",
     bgImage: "background-image:url(/assets/images/cards/OTO-screenshot.png)",
     imgSrc: "/assets/images/cards/OTO-screenshot.png",
     link: "https://oto-client.herokuapp.com",
