@@ -4,7 +4,7 @@ const scrollAnimate = function (jQuery) {
   jQuery.mark = {
     jump: function (options) {
       var defaults = {
-        selector: 'li.scroll-on-page-link'
+        selector: '.scroll-on-page-link'
       };
       if (typeof options === 'string') {
         defaults.selector = options;

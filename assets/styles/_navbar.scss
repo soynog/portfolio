@@ -9,7 +9,6 @@ nav {
 }
 
 .nav-menu-icon {
-  @extend %textured;
   @extend %shadow;
 
   border-radius: 50%;
@@ -20,22 +19,25 @@ nav {
   width: $icon-height;
 
   &:hover {
-    background: $focus-background;
     cursor: pointer;
   }
 }
 
 .nav-menu {
   display: none;
-
-  @extend %textured;
   @extend %shadow;
 
-  li {
+  a {
+    color: $base-font-color;
+    font-size: modular-scale(1);
+    line-height: $header-height / 2;
+    display: block;
+    padding: $small-spacing;
 
+    &:active,
+    &:focus,
     &:hover {
-      background: $focus-background;
-      cursor: pointer;
+      color: $action-color;
     }
   }
 
@@ -60,16 +62,8 @@ nav {
     text-align: center;
     width: 100%;
 
-    ul {
-      // margin: 0;
-
-      li {
-        font-size: modular-scale(1);
-        text-transform: uppercase;
-        line-height: $header-height / 2;
-        display: inline-block;
-        padding: 0 $small-spacing;
-      }
+    a {
+      display: inline-block;
     }
   }
 }
