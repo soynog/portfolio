@@ -1,6 +1,6 @@
 .subtle,
 %subtle {
-  background-color: rgba($light-tan, 0.7);
+  background-color: rgba($light-tan, 0.9);
   color: $base-font-color;
   a,p,h1,h2,h3,h4,h5 {
     color: $base-font-color;
@@ -9,18 +9,18 @@
   &:active,
   &:focus,
   &:hover {
-    background-color: rgba($light-tan, 0.75);
+    background-color: rgba($light-tan, 0.96);
   }
 }
 
 .blue {
-  background-color: $blue;
+  background-color: $md-dk-blue;
   color: $contrast-font-color;
 
   &:active,
   &:focus,
   &:hover {
-    background-color: lighten($blue, 1%);
+    background-color: lighten($md-dk-blue, 1%);
   }
 }
 
@@ -58,8 +58,14 @@
 }
 
 .sky-blue {
-  background-color: $light-blue;
+  background-color: $blue;
   color: $contrast-font-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten($blue, 1%);
+  }
 }
 
 .green {
