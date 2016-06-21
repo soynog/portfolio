@@ -7,19 +7,6 @@ $(document).ready( function() {
   // Render Portfolio cards
   let portfolioCards = require('./templates/portfolio-cards.handlebars');
   $('#portfolio-header-box').after(portfolioCards({portfolio}));
-  // $('.portfolio-cards').append(portfolioCards({portfolio}));
-  // // Portfolio link click handlebars
-  // $('.card-header').on('click', function(e) {
-  //
-  // });
-
-  // // Navbar Menu
-  // $(".menu-expand").on('click', function(e) {
-  //   $('.navbar-wrapper').toggleClass('menu-open');
-  //   $(".menu").toggleClass("menu-open");
-  //   e.preventDefault();
-  //   e.stopPropagation(); // Make sure hide menu click doesn't fire
-  // });
 
   // Navbar Menu
   $(".nav-menu-icon").on('click', function(e) {
