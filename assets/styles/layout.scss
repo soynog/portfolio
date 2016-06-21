@@ -16,6 +16,7 @@ body {
 
 section {
   @extend %shadow;
+  align-items: stretch;
   display: flex;
   flex-flow: row wrap;
   // margin-left: -$tiny-spacing; // Eliminate space on edges of boxes

@@ -1,3 +1,12 @@
+.subtle,
+%subtle {
+  background-color: rgba($light-tan, 0.5);
+  color: $base-font-color;
+  a,p,h1,h2,h3,h4,h5 {
+    color: $base-font-color;
+  }
+}
+
 .blue {
   background-color: $blue;
   color: $contrast-font-color;
