@@ -29,9 +29,10 @@
 
   &.list-box {
     @extend %shadow;
-    padding: $small-spacing;
+    flex: 1 $base-spacing * 3;
+    max-width: $base-spacing * 4;
     min-height: $base-spacing * 3;
-    flex: 0.25 $base-spacing * 3;
+    padding: $small-spacing;
   }
 
   &.desktop-only {
