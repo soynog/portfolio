@@ -20,9 +20,12 @@ h6 {
 }
 
 h1 {
-  font-size: modular-scale(4);
+  font-size: modular-scale(5);
   font-weight: 300;
   @include media($tablet) {
+    font-size: modular-scale(6);
+  }
+  @include media($desktop) {
     font-size: modular-scale(7);
   }
 }
@@ -31,12 +34,15 @@ h2 {
   font-size: modular-scale(4);
   font-weight: 300;
   @include media($tablet) {
+    font-size: modular-scale(5);
+  }
+  @include media($desktop) {
     font-size: modular-scale(6);
   }
 }
 
 h3 {
-  font-size: modular-scale(2);
+  font-size: modular-scale(3);
   font-weight: 300;
   @include media($tablet) {
     font-size: modular-scale(4);
@@ -51,17 +57,22 @@ h4 {
   }
 }
 
-p {
-  color: $contrast-font-color;
+h5 {
   font-size: modular-scale(1);
   font-weight: 300;
-  margin: $tiny-spacing;
   @include media($tablet) {
-    // margin: $base-spacing $base-spacing * 2;
+    font-size: modular-scale(2);
   }
-  // @include media($mobile) {
-  //   margin: 0 $small-spacing $small-spacing;
-  // }
+}
+
+p {
+  color: $contrast-font-color;
+  font-size: $base-font-size;
+  font-weight: 300;
+  margin: $tiny-spacing;
+  @include media($desktop) {
+    font-size: modular-scale(1);
+  }
 }
 
 .list-box {
