@@ -20,11 +20,17 @@ section {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  // margin-left: -$tiny-spacing; // Eliminate space on edges of boxes
-  // margin-right: -$tiny-spacing;
-  padding: $small-spacing;
-  margin-bottom: $base-spacing;
+  padding: 0 $small-spacing / 2 $small-spacing;
+  margin-bottom: $base-spacing * 2;
   text-align: center;
+
+  @include media($tablet) {
+    padding: 0 $small-spacing $base-spacing;
+  }
+
+  @include media($tablet) {
+    padding: 0 $base-spacing * 2 $base-spacing * 2;
+  }
 }
 
 @import 'boxes';
@@ -159,6 +165,7 @@ section {
 
   @include media($desktop) {
     flex: 1 600px;
+    max-width: 1000px;
     order: 3;
   }
 }
