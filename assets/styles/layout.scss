@@ -13,13 +13,16 @@ section {
   padding: 0 $small-spacing / 2 $small-spacing;
   margin-bottom: $base-spacing * 2;
   text-align: center;
+  transition: $base-transition;
 
   @include media($tablet) {
     padding: 0 $small-spacing $base-spacing;
+    transition: $base-transition;
   }
 
   @include media($desktop) {
     padding: 0 $base-spacing * 2 $base-spacing * 2;
+    transition: $base-transition;
   }
 }
 
@@ -70,10 +73,10 @@ section {
 
 // WELCOME SECTION
 .welcome-section {
-  padding-top: $small-spacing;
+  padding-top: $base-spacing;
 
   @include media($desktop) {
-    padding-top: $header-height;
+    padding-top: $header-height * 1.5;
   }
 }
 

@@ -6,6 +6,7 @@
   flex-flow: column nowrap;
   justify-content: center;
   margin: $small-spacing / 2;
+  transition: $quick-transition;
 
   &.shim {
     flex: 4 0;
