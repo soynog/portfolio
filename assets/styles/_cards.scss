@@ -1,50 +1,71 @@
 .box.card {
+  @extend %shadow;
+  @extend %subtle;
+
   align-self: stretch;
   display: flex;
   flex-flow: column nowrap;
-  flex: 1 250px;
+  flex: 1 350px;
   justify-content: space-between;
+  margin: $small-spacing;
+  max-width: 750px;
   overflow: hidden;
-  padding: $small-spacing / 2;
+  padding: 0;
 
   .card-body {
     align-self: stretch;
     align-items: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: center top;
     display: flex;
+    flex: 1 320px;
     flex-flow: column nowrap;
-    margin-bottom: $small-spacing / 2;
-    padding: $small-spacing;
+    opacity: 0.8;
   }
 
   .card-header {
-    @extend %circle;
-
-    background-color: rgba($blue, .8);
+    align-self: stretch;
+    align-items: center;
     display: flex;
-    flex-flow: column nowrap;
-    height: 220px;
+    flex: 0 auto;
+    flex-flow: row nowrap;
     justify-content: center;
-    width: 220px;
+    padding: $small-spacing $tiny-spacing $tiny-spacing;
 
     h4 {
-      margin: $tiny-spacing;
-      padding: 0;
+      a {
+        margin: 0 $small-spacing / 2;
+        transition: $quick-transition;
+        font-weight: 500;
+
+        &:active,
+        &:focus,
+        &:hover {
+          color: $action-color;
+        }
+      }
     }
   }
 
   .card-copy {
-    @extend %textured;
-    flex: 1 auto;
+    flex: 0 auto;
     opacity: .7;
-    padding: $small-spacing / 2;
+    padding: $tiny-spacing $small-spacing / 2 $small-spacing;
 
     p {
       color: $base-font-color;
-      font-size: $base-font-size;
       margin: 0;
+
+      a {
+        transition: $quick-transition;
+
+        &:active,
+        &:focus,
+        &:hover {
+          color: $action-color;
+        }
+      }
     }
   }
 }

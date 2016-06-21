@@ -2,25 +2,28 @@
 // GENERAL PAGE ELEMENTS //
 body {
   @extend %textured;
-
-  background-color: $light-tan;
 }
 
-// .row-wrapper {
-//   @include row();
-//
-//   .outer-container {
-//     @include outer-container;
-//   }
-// }
-
 section {
+  box-shadow: $dark-box-shadow;
+  align-items: stretch;
   display: flex;
   flex-flow: row wrap;
-  margin-left: -$tiny-spacing; // Eliminate space on edges of boxes
-  margin-right: -$tiny-spacing;
-  margin-bottom: 0;
+  justify-content: center;
+  padding: 0 $small-spacing / 2 $small-spacing;
+  margin-bottom: $base-spacing * 2;
   text-align: center;
+  transition: $base-transition;
+
+  @include media($tablet) {
+    padding: 0 $small-spacing $base-spacing;
+    transition: $base-transition;
+  }
+
+  @include media($desktop) {
+    padding: 0 $base-spacing * 2 $base-spacing * 2;
+    transition: $base-transition;
+  }
 }
 
 @import 'boxes';
@@ -70,46 +73,28 @@ section {
 
 // WELCOME SECTION
 .welcome-section {
-  min-height: 100vh;
-}
-
-#welcome-shim-1 {
-  order: 1;
-}
-
-#title-box {
-  min-height: 39vh;
-  order: 2;
+  padding-top: $base-spacing;
 
   @include media($desktop) {
-    flex: 4 50%;
-    // margin-left: $small-spacing / 2;
-    // margin-right: $small-spacing / 2;
-    padding-top: $header-height;
+    padding-top: $header-height * 1.5;
   }
 }
 
-#subtitle-box {
-  min-height: 14vh;
-  order: 3;
+#title-box {
+  margin: $base-spacing 0;
 
   @include media($desktop) {
-    flex: 1 60%;
-    // margin-right: $small-spacing / 2;
-    order: 4;
+    flex: 1 50%;
   }
 }
 
 #portrait-box {
+  margin: $base-spacing 0;
   flex: 1 auto;
-  min-height: 44vh;
-  min-width: 34vh;
   order: 4;
 
   @include media($desktop) {
-    background-color: $dark-blue;
-    order: 3;
-    padding-top: $header-height;
+    padding-top: $base-spacing;
   }
 
   #portrait-image {
@@ -124,92 +109,61 @@ section {
 }
 
 // PORTFOLIO SECTION
-#portfolio-header-box {
-  // @include media($desktop) {
-  //   flex: 1 60%;
-  // }
-}
 
 // General Card Styling
 @import 'cards';
 
 // Particular Card Styling
 #softsurv-card {
-  background-color: $blue;
   order: 2;
 }
 
 #reztailor-card {
-  background-color: $blue;
   order: 4;
 }
 
 #oto-card {
-  align-self: center;
-  background-color: $red;
   flex: 1 100%;
   order: 1;
 
+  .card-body {
+    background-size: cover;
+    background-position: center top;
+  }
+
   @include media($desktop) {
-    flex: 1 50%;
-    order: 3;
+    flex: 1 600px;
+    max-width: 1000px;
   }
 }
 
 #tic-tac-toe-card {
-  background-color: $blue;
   order: 6;
 }
 
 #mustachify-card {
-  background-color: $blue;
   order: 8;
 }
 
 #cryptography-card {
-  background-color: $blue;
   order: 10;
 }
 
 #portfolio-website-card {
-  background-color: $blue;
   order: 12;
 }
 
 
 // SKILLS SECTION
-.skills-section {
-  .section-header.skills-section-header {
-    background-color: $dark-blue;
-  }
 
-  .section-body.skills-section-body{
-    .skill-list {
-      li {
-        display: inline-block;
-        float: none;
-        list-style: none;
-        text-transform: uppercase;
-      }
-    }
-  }
-}
 
 // ABOUT ME SECTION
-.about-me-section {
-  .section-header.about-me-section-header {
-    background-color: $red;
-  }
-}
+
 
 // CONTACT SECTION
-.contact-section {
-  .section-header.contact-section-header {
-    background-color: $dark-blue;
-  }
-}
 
 // FOOTER
 footer {
-  //
+  padding: $small-spacing;
+  text-align: center;
 }

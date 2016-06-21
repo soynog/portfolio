@@ -56,9 +56,10 @@ $white: #fff;
 // $tan: #d4cca4;
 // $light-tan: #f6f4e8;
 
-$v-dark-blue: #092748; // Bluescale
+
+$blue: rgba(0,112,192,1); // Bluescale
 $dark-blue: rgba(0,32,96,1);
-$blue: rgba(0,112,192,1);
+$md-dk-blue: rgba(0,72,144,1);
 $light-blue: rgba(0,176,240,1);
 $v-light-blue: rgba(100,220,255,1);
 
@@ -80,7 +81,7 @@ $gold: rgba(240,180,0,1);
 $base-font-color: $v-dark-tan;
 $secondary-font-color: $dark-blue;
 $contrast-font-color: $light-tan;
-$action-color: $v-light-blue;
+$action-color: $blue;
 
 // Border
 // $base-border-color: $light-gray;

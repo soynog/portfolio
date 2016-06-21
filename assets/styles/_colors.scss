@@ -1,0 +1,116 @@
+.subtle,
+%subtle {
+  background-color: rgba($light-tan, 0.9);
+  color: $base-font-color;
+  a,p,h1,h2,h3,h4,h5 {
+    color: $base-font-color;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: rgba($light-tan, 0.96);
+  }
+}
+
+.blue {
+  background-color: $md-dk-blue;
+  color: $contrast-font-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten($md-dk-blue, 1%);
+  }
+}
+
+.navy {
+  background-color: $dark-blue;
+  color: $contrast-font-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten($dark-blue, 1%);
+  }
+}
+
+.red {
+  background-color: $dark-red;
+  color: $contrast-font-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten($dark-red, 1%);
+  }
+}
+
+.maroon {
+  background-color: $v-dark-red;
+  color: $contrast-font-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten($v-dark-red, 1%);
+  }
+}
+
+.sky-blue {
+  background-color: $blue;
+  color: $contrast-font-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten($blue, 1%);
+  }
+}
+
+.green {
+  background-color: $green;
+  color: $contrast-font-color;
+}
+
+.gold {
+  background-color: $gold;
+  color: $contrast-font-color;
+}
+
+.gray {
+  background-color: $md-dk-gray;
+  color: $contrast-font-color;
+}
+
+.rainbow {
+  color: $contrast-font-color;
+}
+
+.rainbow:nth-child(7n+1) {
+  background-color: $blue;
+}
+
+.rainbow:nth-child(7n+2) {
+  background-color: $dark-blue;
+}
+
+.rainbow:nth-child(7n+3) {
+  background-color: $red;
+}
+
+.rainbow:nth-child(7n+4) {
+  background-color: $dark-blue;
+}
+
+.rainbow:nth-child(7n+5) {
+  background-color: $blue;
+}
+
+.rainbow:nth-child(7n+6) {
+  background-color: $blue;
+}
+
+.rainbow:nth-child(7n+7) {
+  background-color: $red;
+}
