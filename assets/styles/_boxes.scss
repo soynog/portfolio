@@ -1,6 +1,5 @@
 .box,
 %box {
-  // @extend %shadow;
   align-items: center;
   display: flex;
   flex: 1 100%;
@@ -24,18 +23,15 @@
   }
 
   &.body-box {
-    justify-content: space-between;
+    @extend %shadow;
     padding: $small-spacing;
-
-    @include media($tablet) {
-      flex: 1 350px;
-    }
   }
 
   &.list-box {
+    @extend %shadow;
     padding: $small-spacing;
     min-height: $base-spacing * 3;
-    flex: 1 $base-spacing * 3;
+    flex: 0.25 $base-spacing * 3;
   }
 
   &.desktop-only {

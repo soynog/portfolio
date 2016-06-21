@@ -1,8 +1,8 @@
 .box.card {
   @extend %shadow;
+  @extend %subtle;
 
   align-self: stretch;
-  background-color: rgba($light-tan, 0.5);
   display: flex;
   flex-flow: column nowrap;
   flex: 0.5 350px;
