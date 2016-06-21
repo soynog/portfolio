@@ -5,11 +5,15 @@
   align-self: stretch;
   display: flex;
   flex-flow: column nowrap;
-  flex: 0.5 350px;
+  flex: 1 350px;
   justify-content: space-between;
   margin: $small-spacing;
   overflow: hidden;
   padding: 0;
+
+  &:last-child {
+    flex: 0.2 35%;
+  }
 
   .card-body {
     align-self: stretch;

@@ -19,6 +19,7 @@ section {
   align-items: stretch;
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
   // margin-left: -$tiny-spacing; // Eliminate space on edges of boxes
   // margin-right: -$tiny-spacing;
   padding: $small-spacing;
@@ -73,7 +74,9 @@ section {
 
 // WELCOME SECTION
 .welcome-section {
+  box-shadow: none;
   min-height: 100vh;
+  padding: 0;
 }
 
 #welcome-shim-1 {
