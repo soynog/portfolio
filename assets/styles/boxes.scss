@@ -1,85 +1,12 @@
-
 .box,
 %box {
-  @extend %shadow;
+  // @extend %shadow;
   align-items: center;
   display: flex;
   flex: 1 100%;
   flex-flow: column nowrap;
   justify-content: center;
-  margin: 0 $tiny-spacing $tiny-spacing * 2 $tiny-spacing;
-
-  &.blue {
-    background-color: $blue;
-    color: $contrast-font-color;
-  }
-
-  &.navy {
-    background-color: $dark-blue;
-    color: $contrast-font-color;
-  }
-
-  &.red {
-    background-color: $red;
-    color: $contrast-font-color;
-  }
-
-  &.maroon {
-    background-color: $v-dark-red;
-    color: $contrast-font-color;
-  }
-
-  &.sky-blue {
-    background-color: $light-blue;
-    color: $contrast-font-color;
-  }
-
-  &.green {
-    background-color: $green;
-    color: $contrast-font-color;
-  }
-
-  &.gold {
-    background-color: $gold;
-    color: $contrast-font-color;
-  }
-
-  &.gray {
-    background-color: $md-dk-gray;
-    color: $contrast-font-color;
-  }
-
-  &.rainbow {
-    color: $contrast-font-color;
-  }
-
-  &.rainbow:nth-child(7n+1) {
-    background-color: $blue;
-  }
-
-  &.rainbow:nth-child(7n+2) {
-    background-color: $dark-blue;
-  }
-
-  &.rainbow:nth-child(7n+3) {
-    background-color: $red;
-  }
-
-  &.rainbow:nth-child(7n+4) {
-    background-color: $dark-blue;
-  }
-
-  &.rainbow:nth-child(7n+5) {
-    background-color: $blue;
-  }
-
-  &.rainbow:nth-child(7n+6) {
-    background-color: $blue;
-  }
-
-  &.rainbow:nth-child(7n+7) {
-    background-color: $red;
-  }
+  margin: $small-spacing / 2;
 
   &.shim {
     flex: 4 0;

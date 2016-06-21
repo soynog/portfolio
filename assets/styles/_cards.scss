@@ -1,10 +1,13 @@
 .box.card {
+  @extend %shadow;
+
   align-self: stretch;
-  background-color: rgba($light-tan, 0.3);
+  background-color: rgba($light-tan, 0.5);
   display: flex;
   flex-flow: column nowrap;
-  flex: 1 350px;
+  flex: 0.5 350px;
   justify-content: space-between;
+  margin: $small-spacing;
   overflow: hidden;
   padding: 0;
 
@@ -28,10 +31,13 @@
     justify-content: center;
     padding: $small-spacing $tiny-spacing $tiny-spacing;
 
-    h4,i {
+    h4 {
       color: $base-font-color;
-      margin: 0 $small-spacing;
       padding: 0;
+
+      a {
+        margin: 0 $small-spacing / 2;
+      }
     }
   }
 
