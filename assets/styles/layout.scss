@@ -28,7 +28,7 @@ section {
     padding: 0 $small-spacing $base-spacing;
   }
 
-  @include media($tablet) {
+  @include media($desktop) {
     padding: 0 $base-spacing * 2 $base-spacing * 2;
   }
 }
@@ -136,11 +136,6 @@ section {
 }
 
 // PORTFOLIO SECTION
-#portfolio-header-box {
-  // @include media($desktop) {
-  //   flex: 1 60%;
-  // }
-}
 
 // General Card Styling
 @import 'cards';
@@ -188,38 +183,15 @@ section {
 
 
 // SKILLS SECTION
-.skills-section {
-  .section-header.skills-section-header {
-    background-color: $dark-blue;
-  }
 
-  .section-body.skills-section-body{
-    .skill-list {
-      li {
-        display: inline-block;
-        float: none;
-        list-style: none;
-        text-transform: uppercase;
-      }
-    }
-  }
-}
 
 // ABOUT ME SECTION
-.about-me-section {
-  .section-header.about-me-section-header {
-    background-color: $red;
-  }
-}
+
 
 // CONTACT SECTION
-.contact-section {
-  .section-header.contact-section-header {
-    background-color: $dark-blue;
-  }
-}
 
 // FOOTER
 footer {
-  //
+  padding: $small-spacing;
+  text-align: center;
 }
