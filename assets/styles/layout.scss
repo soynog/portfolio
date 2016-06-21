@@ -135,17 +135,14 @@ section {
 
 // Particular Card Styling
 #softsurv-card {
-  background-color: $blue;
   order: 2;
 }
 
 #reztailor-card {
-  background-color: $blue;
   order: 4;
 }
 
 #oto-card {
-  background-color: $red;
   flex: 1 100%;
   order: 1;
 
@@ -155,28 +152,24 @@ section {
   }
 
   @include media($desktop) {
-    flex: 1 50%;
+    flex: 1 600px;
     order: 3;
   }
 }
 
 #tic-tac-toe-card {
-  background-color: $blue;
   order: 6;
 }
 
 #mustachify-card {
-  background-color: $blue;
   order: 8;
 }
 
 #cryptography-card {
-  background-color: $blue;
   order: 10;
 }
 
 #portfolio-website-card {
-  background-color: $blue;
   order: 12;
 }
 
