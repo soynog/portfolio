@@ -86,11 +86,10 @@ section {
 #title-box {
   min-height: 39vh;
   order: 2;
+  margin-top: 0;
 
   @include media($desktop) {
     flex: 4 50%;
-    // margin-left: $small-spacing / 2;
-    // margin-right: $small-spacing / 2;
     padding-top: $header-height;
   }
 }
