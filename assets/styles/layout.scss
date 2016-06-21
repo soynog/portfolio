@@ -149,6 +149,11 @@ section {
   flex: 1 100%;
   order: 1;
 
+  .card-body {
+    background-size: cover;
+    background-position: center top;
+  }
+
   @include media($desktop) {
     flex: 1 50%;
     order: 3;
