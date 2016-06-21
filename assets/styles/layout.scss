@@ -2,12 +2,10 @@
 // GENERAL PAGE ELEMENTS //
 body {
   @extend %textured;
-
-  background-color: $light-tan;
 }
 
 section {
-  @extend %shadow;
+  box-shadow: $dark-box-shadow;
   align-items: stretch;
   display: flex;
   flex-flow: row wrap;
@@ -72,49 +70,28 @@ section {
 
 // WELCOME SECTION
 .welcome-section {
-  box-shadow: none;
-  min-height: 100vh;
-  margin-left: -$small-spacing / 2;
-  margin-right: -$small-spacing / 2;
-  padding: 0;
-}
-
-#welcome-shim-1 {
-  order: 1;
-}
-
-#title-box {
-  min-height: 39vh;
-  order: 2;
-  margin-top: 0;
+  padding-top: $small-spacing;
 
   @include media($desktop) {
-    flex: 4 50%;
     padding-top: $header-height;
   }
 }
 
-#subtitle-box {
-  min-height: 14vh;
-  order: 3;
+#title-box {
+  margin: $base-spacing 0;
 
   @include media($desktop) {
-    flex: 1 60%;
-    // margin-right: $small-spacing / 2;
-    order: 4;
+    flex: 1 50%;
   }
 }
 
 #portrait-box {
+  margin: $base-spacing 0;
   flex: 1 auto;
-  min-height: 44vh;
-  min-width: 34vh;
   order: 4;
 
   @include media($desktop) {
-    background-color: $dark-blue;
-    order: 3;
-    padding-top: $header-height;
+    padding-top: $base-spacing;
   }
 
   #portrait-image {
