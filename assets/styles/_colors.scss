@@ -1,6 +1,6 @@
 .subtle,
 %subtle {
-  background-color: rgba($light-tan, 0.9);
+  background-color: rgba($v-light-tan, 0.85);
   color: $base-font-color;
   a,p,h1,h2,h3,h4,h5 {
     color: $base-font-color;
@@ -9,7 +9,7 @@
   &:active,
   &:focus,
   &:hover {
-    background-color: rgba($light-tan, 0.96);
+    background-color: rgba($v-light-tan, 0.9);
   }
 }
 
