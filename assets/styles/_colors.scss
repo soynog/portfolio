@@ -16,16 +16,34 @@
 .blue {
   background-color: $blue;
   color: $contrast-font-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten($blue, 1%);
+  }
 }
 
 .navy {
   background-color: $dark-blue;
   color: $contrast-font-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten($dark-blue, 1%);
+  }
 }
 
 .red {
   background-color: $red;
   color: $contrast-font-color;
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: lighten($red, 1%);
+  }
 }
 
 .maroon {
