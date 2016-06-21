@@ -29,8 +29,8 @@
 
   &.list-box {
     @extend %shadow;
-    flex: 1 $base-spacing * 3;
-    max-width: $base-spacing * 4;
+    flex: 1 auto;
+    max-width: $base-spacing * 5;
     min-height: $base-spacing * 3;
     padding: $small-spacing;
   }
