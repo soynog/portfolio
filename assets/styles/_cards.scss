@@ -36,7 +36,6 @@
     h4 {
       a {
         margin: 0 $small-spacing / 2;
-        text-decoration: none;
         transition: $quick-transition;
         font-weight: 500;
 
@@ -57,6 +56,16 @@
     p {
       color: $base-font-color;
       margin: 0;
+
+      a {
+        transition: $quick-transition;
+
+        &:active,
+        &:focus,
+        &:hover {
+          color: $action-color;
+        }
+      }
     }
   }
 }
