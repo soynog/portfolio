@@ -1,17 +1,17 @@
 {{#each portfolio}}
-  <div class="card box blue" id="{{this.id}}-card">
+  <div class="card box" id="{{this.id}}-card">
     <div class="card-body"  style={{this.bgImage}}>
-      <div class="card-header clickable">
-        <h4>
-          <a href={{this.link}} target='_blank'>{{this.title}}</a>
-        </h4>
-        <p>
-          {{#if this.ghLink}}
-            <a href={{this.ghLink}} target='_blank'><i class="devicon-github-plain icon-md"></i></a>
-          {{/if}}
-        </p>
-      </div>
     </div>
+
+    <div class="card-header">
+      <h4>
+        <a href={{this.link}} target='_blank'>{{this.title}}</a>
+      </h4>
+      {{#if this.ghLink}}
+        <a href={{this.ghLink}} target='_blank'><i class="devicon-github-plain icon-md"></i></a>
+      {{/if}}
+    </div>
+
     <div class="card-copy">
       <p>{{this.desc}}</p>
     </div>

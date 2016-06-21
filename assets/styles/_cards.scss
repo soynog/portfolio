@@ -1,11 +1,12 @@
 .box.card {
   align-self: stretch;
+  background-color: rgba($light-tan, 0.3);
   display: flex;
   flex-flow: column nowrap;
-  flex: 1 250px;
+  flex: 1 350px;
   justify-content: space-between;
   overflow: hidden;
-  padding: $small-spacing / 2;
+  padding: 0;
 
   .card-body {
     align-self: stretch;
@@ -14,32 +15,30 @@
     background-size: cover;
     background-position: center center;
     display: flex;
+    flex: 1 200px;
     flex-flow: column nowrap;
-    margin-bottom: $small-spacing / 2;
-    padding: $small-spacing;
   }
 
   .card-header {
-    @extend %circle;
-
-    background-color: rgba($blue, .8);
+    align-self: stretch;
+    align-items: center;
     display: flex;
-    flex-flow: column nowrap;
-    height: 220px;
+    flex: 0 auto;
+    flex-flow: row nowrap;
     justify-content: center;
-    width: 220px;
+    padding: $small-spacing $tiny-spacing $tiny-spacing;
 
-    h4 {
-      margin: $tiny-spacing;
+    h4,i {
+      color: $base-font-color;
+      margin: 0 $small-spacing;
       padding: 0;
     }
   }
 
   .card-copy {
-    @extend %textured;
-    flex: 1 auto;
+    flex: 0 auto;
     opacity: .7;
-    padding: $small-spacing / 2;
+    padding: $tiny-spacing $tiny-spacing $small-spacing;
 
     p {
       color: $base-font-color;
