@@ -34,11 +34,17 @@
     padding: $small-spacing $tiny-spacing $tiny-spacing;
 
     h4 {
-      color: $base-font-color;
-      padding: 0;
-
       a {
         margin: 0 $small-spacing / 2;
+        text-decoration: none;
+        transition: $quick-transition;
+        font-weight: 500;
+
+        &:active,
+        &:focus,
+        &:hover {
+          color: $action-color;
+        }
       }
     }
   }
