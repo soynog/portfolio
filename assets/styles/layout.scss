@@ -15,11 +15,13 @@ body {
 // }
 
 section {
+  @extend %shadow;
   display: flex;
   flex-flow: row wrap;
-  margin-left: -$tiny-spacing; // Eliminate space on edges of boxes
-  margin-right: -$tiny-spacing;
-  margin-bottom: 0;
+  // margin-left: -$tiny-spacing; // Eliminate space on edges of boxes
+  // margin-right: -$tiny-spacing;
+  padding: $small-spacing;
+  margin-bottom: $base-spacing;
   text-align: center;
 }
 

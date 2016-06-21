@@ -6,10 +6,11 @@
     <div class="card-header">
       <h4>
         <a href={{this.link}} target='_blank'>{{this.title}}</a>
+
+        {{#if this.ghLink}}
+          <a class="devicon-github-plain icon-sm" href={{this.ghLink}} target='_blank'></a>
+        {{/if}}
       </h4>
-      {{#if this.ghLink}}
-        <a class="devicon-github-plain icon-md" href={{this.ghLink}} target='_blank'></a>
-      {{/if}}
     </div>
 
     <div class="card-copy">
