@@ -44,7 +44,7 @@
   .card-copy {
     flex: 0 auto;
     opacity: .7;
-    padding: $tiny-spacing $tiny-spacing $small-spacing;
+    padding: $tiny-spacing $small-spacing / 2 $small-spacing;
 
     p {
       color: $base-font-color;
