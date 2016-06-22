@@ -11,6 +11,7 @@ nav {
 .nav-menu-icon {
   @extend %shadow;
 
+  background-color: rgba($v-light-tan, 0.9);
   border-radius: 50%;
   height: $icon-height;
   line-height: $icon-height;
@@ -24,6 +25,7 @@ nav {
 }
 
 .nav-menu {
+  background-color: rgba($v-light-tan, 0.9);
   display: none;
   @extend %shadow;
 
